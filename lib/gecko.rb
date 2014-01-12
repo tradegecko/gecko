@@ -1,2 +1,1 @@
-module Gecko
-end
+require 'gecko/client'
