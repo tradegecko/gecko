@@ -18,7 +18,7 @@ module Gecko
     def authorize_from_refresh_token(refresh_token)
       @access_token = oauth_client.get_token({
         client_id:     oauth_client.id,
-        client_secret: oauth_client.secret
+        client_secret: oauth_client.secret,
         refresh_token: refresh_token,
         grant_type:    'refresh_token'
       })
