@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email = ['bradley@tradegecko.com']
   spec.description = %q{A Ruby interface to the TradeGecko API.}
   spec.summary = spec.description
-  spec.homepage = 'https://tradegecko.github.com/gecko_gem/'
+  spec.homepage = 'https://github.com/tradegecko/gecko/'
   spec.license = 'MIT'
 
   spec.files         = `git ls-files`.split($/)

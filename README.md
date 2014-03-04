@@ -18,6 +18,9 @@ Or install it yourself as:
 ## Usage
 
 `client = Gecko::Client.new(CLIENT_ID, CLIENT_SECRET)`
+
+`client.access_token = existing_access_token`
+
 TODO: Write usage instructions here
 
 ## Contributing
