@@ -5,6 +5,8 @@ module Gecko
   class Client
     extend Helpers::RecordHelper
 
+    record :Account
+
     record :Address
     record :Company
 

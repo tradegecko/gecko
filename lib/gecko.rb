@@ -4,6 +4,7 @@ require 'gecko/client'
 require 'gecko/record/base'
 require 'gecko/record/base_adapter'
 
+require 'gecko/record/account'
 require 'gecko/record/address'
 require 'gecko/record/company'
 require 'gecko/record/order'

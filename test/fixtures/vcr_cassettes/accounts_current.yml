@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/accounts/current
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer 504285880e534514728b011f01c19e57ae44d012c467fdf9b6506f3d4f3cf143
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 05 Mar 2014 02:38:20 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"8e1fff7a61c4aace2ff5d5c52fcf583d"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 242f8544-60db-4c75-a026-8aebccf7ade4
+      X-Runtime:
+      - '0.222954'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"account":{"id":7067,"contact_email":"gecko@tradegecko.com","contact_mobile":null,"contact_phone":"555-555-555","country":"SG","default_tax_rate":7.0,"default_tax_type":"exclusive","industry":"Computers,
+        IT Products \u0026 Services","logo_url":null,"name":"Gecko Inc.","invoice_details":"Your
+        prompt payment is greatly appreciated","order_details":null,"quote_details":null,"website":null,"expires_at":"2014-03-26T02:34:30.000Z","subscription_name":"Small","subscription_price":99.0,"annual_subscription_price":79.0,"tax_number":"","tax_number_label":"GST
+        Number","tax_label":"GST","default_order_price_type_id":"wholesale","default_purchase_order_price_type_id":"buy","time_zone":"Asia/Singapore","stock_level_warn":true,"primary_location_id":8409,"primary_billing_location_id":8409,"default_currency_id":8078,"default_payment_term_id":20562,"billing_contact_id":8926,"location_ids":[8409],"user_ids":[8926]}}'
+    http_version: 
+  recorded_at: Wed, 05 Mar 2014 02:38:20 GMT
+recorded_with: VCR 2.8.0
