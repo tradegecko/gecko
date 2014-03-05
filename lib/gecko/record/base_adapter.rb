@@ -44,11 +44,11 @@ module Gecko
       #   client.Product.record_for_id(12)
       #
       # @return [Gecko::Record::Base] if a record was found in the identity map.
-      # @return [nil] If no record was found
+      # @raise  [Gecko::Record::RecordNotInIdentityMap] If no record was found
       #
       # @api private
       def record_for_id(id)
-        @identity_map.fetch(id)
+        @identity_map.fetch(id) { record_not_in_identity_map!(id) }
       end
 
       # Returns whether the Identity Map has a record for a particular ID
@@ -140,8 +140,15 @@ module Gecko
       # @api private
       def fetch(id)
         response    = access_token.get(plural_path + "/" + id.to_s)
-        record_json = response.parsed[json_root.underscore]
+        record_json = response.parsed[json_root]
         instantiate_and_register_record(record_json)
+      rescue OAuth2::Error => ex
+        case ex.response.status
+        when 404
+          record_not_found!(id)
+        else
+          raise
+        end
       end
 
       # Parse a json collection and instantiate records
@@ -225,6 +232,14 @@ module Gecko
       # @api private
       def set_metadata(json)
         @metadata = json["meta"] if json["meta"]
+      end
+
+      def record_not_found!(id)
+        raise RecordNotFound, "Couldn't find #{model_class.name} with id=#{id}"
+      end
+
+      def record_not_in_identity_map!(id)
+        raise RecordNotInIdentityMap, "Couldn't find #{model_class.name} with id=#{id}"
       end
     end
   end

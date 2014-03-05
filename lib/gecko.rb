@@ -3,6 +3,7 @@ require 'gecko/client'
 # Include models
 require 'gecko/record/base'
 require 'gecko/record/base_adapter'
+require 'gecko/record/errors'
 
 require 'gecko/record/account'
 require 'gecko/record/address'

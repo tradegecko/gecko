@@ -23,6 +23,14 @@ Or install it yourself as:
 
 TODO: Write usage instructions here
 
+
+## TODO
+- Complete record collection
+- Instrumentation
+- Allow writing objects
+- Handle API Errors
+- Clean up Access Token management
+
 ## Contributing
 
 1. Fork it ( http://github.com/[my-github-username]/gecko/fork )

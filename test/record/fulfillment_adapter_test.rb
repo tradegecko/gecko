@@ -4,9 +4,9 @@ class Gecko::Record::FulfillmentAdapterTest < Minitest::Test
   include TestingAdapter
   include SharedAdapterExamples
 
-  let(:adapter)           { @client.Fulfillment }
-  let(:vcr_cassette_name) { "fulfillments" }
-  let(:record_class)      { Gecko::Record::Fulfillment }
+  let(:adapter)       { @client.Fulfillment }
+  let(:plural_name)   { "fulfillments" }
+  let(:record_class)  { Gecko::Record::Fulfillment }
 
   def test_initializes_adapter
     assert_instance_of(Gecko::Record::FulfillmentAdapter, @client.Fulfillment)

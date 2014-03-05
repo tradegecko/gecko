@@ -3,9 +3,9 @@ require 'test_helper'
 class Gecko::Record::FulfillmentLineItemAdapterTest < Minitest::Test
   include TestingAdapter
 
-  let(:adapter)           { @client.FulfillmentLineItem }
-  let(:vcr_cassette_name) { "fulfillment_line_items" }
-  let(:record_class)      { Gecko::Record::FulfillmentLineItem }
+  let(:adapter)       { @client.FulfillmentLineItem }
+  let(:plural_name)   { "fulfillment_line_items" }
+  let(:record_class)  { Gecko::Record::FulfillmentLineItem }
 
   def test_initializes_adapter
     assert_instance_of(Gecko::Record::FulfillmentLineItemAdapter, @client.FulfillmentLineItem)
