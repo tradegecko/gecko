@@ -10,6 +10,7 @@ module Gecko
 
       attribute :label,     String
       attribute :freeform,  Boolean
+      attribute :line_type, String
 
       attribute :discount,  BigDecimal
       attribute :quantity,  BigDecimal
