@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/companies?limit=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer ca82dd1f31d34b1e9b76a2ce2488b552d130788659ce0cf8c665aaffd9c7387d
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 03 Mar 2014 06:40:06 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      X-Pagination:
+      - '{"total_records":157,"total_pages":32,"first_page":true,"last_page":false,"out_of_bounds":false,"offset":0}'
+      Link:
+      - <http://api.lvh.me:3000/ajax/companies.json?limit=5&page=2>; rel="next", <http://api.lvh.me:3000/ajax/companies.json?limit=5&page=32>;
+        rel="last"
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"199304dd0cab85b5b5243d035fe23825"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 1de8d3bf-0329-442b-9885-e5e9b3087f4d
+      X-Runtime:
+      - '0.705001'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"companies":[{"id":114,"assignee_id":null,"name":"Cupcake Boutique","description":null,"phone_number":null,"status":"active","email":"cakes@cupcakeboutique.com","website":null,"company_type":"business","company_code":"8974531","fax":null,"default_tax_rate":null,"default_discount_rate":null,"default_price_type_id":"buy","default_payment_term_id":null,"tax_number":null,"address_ids":[56975],"contact_ids":[13352],"note_ids":[]},{"id":109,"assignee_id":null,"name":"Lagoon
+        Bike and Bits","description":null,"phone_number":null,"status":"active","email":null,"website":null,"company_type":"business","company_code":"243678","fax":null,"default_tax_rate":null,"default_discount_rate":null,"default_price_type_id":null,"default_payment_term_id":null,"tax_number":null,"address_ids":[],"contact_ids":[29537],"note_ids":[]},{"id":110,"assignee_id":null,"name":"Ludwigs","description":null,"phone_number":null,"status":"active","email":null,"website":null,"company_type":"business","company_code":"789065","fax":null,"default_tax_rate":null,"default_discount_rate":null,"default_price_type_id":null,"default_payment_term_id":null,"tax_number":null,"address_ids":[],"contact_ids":[],"note_ids":[]},{"id":111,"assignee_id":null,"name":"Cameo
+        Creamers Cafe","description":null,"phone_number":null,"status":"active","email":"office@cameo.com","website":null,"company_type":"business","company_code":"456789","fax":null,"default_tax_rate":null,"default_discount_rate":null,"default_price_type_id":null,"default_payment_term_id":null,"tax_number":null,"address_ids":[],"contact_ids":[],"note_ids":[]},{"id":65158,"assignee_id":null,"name":"Moonis
+        test ltd","description":null,"phone_number":"123456748","status":"active","email":"info@moonis.com","website":"","company_type":"business","company_code":"testts","fax":"","default_tax_rate":17.0,"default_discount_rate":5.0,"default_price_type_id":"wholesale","default_payment_term_id":null,"tax_number":null,"address_ids":[],"contact_ids":[],"note_ids":[]}],"meta":{"total":157}}'
+    http_version: 
+  recorded_at: Mon, 03 Mar 2014 06:40:06 GMT
+recorded_with: VCR 2.8.0

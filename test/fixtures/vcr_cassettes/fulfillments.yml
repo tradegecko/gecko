@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/fulfillments?limit=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer df18f3bd1b2457f3df52534bec266ff8bc360c01870f04745327e304da6d1d90
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 01 Mar 2014 04:08:54 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      X-Pagination:
+      - '{"total_records":371,"total_pages":75,"first_page":true,"last_page":false,"out_of_bounds":false,"offset":0}'
+      Link:
+      - <http://api.lvh.me:3000/ajax/fulfillments.json?limit=5&page=2>; rel="next",
+        <http://api.lvh.me:3000/ajax/fulfillments.json?limit=5&page=75>; rel="last"
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"ec098298a089ff749704a5ce1c395fc5"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - cd5a9321-110f-4721-8f93-9d48f2d85586
+      X-Runtime:
+      - '0.263301'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"fulfillment_line_items":[{"id":342205,"fulfillment_id":99232,"order_line_item_id":515705,"quantity":"1.0","base_price":"25.0"},{"id":342206,"fulfillment_id":99232,"order_line_item_id":515706,"quantity":"1.0","base_price":"20.0"},{"id":342155,"fulfillment_id":99216,"order_line_item_id":508721,"quantity":"2.0","base_price":null},{"id":338215,"fulfillment_id":98019,"order_line_item_id":509625,"quantity":"1.0","base_price":"25.0"},{"id":338216,"fulfillment_id":98019,"order_line_item_id":509626,"quantity":"1.0","base_price":"20.0"},{"id":335432,"fulfillment_id":97255,"order_line_item_id":498992,"quantity":"1.0","base_price":"3.9321"},{"id":335157,"fulfillment_id":97167,"order_line_item_id":504670,"quantity":"1.0","base_price":"5.0"}],"fulfillments":[{"id":99232,"order_id":138669,"shipping_address_id":556814,"billing_address_id":556814,"status":"fulfilled","exchange_rate":"1.0","packed_at":"2014-02-17","shipped_at":null,"received_at":null,"delivery_type":"Courier","tracking_number":"123spam","notes":null,"tracking_url":"https://github.com","tracking_company":null,"receipt":{},"updated_at":"2014-02-17T03:01:47.495Z","destination_url":null,"fulfillment_line_item_ids":[342205,342206]},{"id":99216,"order_id":136938,"shipping_address_id":36768,"billing_address_id":36768,"status":"packed","exchange_rate":"1.0","packed_at":"2014-02-17","shipped_at":null,"received_at":null,"delivery_type":null,"tracking_number":null,"notes":null,"tracking_url":null,"tracking_company":null,"receipt":{},"updated_at":"2014-02-17T01:31:02.780Z","destination_url":null,"fulfillment_line_item_ids":[342155]},{"id":98019,"order_id":137108,"shipping_address_id":533491,"billing_address_id":533491,"status":"fulfilled","exchange_rate":"1.0","packed_at":"2014-02-14","shipped_at":"2014-02-14T07:01:39.000Z","received_at":null,"delivery_type":"Courier","tracking_number":"A554G12","notes":null,"tracking_url":"thetracker.com/3311233","tracking_company":null,"receipt":{},"updated_at":"2014-02-14T07:16:43.871Z","destination_url":"https://go.xero.com/AccountsPayable/View.aspx?InvoiceID=2f59a4cf-e138-4027-8f70-869795c835c0","fulfillment_line_item_ids":[338215,338216]},{"id":97255,"order_id":134005,"shipping_address_id":289097,"billing_address_id":440587,"status":"fulfilled","exchange_rate":"2.54317","packed_at":"2014-02-13","shipped_at":"2014-02-13T06:31:01.000Z","received_at":null,"delivery_type":null,"tracking_number":null,"notes":null,"tracking_url":null,"tracking_company":null,"receipt":{},"updated_at":"2014-02-13T06:28:40.239Z","destination_url":"https://go.xero.com/AccountsPayable/View.aspx?InvoiceID=53dcb5df-e636-4718-a5de-0e3aa6a6e70a","fulfillment_line_item_ids":[335432]},{"id":97167,"order_id":135893,"shipping_address_id":386078,"billing_address_id":298467,"status":"fulfilled","exchange_rate":"1.0","packed_at":"2014-02-13","shipped_at":"2014-02-13T02:39:28.000Z","received_at":null,"delivery_type":null,"tracking_number":null,"notes":null,"tracking_url":null,"tracking_company":null,"receipt":{},"updated_at":"2014-02-13T02:39:30.451Z","destination_url":"https://go.xero.com/AccountsPayable/View.aspx?InvoiceID=53dcb5df-e636-4718-a5de-0e3aa6a6e70a","fulfillment_line_item_ids":[335157]}],"meta":{"total":371}}'
+    http_version: 
+  recorded_at: Sat, 01 Mar 2014 04:08:54 GMT
+recorded_with: VCR 2.8.0

@@ -1,0 +1,79 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/products?limit=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer a2937ab8d1c824af7866976027340165666eda983c2feba457c1fd32a3efdb50
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 04 Mar 2014 19:58:54 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      X-Pagination:
+      - '{"total_records":247,"total_pages":50,"first_page":true,"last_page":false,"out_of_bounds":false,"offset":0}'
+      Link:
+      - <http://api.lvh.me:3000/ajax/products.json?limit=5&page=2>; rel="next", <http://api.lvh.me:3000/ajax/products.json?limit=5&page=50>;
+        rel="last"
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"796e7dc6b4e0b1199c411aa55107e373"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 0b1d9c42-a958-41eb-8d04-c9b9edddb4fa
+      X-Runtime:
+      - '1.043174'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"products":[{"id":498917,"name":"2 Seater Sofa - Florence Knoll Replica","description":null,"product_type":"2
+        Seat Sofa","supplier":"Florence Knoll","created_at":"2014-02-05T05:22:43.502Z","updated_at":"2014-02-13T06:41:32.357Z","status":"active","tags":"Office,2
+        Seat,Sofa","opt1":"Colour","opt2":" Size ","opt3":null,"quantity":"1","search_cache":"875220-B
+        875220-W White 875220-N Navy","image_url":"https://tradegecko-development-images.s3.amazonaws.com/uploads/variant_image/image/375737/thumbnail_H75WfVALRlGoT0kw97GU_Screen_20Shot_202013-12-05_20at_205.31.34_20pm.png","variant_ids":[936265,936266,936267],"vendor":"Florence
+        Knoll"},{"id":525598,"name":"2342423","description":"\u003Cb\u003EWYSIWYG
+        test yo!\u003Cbr\u003E\u003Cbr\u003E\u003C/b\u003Essdasds","product_type":"Bag","supplier":"Acme
+        Ltd","created_at":"2014-02-14T06:57:48.257Z","updated_at":"2014-02-14T06:57:48.257Z","status":"active","tags":"T-shirts,Winter
+        2012","opt1":"Size","opt2":null,"opt3":null,"quantity":"8","search_cache":"smth
+        Default","image_url":null,"variant_ids":[982793],"vendor":"Acme Ltd"},{"id":335784,"name":"2342423","description":"\u003Cb\u003EWYSIWYG
+        test yo!\u003Cbr\u003E\u003Cbr\u003E\u003C/b\u003Essdasds","product_type":"Bag","supplier":"Acme
+        Ltd","created_at":"2013-11-26T04:22:46.542Z","updated_at":"2014-01-23T09:35:02.493Z","status":"active","tags":"T-shirts,Winter
+        2012","opt1":"Size","opt2":null,"opt3":null,"quantity":"-2","search_cache":"Candy
+        Cloud smth Default","image_url":"https://tradegecko-development-images.s3.amazonaws.com/uploads/variant_image/image/289321/thumbnail_yRvqD4lCTH6mZOxhcnX4_Desktop.png","variant_ids":[637964,866954],"vendor":"Acme
+        Ltd"},{"id":525599,"name":"666/Brewaucracy Devil in the Details","description":null,"product_type":"Beer","supplier":"666
+        Brewing","created_at":"2014-02-14T06:57:48.472Z","updated_at":"2014-02-14T06:57:48.472Z","status":"active","tags":"serial
+        number","opt1":"Volume","opt2":null,"opt3":null,"quantity":"0","search_cache":"PWxxx
+        Default XXXTEST","image_url":null,"variant_ids":[982794,982968],"vendor":"666
+        Brewing"},{"id":411698,"name":"666/Brewaucracy Devil in the Details","description":null,"product_type":"Beer","supplier":"666
+        Brewing","created_at":"2014-01-03T03:52:08.220Z","updated_at":"2014-02-05T03:08:26.040Z","status":"active","tags":"serial
+        number","opt1":"Volume","opt2":null,"opt3":null,"quantity":"0","search_cache":"PWxxx
+        Default","image_url":null,"variant_ids":[879305],"vendor":"666 Brewing"}],"meta":{"total":247}}'
+    http_version: 
+  recorded_at: Tue, 04 Mar 2014 19:58:54 GMT
+recorded_with: VCR 2.8.0

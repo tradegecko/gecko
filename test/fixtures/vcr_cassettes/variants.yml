@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/variants?limit=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer 23af81161fe7f54dd6d065210808049612b5bb0cf7a3e487a8e48eb9e230eac2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 03 Mar 2014 03:10:13 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      X-Pagination:
+      - '{"total_records":857,"total_pages":172,"first_page":true,"last_page":false,"out_of_bounds":false,"offset":0}'
+      Link:
+      - <http://api.lvh.me:3000/ajax/variants.json?limit=5&page=2>; rel="next", <http://api.lvh.me:3000/ajax/variants.json?limit=5&page=172>;
+        rel="last"
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"288b521b2c5b06801be25e2edc20e95a"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 26fe2fe6-4293-4b63-bcc8-a3517ef1b45f
+      X-Runtime:
+      - '1.442678'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"variants":[{"id":593558,"product_id":307886,"sku":"","reorder_point":null,"wholesale_price":null,"retail_price":null,"status":"active","description":null,"name":"Gecko","upc":null,"supplier_code":null,"manage_stock":true,"max_online":null,"keep_selling":false,"taxable":true,"is_online":false,"online_id":null,"opt1":"Default","opt2":null,"opt3":null,"position":1,"buy_price":"20.0","last_cost_price":"28.18","stock_on_hand":"301","committed_stock":"11","moving_average_cost":"18.745","created_at":"2013-11-21T01:16:50.694Z","product_name":"Gecko","product_status":"active","product_type":"Barstool","updated_at":"2014-02-26T03:37:29.433Z","prices":{"buy":"20.0","retail":null,"wholesale":null},"composite":false,"weight":null,"sellable":true,"online_ordering":false,"stock_levels":{"18":"0.0","153":"0.0","159":"202.0","160":"98.0","322":"0.0","1395":"0.0","1400":"1.0","1725":"0.0","2195":"0.0","2196":"0.0","3723":"0.0","3986":"0.0","7779":"0.0"},"committed_stock_levels":{"159":"10.0","160":"1.0"},"vendor_code":null,"cost_price":"20.0","image_ids":[]},{"id":704122,"product_id":370075,"sku":"","reorder_point":null,"wholesale_price":"20.0","retail_price":"30.0","status":"active","description":null,"name":"Red
+        / Small","upc":null,"supplier_code":null,"manage_stock":true,"max_online":null,"keep_selling":false,"taxable":true,"is_online":true,"online_id":null,"opt1":"Red","opt2":"Small","opt3":null,"position":2,"buy_price":"10.0","last_cost_price":"309.636","stock_on_hand":"17","committed_stock":"14","moving_average_cost":"309.636","created_at":"2013-12-09T14:05:01.711Z","product_name":"TestX","product_status":"active","product_type":"Test","updated_at":"2014-02-28T01:21:29.366Z","prices":{"buy":"10.0","retail":"30.0","wholesale":"20.0"},"composite":false,"weight":"0","sellable":true,"online_ordering":true,"stock_levels":{"18":"2.0","153":"0.0","159":"0.0","160":"10.0","322":"0.0","1395":"0.0","1400":"0.0","1725":"0.0","2195":"5.0","2196":"0.0","3723":"0.0","3986":"0.0","7779":"0.0"},"committed_stock_levels":{"2195":"13.0","3986":"1.0"},"vendor_code":null,"cost_price":"10.0","image_ids":[]},{"id":704123,"product_id":370075,"sku":"","reorder_point":null,"wholesale_price":"20.0","retail_price":"30.0","status":"active","description":null,"name":"Purple
+        / Small","upc":null,"supplier_code":null,"manage_stock":true,"max_online":null,"keep_selling":false,"taxable":true,"is_online":true,"online_id":null,"opt1":"Purple","opt2":"Small","opt3":null,"position":3,"buy_price":"10.0","last_cost_price":null,"stock_on_hand":"9","committed_stock":"14","moving_average_cost":null,"created_at":"2013-12-09T14:06:27.543Z","product_name":"TestX","product_status":"active","product_type":"Test","updated_at":"2014-02-10T07:29:10.274Z","prices":{"buy":"10.0","retail":"30.0","wholesale":"20.0"},"composite":true,"weight":"0","sellable":true,"online_ordering":true,"stock_levels":{"18":"0.0","153":"0.0","159":"-1.0","160":"10.0","322":"0.0","1395":"0.0","1400":"0.0","1725":"0.0","2195":"0.0","2196":"0.0","3723":"0.0","3986":"0.0","7779":"0.0"},"committed_stock_levels":{"18":"-0.0","153":"-0.0","159":"-0.0","160":"-0.0","322":"-0.0","1395":"-0.0","1400":"-0.0","1725":"-0.0","2195":"13.0","2196":"-0.0","3723":"-0.0","3986":"1.0","7779":"-0.0"},"vendor_code":null,"cost_price":"10.0","image_ids":[]},{"id":687681,"product_id":352561,"sku":"","reorder_point":null,"wholesale_price":null,"retail_price":"0.0","status":"active","description":null,"name":"SE","upc":null,"supplier_code":null,"manage_stock":true,"max_online":null,"keep_selling":false,"taxable":true,"is_online":false,"online_id":null,"opt1":"SE","opt2":null,"opt3":null,"position":4,"buy_price":"5.0","last_cost_price":"83.97","stock_on_hand":"-1","committed_stock":"3","moving_average_cost":"83.97","created_at":"2013-12-05T10:17:28.801Z","product_name":"Cheese","product_status":"active","product_type":"Food","updated_at":"2014-02-04T01:44:21.907Z","prices":{"buy":"5.0","retail":"0.0","wholesale":null},"composite":false,"weight":"0","sellable":true,"online_ordering":true,"stock_levels":{"18":"0.0","153":"0.0","159":"0.0","160":"-2.0","322":"0.0","1395":"0.0","1400":"1.0","1725":"0.0","2195":"0.0","2196":"0.0","3723":"0.0","3986":"0.0","7779":"0.0"},"committed_stock_levels":{"160":"3.0"},"vendor_code":null,"cost_price":"5.0","image_ids":[]},{"id":687678,"product_id":352561,"sku":"","reorder_point":null,"wholesale_price":null,"retail_price":"0.0","status":"active","description":null,"name":"54321","upc":null,"supplier_code":null,"manage_stock":true,"max_online":null,"keep_selling":false,"taxable":true,"is_online":false,"online_id":null,"opt1":null,"opt2":null,"opt3":null,"position":1,"buy_price":null,"last_cost_price":null,"stock_on_hand":"-12","committed_stock":"20","moving_average_cost":null,"created_at":"2013-12-05T10:16:47.262Z","product_name":"Cheese","product_status":"active","product_type":"Food","updated_at":"2014-02-10T04:32:00.150Z","prices":{"buy":null,"retail":"0.0","wholesale":null},"composite":true,"weight":"0","sellable":true,"online_ordering":true,"stock_levels":{"18":"0.0","153":"0.0","159":"-10.0","160":"-2.0","322":"0.0","1395":"0.0","1400":"0.0","1725":"0.0","2195":"0.0","2196":"0.0","3723":"0.0","3986":"0.0","7779":"0.0"},"committed_stock_levels":{"18":"15.0","153":"-0.0","159":"1.0","160":"4.0","322":"-0.0","1395":"-0.0","1400":"-0.0","1725":"-0.0","2195":"-0.0","2196":"-0.0","3723":"-0.0","3986":"-0.0","7779":"-0.0"},"vendor_code":null,"cost_price":null,"image_ids":[]}],"meta":{"total":857}}'
+    http_version: 
+  recorded_at: Mon, 03 Mar 2014 03:10:13 GMT
+recorded_with: VCR 2.8.0

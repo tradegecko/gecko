@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/order_line_items?limit=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer 73f8655eda623d3a7bc99a8d3ff35d47220047041b28e8b83cb49f59a9119f14
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 03 Mar 2014 02:36:46 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      X-Pagination:
+      - '{"total_records":1231,"total_pages":247,"first_page":true,"last_page":false,"out_of_bounds":false,"offset":0}'
+      Link:
+      - <http://api.lvh.me:3000/ajax/order_line_items.json?limit=5&page=2>; rel="next",
+        <http://api.lvh.me:3000/ajax/order_line_items.json?limit=5&page=247>; rel="last"
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"e590ae33f2db329aced6d5bf8312cb50"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e4bcff94-8eaa-4dcc-8b1c-52a2c75b191c
+      X-Runtime:
+      - '0.437746'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"order_line_items":[{"id":426391,"order_id":115630,"variant_id":526799,"discount":null,"quantity":"1.0","price":"150.0","tax_rate":"10.0","freeform":false,"label":null,"position":0,"image_url":null,"fulfillment_line_item_ids":[277346],"invoice_line_item_ids":[]},{"id":438502,"order_id":118782,"variant_id":867034,"discount":"90.0","quantity":"2.0","price":"20.0","tax_rate":"10.0","freeform":false,"label":null,"position":0,"image_url":null,"fulfillment_line_item_ids":[287427],"invoice_line_item_ids":[327872]},{"id":12434,"order_id":5706,"variant_id":13410,"discount":null,"quantity":"1.0","price":"65.0","tax_rate":"15.0","freeform":false,"label":null,"position":0,"image_url":"https://tradegecko-development-images.s3.amazonaws.com/uploads/variant_image/image/5155/thumbnail__void_0_-16.png","fulfillment_line_item_ids":[2813],"invoice_line_item_ids":[9677]},{"id":269201,"order_id":72895,"variant_id":431876,"discount":null,"quantity":"1.0","price":"130.0","tax_rate":"10.0","freeform":false,"label":null,"position":0,"image_url":null,"fulfillment_line_item_ids":[],"invoice_line_item_ids":[]},{"id":291826,"order_id":79234,"variant_id":431876,"discount":null,"quantity":"28.0","price":"130.0","tax_rate":"10.0","freeform":false,"label":null,"position":0,"image_url":null,"fulfillment_line_item_ids":[177286],"invoice_line_item_ids":[]}]}'
+    http_version: 
+  recorded_at: Mon, 03 Mar 2014 02:36:46 GMT
+recorded_with: VCR 2.8.0
