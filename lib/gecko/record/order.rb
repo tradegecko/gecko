@@ -7,8 +7,8 @@ module Gecko
       has_many :invoices
       has_many :order_line_items
       belongs_to :company
-      belongs_to :shipping_address
-      belongs_to :billing_address
+      belongs_to :shipping_address,     class_name: "Address"
+      belongs_to :billing_address,      class_name: "Address"
       belongs_to :user
       belongs_to :assignee,             class_name: "User"
       belongs_to :stock_location,       class_name: "Location"
