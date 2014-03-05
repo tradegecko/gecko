@@ -19,7 +19,7 @@ module Gecko
       def belongs_to(model_name, options={})
         class_name = options[:class_name] || model_name.to_s.classify
         define_method model_name do
-          id = @raw_data[model_name.to_s.foreign_key.to_sym]
+          id = @data[model_name.to_s.foreign_key.to_sym]
           if id
             @client.public_send(class_name).find(id)
           end
@@ -45,7 +45,7 @@ module Gecko
         model_name = association_name.to_s.singularize
         class_name = options[:class_name] || model_name.classify
         define_method association_name do
-          ids = @raw_data[model_name.foreign_key.pluralize.to_sym]
+          ids = @data[model_name.foreign_key.pluralize.to_sym]
           if ids.any?
             @client.public_send(class_name).find_many(ids)
           else

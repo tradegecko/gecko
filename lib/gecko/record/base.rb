@@ -11,6 +11,13 @@ module Gecko
       include Gecko::Helpers::InspectionHelper
       include Virtus.model
 
+      # Returns The original attribute hash before coercion
+      #
+      # @return [Hash]
+      #
+      # @api public
+      attr_reader :data
+
       # Overrides the default Virtus functionality to store:
       # - The Gecko::Client used to create the object
       # - a raw copy of the attributes for the association helpers to read from
@@ -20,7 +27,7 @@ module Gecko
       def initialize(client, attributes)
         super(attributes)
         @client   = client
-        @raw_data = symbolize_keys(attributes)
+        @data = symbolize_keys(attributes)
       end
 
       # Set up the default attributes associated with all records
