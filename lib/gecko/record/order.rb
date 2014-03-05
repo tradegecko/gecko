@@ -34,8 +34,10 @@ module Gecko
       attribute :source_url,            String
       attribute :total,                 BigDecimal
 
-      # attribute :source_id,             String
-      # attribute :source,                String
+      attribute :source_id,             String
+
+      ## DEPRECATED
+      attribute :source,                String
     end
 
     class OrderAdapter < BaseAdapter
