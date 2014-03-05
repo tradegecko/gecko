@@ -23,7 +23,6 @@ module Gecko
       attribute :received_at,      DateTime
 
       attribute :receipt,          Hash
-      attribute :shippable,        Boolean
     end
 
     class FulfillmentAdapter < BaseAdapter

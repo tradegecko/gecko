@@ -9,8 +9,10 @@ module Gecko
       has_many :invoice_line_items
 
       attribute :label,     String
-      attribute :freeform,  Boolean
       attribute :line_type, String
+
+      attribute :freeform,  Boolean
+      attribute :shippable, Boolean
 
       attribute :discount,  BigDecimal
       attribute :quantity,  BigDecimal
