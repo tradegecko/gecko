@@ -9,7 +9,7 @@ Add this line to your application's Gemfile:
 
 And then execute:
 
-    $ bundle install
+    $ bundle
 
 Or install it yourself as:
 
@@ -25,7 +25,7 @@ TODO: Write usage instructions here
 
 ## Contributing
 
-1. Fork it
+1. Fork it ( http://github.com/[my-github-username]/gecko/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
