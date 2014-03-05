@@ -1,4 +1,4 @@
-# Gecko gem
+# TradeGecko RubyGem [![Build Status](https://travis-ci.org/tradegecko/gecko.png)](https://travis-ci.org/tradegecko/gecko)
 The official TradeGecko RubyGem
 
 ## Installation
