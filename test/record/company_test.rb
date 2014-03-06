@@ -4,9 +4,12 @@ class Gecko::CompanyTest < Minitest::Test
   include VCRHelper
   include SharedRecordExamples
 
+  let(:plural_name)   { "companies" }
+  let(:record_class)  { Gecko::Record::Company }
+
   def setup
-    @json = load_vcr_hash("companies", "companies").first
-    @record = Gecko::Record::Company.new(Gecko::Client.new("ABC", "DEF"), @json)
+    @json   = load_vcr_hash("companies", "companies").first
+    @record = record_class.new(client, @json)
   end
 
   def test_initializes_record

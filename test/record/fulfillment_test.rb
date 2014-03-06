@@ -4,9 +4,12 @@ class Gecko::FulfillmentTest < Minitest::Test
   include VCRHelper
   include SharedRecordExamples
 
+  let(:plural_name)   { "fulfillments" }
+  let(:record_class)  { Gecko::Record::Fulfillment }
+
   def setup
-    @json = load_vcr_hash("fulfillments", "fulfillments").first
-    @record = Gecko::Record::Fulfillment.new(Gecko::Client.new("ABC", "DEF"), @json)
+    @json   = load_vcr_hash("fulfillments", "fulfillments").first
+    @record = record_class.new(client, @json)
   end
 
   def test_initializes_record
