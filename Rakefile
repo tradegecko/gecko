@@ -8,3 +8,12 @@ Rake::TestTask.new do |t|
   t.libs << 'test'
   t.pattern = "test/**/*_test.rb"
 end
+
+desc "Open an irb session with Gecko"
+task :console do
+  require 'irb'
+  require 'irb/completion'
+  require 'gecko'
+  ARGV.clear
+  IRB.start
+end
