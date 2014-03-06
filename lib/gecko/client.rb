@@ -83,6 +83,17 @@ module Gecko
       })
     end
 
+    # Fetch the adapter for a specified Gecko::Record class
+    #
+    # @param [String] klass_name Gecko::Record subclass name
+    #
+    # @return [Gecko::Record::BaseAdapter]
+    #
+    # @api private
+    def adapter_for(klass_name)
+      self.public_send(klass_name.to_sym)
+    end
+
   private
     def setup_oauth_client(client_id, client_secret, options)
       defaults = {

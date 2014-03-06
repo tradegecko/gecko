@@ -22,7 +22,7 @@ module Gecko
         define_method model_name do
           id = self.attributes[foreign_key]
           if id
-            @client.public_send(class_name).find(id)
+            @client.adapter_for(class_name).find(id)
           end
         end
         attribute foreign_key, Integer
@@ -50,7 +50,7 @@ module Gecko
         define_method association_name do
           ids = self.attributes[foreign_key]
           if ids.any?
-            @client.public_send(class_name).find_many(ids)
+            @client.adapter_for(class_name).find_many(ids)
           else
             []
           end
