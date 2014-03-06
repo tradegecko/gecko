@@ -1,6 +1,7 @@
 require 'gecko/helpers/association_helper'
 require 'gecko/helpers/inspection_helper'
 require 'gecko/helpers/serialization_helper'
+require 'gecko/helpers/validation_helper'
 
 module Gecko
   module Record
@@ -9,6 +10,7 @@ module Gecko
       extend  Gecko::Helpers::AssociationHelper
       include Gecko::Helpers::InspectionHelper
       include Gecko::Helpers::SerializationHelper
+      include Gecko::Helpers::ValidationHelper
 
       # Set up the default attributes associated with all records
       attribute :id,          Integer,    readonly: true
