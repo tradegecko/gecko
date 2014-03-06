@@ -2,7 +2,6 @@ module Gecko
   module Record
     class BaseAdapter
       attr_reader :client
-
       # Instantiates a new Record Adapter
       #
       # @param [Gecko::Client] client

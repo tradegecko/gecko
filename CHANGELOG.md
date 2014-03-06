@@ -1,4 +1,8 @@
-## 0.0.2 (Unreleased)
+## Unreleased
+
+- Basic serialization support via `as_json` and `serializable_hash` helpers
+
+## 0.0.2 (2014-03-08)
 
 - AS::Notifications for API calls
 - Add `@client.Record.build(attributes)`

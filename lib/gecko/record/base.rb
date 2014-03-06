@@ -1,5 +1,6 @@
 require 'gecko/helpers/association_helper'
 require 'gecko/helpers/inspection_helper'
+require 'gecko/helpers/serialization_helper'
 
 module Gecko
   module Record
@@ -7,6 +8,7 @@ module Gecko
       include Virtus.model
       extend  Gecko::Helpers::AssociationHelper
       include Gecko::Helpers::InspectionHelper
+      include Gecko::Helpers::SerializationHelper
 
       # Set up the default attributes associated with all records
       attribute :id,          Integer,    readonly: true
@@ -34,6 +36,18 @@ module Gecko
       # @api public
       def persisted?
         !!id
+      end
+
+      # Return the demodulized class name
+      #
+      # @example
+      #   Gecko::Record::Product.demodulized_name #=> "Product"
+      #
+      # @return [String]
+      #
+      # @api private
+      def self.demodulized_name
+        self.name.split("::").last
       end
     end
   end
