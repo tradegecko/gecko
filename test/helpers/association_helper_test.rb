@@ -10,11 +10,18 @@ class Gecko::Helpers::AssociationHelperTest < Minitest::Test
     @client = Gecko::Client.new('ABC', 'DEF')
   end
 
-  def test_adds_methods
+  def test_adds_association_methods
     record = @klass.new(@client, {})
     assert(record.respond_to?(:orders))
     assert(record.respond_to?(:order))
     assert(record.respond_to?(:small_order))
+  end
+
+  def test_adds_id_methods
+    record = @klass.new(@client, {})
+    assert(record.respond_to?(:order_ids))
+    assert(record.respond_to?(:order_id))
+    assert(record.respond_to?(:small_order_id))
   end
 
   def test_has_many
