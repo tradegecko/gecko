@@ -18,7 +18,7 @@ module Gecko
       attribute :website,                String
       attribute :company_type,           String
 
-      attribute :status,                 String
+      attribute :status,                 String, readonly: true
 
       attribute :tax_number,             String
 

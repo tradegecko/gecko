@@ -21,7 +21,7 @@ module Gecko
 
       attribute :position,  Integer
 
-      attribute :image_url, String
+      attribute :image_url, String,     readonly: true
     end
 
     class OrderLineItemAdapter < BaseAdapter

@@ -1,5 +1,6 @@
 ## Unreleased
 
+- Add support for readonly attributes in serialization
 - Basic serialization support via `as_json` and `serializable_hash` helpers
 
 ## 0.0.2 (2014-03-08)

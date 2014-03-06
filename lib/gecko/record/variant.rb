@@ -19,19 +19,19 @@ module Gecko
 
       attribute :weight,          String
 
-      attribute :status,          String
+      attribute :status,          String,   readonly: true
 
-      attribute :product_name,    String
-      attribute :product_status,  String
-      attribute :product_type,    String
+      attribute :product_name,    String,   readonly: true
+      attribute :product_status,  String,   readonly: true
+      attribute :product_type,    String,   readonly: true
 
 
       attribute :wholesale_price, BigDecimal
       attribute :retail_price,    BigDecimal
       attribute :buy_price,       BigDecimal
 
-      attribute :moving_average_cost, BigDecimal
-      attribute :last_cost_price,     BigDecimal
+      attribute :moving_average_cost, BigDecimal, readonly: true
+      attribute :last_cost_price,     BigDecimal, readonly: true
 
       attribute :manage_stock,    Integer
       attribute :reorder_point,   Integer
@@ -45,12 +45,12 @@ module Gecko
 
       attribute :position,        Integer
 
-      attribute :stock_on_hand,   BigDecimal
-      attribute :committed_stock, BigDecimal
+      attribute :stock_on_hand,   BigDecimal, readonly: true
+      attribute :committed_stock, BigDecimal, readonly: true
 
-      attribute :prices,                 Hash[Symbol => BigDecimal]
-      attribute :stock_levels,           Hash[Integer => BigDecimal]
-      attribute :committed_stock_levels, Hash[Integer => BigDecimal]
+      attribute :prices,                 Hash[Symbol => BigDecimal],  readonly: true
+      attribute :stock_levels,           Hash[Integer => BigDecimal], readonly: true
+      attribute :committed_stock_levels, Hash[Integer => BigDecimal], readonly: true
 
       # attribute :is_online
       # attribute :online_id

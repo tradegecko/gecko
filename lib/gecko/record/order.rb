@@ -6,6 +6,7 @@ module Gecko
       has_many :fulfillments
       has_many :invoices
       has_many :order_line_items
+
       belongs_to :company
       belongs_to :shipping_address,     class_name: "Address"
       belongs_to :billing_address,      class_name: "Address"
@@ -20,21 +21,21 @@ module Gecko
       attribute :notes,                 String
       attribute :reference_number,      String
       attribute :status,                String
+      attribute :packed_status,         String,     readonly: true
+      attribute :fulfillment_status,    String,     readonly: true
+      attribute :invoice_status,        String,     readonly: true
+      attribute :invoice_numbers,       Hash[Integer => String], readonly: true
       attribute :payment_status,        String
-      attribute :invoice_status,        String
-      attribute :invoice_numbers,       Hash[Integer => String]
-      attribute :packed_status,         String
-      attribute :fulfillment_status,    String
       attribute :tax_type,              String
       attribute :issued_at,             Date
       attribute :ship_at,               Date
-      attribute :tax_override,          String
+      attribute :tax_override,          String,     readonly: true
       attribute :tax_label,             String
       attribute :tracking_number,       String
       attribute :source_url,            String
-      attribute :total,                 BigDecimal
+      attribute :total,                 BigDecimal, readonly: true
 
-      attribute :source_id,             String
+      attribute :source_id,             String,     readonly: true
 
       ## DEPRECATED
       attribute :source,                String
