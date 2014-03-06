@@ -76,4 +76,12 @@ module SharedAdapterExamples
 
     assert_equal("Couldn't find #{record_class.name} with id=12345", exception.message)
   end
+
+  def test_find_without_id
+    exception = assert_raises Gecko::Record::RecordNotFound do
+      adapter.find(nil)
+    end
+
+    assert_equal("Couldn't find #{record_class.name} without an ID", exception.message)
+  end
 end

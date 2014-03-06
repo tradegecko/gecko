@@ -48,6 +48,7 @@ module Gecko
       #
       # @api private
       def record_for_id(id)
+        verify_id_presence!(id)
         @identity_map.fetch(id) { record_not_in_identity_map!(id) }
       end
 
@@ -139,6 +140,7 @@ module Gecko
       #
       # @api private
       def fetch(id)
+        verify_id_presence!(id)
         response    = access_token.get(plural_path + "/" + id.to_s)
         record_json = response.parsed[json_root]
         instantiate_and_register_record(record_json)
@@ -240,6 +242,12 @@ module Gecko
 
       def record_not_in_identity_map!(id)
         raise RecordNotInIdentityMap, "Couldn't find #{model_class.name} with id=#{id}"
+      end
+
+      def verify_id_presence!(id)
+        if id.respond_to?(:empty?) ? id.empty? : !id
+          raise RecordNotFound, "Couldn't find #{model_class.name} without an ID"
+        end
       end
     end
   end
