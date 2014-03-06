@@ -2,14 +2,18 @@ require 'gecko/helpers/association_helper'
 require 'gecko/helpers/inspection_helper'
 require 'virtus'
 require 'active_support/inflector'
-require 'active_support/core_ext/hash/keys'
 
 module Gecko
   module Record
     class Base
+      include Virtus.model
       extend  Gecko::Helpers::AssociationHelper
       include Gecko::Helpers::InspectionHelper
-      include Virtus.model
+
+      # Set up the default attributes associated with all records
+      attribute :id,          Integer,    readonly: true
+      attribute :updated_at,  DateTime,   readonly: true
+      attribute :created_at,  DateTime,   readonly: true
 
       # Overrides the default Virtus functionality to store:
       # - The Gecko::Client used to create the object
@@ -21,11 +25,6 @@ module Gecko
         super(attributes)
         @client   = client
       end
-
-      # Set up the default attributes associated with all records
-      attribute :id,               Integer
-      attribute :updated_at,       DateTime
-      attribute :created_at,       DateTime
     end
   end
 end
