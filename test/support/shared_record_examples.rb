@@ -4,6 +4,12 @@ module SharedRecordExamples
     assert_equal(@json["id"], @record.id)
   end
 
+  def test_persisted?
+    assert record_class.new(client, {id: 123}).persisted?
+    assert !record_class.new(client, {}).persisted?
+    assert !record_class.new(client).persisted?
+  end
+
   def client
     @client ||= Gecko::Client.new("ABC", "DEF")
   end
