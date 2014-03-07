@@ -1,4 +1,6 @@
 ## Unreleased
+
+- Add `@client.Record.build(attributes)`
 - Add `Record#persisted?`
 - Implement a custom User-Agent
 
