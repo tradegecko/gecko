@@ -1,6 +1,8 @@
 require 'test_helper'
 class Gecko::Record::AccountAdapterTest < Minitest::Test
   include TestingAdapter
+  include SharedAdapterExamples
+  undef :test_adapter_count
 
   let(:adapter)       { @client.Account }
   let(:plural_name)   { "accounts" }
@@ -14,6 +16,15 @@ class Gecko::Record::AccountAdapterTest < Minitest::Test
     VCR.use_cassette("accounts#current") do
       assert_instance_of(Gecko::Record::Account, @client.Account.current)
       assert(@client.Account.current, "Account.current is identity mapped")
+    end
+  end
+
+  def test_adapter_all
+    VCR.use_cassette(plural_name) do
+      collection = adapter.where(limit: 5)
+      assert_instance_of(Array, collection)
+      assert_equal(1, collection.size)
+      assert_instance_of(record_class, collection[0])
     end
   end
 

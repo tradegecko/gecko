@@ -4,6 +4,7 @@
 # - plural_name
 # - record_class
 
+require 'json'
 module SharedAdapterExamples
   def test_adapter_all
     VCR.use_cassette(plural_name) do
@@ -15,7 +16,6 @@ module SharedAdapterExamples
   end
 
   def test_adapter_count
-    skip("Skipping #{adapter.class}#count") unless adapter.respond_to?(:count)
     VCR.use_cassette(plural_name) do
       adapter.where(limit: 5)
       assert(adapter.count > 10)
@@ -53,7 +53,7 @@ module SharedAdapterExamples
     request_stub = stub_request(:get, /#{plural_name}\/\d+/)
       .to_return({
         headers: {"Content-Type" => "application/json"},
-        body: {plural_name.singularize => {id: 12345}}.to_json
+        body:    JSON.dump({plural_name.singularize => {id: 12345}})
       })
     record = adapter.fetch(12345)
     assert_equal(12345, record.id)
@@ -65,10 +65,10 @@ module SharedAdapterExamples
       .to_return({
         status:  404,
         headers: {"Content-Type" => "application/json"},
-        body: {
+        body: JSON.dump({
           type: "Not Found",
           message: "Couldn't find #{plural_name.singularize} with id 12345"
-        }.to_json
+        })
       })
     exception = assert_raises Gecko::Record::RecordNotFound do
       adapter.fetch(12345)

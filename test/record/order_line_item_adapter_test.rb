@@ -12,7 +12,7 @@ class Gecko::Record::OrderLineItemAdapterTest < Minitest::Test
     assert_instance_of(Gecko::Record::OrderLineItemAdapter, @client.OrderLineItem)
   end
 
-  def test_undef_count
+  def test_adapter_count
     assert !adapter.respond_to?(:count)
   end
 end
