@@ -1,3 +1,6 @@
+## Unreleased
+- Implement a custom User-Agent
+
 ## 0.0.1 (2014-03-07)
 
 - Add `rake console`

@@ -1,4 +1,6 @@
 require 'oauth2'
+require 'oauth2/version'
+require 'gecko/version'
 require 'gecko/helpers/record_helper'
 
 module Gecko
@@ -98,9 +100,20 @@ module Gecko
     def setup_oauth_client(client_id, client_secret, options)
       defaults = {
         site:          'https://api.tradegecko.com',
-        authorize_url: 'https://go.tradegecko.com/oauth/authorize'
+        authorize_url: 'https://go.tradegecko.com/oauth/authorize',
+        connection_opts: {
+          headers:     default_headers
+        }
       }
       @oauth_client = OAuth2::Client.new(client_id, client_secret, defaults.merge(options))
+    end
+
+    def default_headers
+      {
+        'User-Agent' => [ "Gecko/#{Gecko::VERSION}",
+                          "OAuth2/#{OAuth2::Version.to_s}",
+                          "Ruby/#{RUBY_VERSION}"].join(' ')
+      }
     end
   end
 end

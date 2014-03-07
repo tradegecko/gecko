@@ -10,6 +10,12 @@ class ClientTest < Minitest::Test
     assert_equal "DEF", oauth_client.secret
   end
 
+  def test_custom_user_agent
+    client  = Gecko::Client.new("ABC", "DEF")
+    agent   = client.oauth_client.connection.headers["User-Agent"]
+    assert_match(%r|Gecko/#{Gecko::VERSION} OAuth2/\d.\d.\d Ruby/\d.\d.\d|, agent)
+  end
+
   def test_allows_test_URLs
     client = Gecko::Client.new("ABC", "DEF", site: "localhost:3000")
     assert_equal "localhost:3000", client.oauth_client.site
