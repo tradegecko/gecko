@@ -1,5 +1,11 @@
 # TradeGecko RubyGem [![Build Status](https://travis-ci.org/tradegecko/gecko.png)](https://travis-ci.org/tradegecko/gecko)
-The official TradeGecko RubyGem
+The official TradeGecko API RubyGem
+
+## Introduction
+
+This library provides a Ruby interface to publicly available (beta) API for TradeGecko.
+
+If you are unfamiliar with the TradeGecko API, you can read the documentation located at [http://developer.tradegecko.com](http://developer.tradegecko.com)
 
 ## Installation
 
@@ -15,19 +21,72 @@ Or install it yourself as:
 
     $ gem install gecko
 
-## Usage
+## Basic Usage
 
-`client = Gecko::Client.new(CLIENT_ID, CLIENT_SECRET)`
+```ruby
+client = Gecko::Client.new(CLIENT_ID, CLIENT_SECRET)
+client.access_token = existing_access_token
 
-`client.access_token = existing_access_token`
+products = client.Product.where(q: "Gecko")
+#=> [<Gecko::Record::Product id=1 name="Geckotron">, <Gecko::Record::Product id=3 name="Green Gecko">]
+```
 
-TODO: Write usage instructions here
+## Finding Records
 
+#### Basic finders
+```ruby
+client.Product.find(123)
+#=> <Gecko::Record::Product id=123 name="Geckotron">
+client.Product.find_many(123, 124)
+#=> [<Gecko::Record::Product id=123 name="Geckotron">, <Gecko::Record::Product id=124 name="Salamander">
+client.Product.where(ids: [123, 124])
+#=> [<Gecko::Record::Product id=123 name="Geckotron">, <Gecko::Record::Product id=124 name="Salamander">
+```
+
+#### Identity Map
+
+The Gecko gem ships with a basic identity map
+
+```ruby
+client.Product.find(123)
+# Makes an API request
+
+client.Product.find(123)
+# Returned from identity map on second request, no API request
+
+client.Product.fetch(123)
+# Does not use identity map and makes request regardless
+
+client.Product.find_many([123, 124])
+# Will return 123 from memory and make request for 124
+
+client.Product.where(ids: [123, 124])
+# Does not use identity map and makes request regardless
+```
+
+## Building Records
+
+```ruby
+geckobot = client.Product.build(name: "Geckobot", product_type: "Robot")
+#=> <Gecko::Record::Product id=nil name="Geckobot" product_type: "Robot">
+geckobot.persisted?
+#=> false
+```
+
+## Instrumentation
+
+The Gecko gem supports instrumentation via AS::Notifications.
+You can subscribe to API calls by subscribing to `'request.gecko'` notifications
+
+```ruby
+ActiveSupport::Notifications.subscribe('request.gecko') do |name, start, finish, id, payload|
+  # Do Something
+end
+```
 
 ## TODO
+- Saving records
 - Complete record collection
-- Instrumentation
-- Allow writing objects
 - Handle API Errors
 - Clean up Access Token management
 
