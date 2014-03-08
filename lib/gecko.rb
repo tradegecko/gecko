@@ -1,3 +1,8 @@
+require 'virtus'
+require 'active_support/inflector'
+require 'active_support/notifications'
+require 'oauth2'
+
 require 'gecko/client'
 
 # Include models
