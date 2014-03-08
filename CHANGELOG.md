@@ -1,5 +1,6 @@
-## Unreleased
+## 0.0.2 (Unreleased)
 
+- AS::Notifications for API calls
 - Add `@client.Record.build(attributes)`
 - Add `Record#persisted?`
 - Implement a custom User-Agent

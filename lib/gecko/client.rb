@@ -1,4 +1,3 @@
-require 'oauth2'
 require 'oauth2/version'
 require 'gecko/version'
 require 'gecko/helpers/record_helper'

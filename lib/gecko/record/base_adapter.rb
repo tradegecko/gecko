@@ -110,8 +110,7 @@ module Gecko
       #
       # @api public
       def where(params={})
-        params.select! { |_, value| value }
-        response        = access_token.get(plural_path, params: params)
+        response        = request(:get, plural_path, params: params)
         parsed_response = response.parsed
         set_metadata(parsed_response)
         parse_records(parsed_response)
@@ -141,7 +140,7 @@ module Gecko
       # @api private
       def fetch(id)
         verify_id_presence!(id)
-        response    = access_token.get(plural_path + "/" + id.to_s)
+        response    = request(:get, plural_path + "/" + id.to_s)
         record_json = response.parsed[json_root]
         instantiate_and_register_record(record_json)
       rescue OAuth2::Error => ex
@@ -204,15 +203,6 @@ module Gecko
         json_root + "s"
       end
 
-      # Shortcut to the client's access_token
-      #
-      # @return [OAuth2::AccessToken]
-      #
-      # @api private
-      def access_token
-        @client.access_token
-      end
-
       # Returns the model class associated with an adapter
       #
       # @example
@@ -252,6 +242,25 @@ module Gecko
       # @api private
       def set_metadata(json)
         @metadata = json["meta"] if json["meta"]
+      end
+
+      # Makes a request to the API.
+      #
+      # @param [Symbol] verb the HTTP request method
+      # @param [String] path the HTTP URL path of the request
+      # @param [Hash] opts the options to make the request with
+      # @option opts [Hash] :params params for request
+      #
+      # @return [OAuth2::Response]
+      #
+      # @api private
+      def request(verb, path, options={})
+        ActiveSupport::Notifications.instrument("request.gecko") do |payload|
+          payload[:verb]         = verb
+          payload[:model_class]  = model_class
+          payload[:request_path] = path
+          payload[:response]     = @client.access_token.request(verb, path, options)
+        end
       end
 
       def record_not_found!(id)

@@ -1,7 +1,5 @@
 require 'gecko/helpers/association_helper'
 require 'gecko/helpers/inspection_helper'
-require 'virtus'
-require 'active_support/inflector'
 
 module Gecko
   module Record
