@@ -84,4 +84,21 @@ module SharedAdapterExamples
 
     assert_equal("Couldn't find #{record_class.name} without an ID", exception.message)
   end
+
+  def test_build
+    record = adapter.build
+    assert_instance_of(record_class, record)
+    assert !record.persisted?
+  end
+
+  def test_build_with_attributes
+    record = adapter.build(random_attribute => "Max Power")
+    assert_equal(record.attributes[random_attribute], "Max Power")
+    assert !record.persisted?
+  end
+
+private
+  def random_attribute
+    @rattr ||= record_class.attribute_set.find { |att| att.type == Axiom::Types::String }.name
+  end
 end

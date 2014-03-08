@@ -164,6 +164,24 @@ module Gecko
         end
       end
 
+      # Build a new record
+      #
+      # @example
+      #   new_order = client.Order.build(company_id: 123, order_number: 1234)
+      #
+      # @example
+      #   new_order = client.Order.build
+      #   new_order.order_number = 1234
+      #
+      # @params [#to_hash] attributes
+      #
+      # @return <Gecko::Record::Base>
+      #
+      # @api public
+      def build(attributes={})
+        model_class.new(@client, attributes)
+      end
+
     private
       # Returns the json key for a record adapter
       #

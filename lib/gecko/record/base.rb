@@ -21,9 +21,21 @@ module Gecko
       # @return [undefined]
       #
       # @api private
-      def initialize(client, attributes)
+      def initialize(client, attributes={})
         super(attributes)
         @client   = client
+      end
+
+      # Whether the record has been persisted
+      #
+      # @example
+      #   variant.persisted? #=> true
+      #
+      # @return <Boolean>
+      #
+      # @api public
+      def persisted?
+        !!id
       end
     end
   end
