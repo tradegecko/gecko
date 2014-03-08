@@ -16,8 +16,7 @@ module SharedAdapterExamples
   end
 
   def test_adapter_count
-    VCR.use_cassette(plural_name) do
-      adapter.where(limit: 5)
+    VCR.use_cassette(plural_name + "_count") do
       assert(adapter.count > 10)
     end
   end
