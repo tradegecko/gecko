@@ -3,9 +3,12 @@ require 'gecko/record/base'
 module Gecko
   module Record
     class Account < Base
+      has_many :users
+      has_many :locations
+
       attribute :name,             String
       attribute :industry,         String
-      attribute :logo_url,         String
+      attribute :logo_url,         String,  readonly: true
       attribute :website,          String
       attribute :tax_number,       String
       attribute :country,          String
@@ -23,9 +26,6 @@ module Gecko
       attribute :default_tax_type, String
       attribute :tax_number_label, String
       attribute :tax_label,        String
-
-      has_many :locations
-      has_many :users
 
       # has_one :default_purchase_order_price_type, class_name: "PriceList"
       # has_one :default_order_price_type, class_name: "PriceList"

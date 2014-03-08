@@ -14,10 +14,10 @@ module Gecko
       attribute :opt1,         String
       attribute :opt2,         String
       attribute :opt3,         String
-      attribute :image_url,    String
 
-      # attribute :quantity
-      # attribute :search_cache
+      # attribute :image_url,    String,  readonly: true
+      # attribute :quantity,     Integer, readonly: true
+      # attribute :search_cache, String,  readonly: true
     end
 
     class ProductAdapter < BaseAdapter

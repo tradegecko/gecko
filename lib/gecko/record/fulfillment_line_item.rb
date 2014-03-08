@@ -7,7 +7,9 @@ module Gecko
       belongs_to :order_line_item
 
       attribute :quantity,   BigDecimal
-      attribute :base_price, BigDecimal
+      attribute :base_price, BigDecimal, readonly: true
+
+      attribute :position,   Integer
     end
 
     class FulfillmentLineItemAdapter < BaseAdapter

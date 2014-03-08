@@ -18,7 +18,7 @@ module Gecko
       attribute :country,      String
       attribute :zip_code,     String
 
-      attribute :status,       String
+      attribute :status,       String,  readonly: true
 
       alias_method :country_code, :country
     end
