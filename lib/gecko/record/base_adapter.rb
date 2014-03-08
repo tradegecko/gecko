@@ -125,7 +125,7 @@ module Gecko
       #
       # @api public
       def count
-        self.where(limit: 0) unless @metadata
+        self.where(limit: 0)
         @metadata["total"]
       end
 
