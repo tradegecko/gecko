@@ -98,12 +98,10 @@ module SharedAdapterExamples
 
   def test_saving_new_record
     record = adapter.build
-    mock_token    = mock
-    mock_response = mock(parsed: {plural_name.singularize => {id: 123}}, status: 200)
-    mock_token.expects(:request)
-              .with(:post, plural_name, body: record.as_json, raise_errors: false)
-              .returns(mock_response)
-    adapter.client.access_token = mock_token
+    mock_api_request(record,
+      [:post, plural_name],
+      [200, {plural_name.singularize => {id: 123}}]
+    )
     adapter.save(record)
     assert_equal(record.id, 123)
     assert(record.valid?)
@@ -111,11 +109,10 @@ module SharedAdapterExamples
 
   def test_saving_invalid_record
     record = adapter.build
-    mock_token    = mock
-    mock_response = mock(parsed: {"errors" => {title: ["can not be bounced"]}}, status: 422)
-    mock_token.expects(:request)
-              .returns(mock_response)
-    adapter.client.access_token = mock_token
+    mock_api_request(record,
+      [:post, plural_name],
+      [422, {"errors" => {title: ["can not be bounced"]}}]
+    )
     adapter.save(record)
     assert_nil(record.id)
     assert(!record.valid?)
@@ -123,15 +120,35 @@ module SharedAdapterExamples
 
   def test_saving_existing_record
     record = adapter.build(id: 123)
-    mock_token = mock
-    mock_token.expects(:request)
-              .with(:put, "#{plural_name}/#{record.id}", body: record.as_json)
-              .returns(true)
-    adapter.client.access_token = mock_token
+    mock_api_request(record,
+      [:put, "#{plural_name}/#{record.id}"],
+      [204, {}]
+    )
     adapter.save(record)
+    assert(record.valid?)
+  end
+
+  def test_saving_existing_invalid_record
+    record = adapter.build(id: 123)
+    mock_api_request(record,
+      [:put, "#{plural_name}/#{record.id}"],
+      [422, {"errors" => {title: ["can not be bounced"]}}]
+    )
+    adapter.save(record)
+    assert(!record.valid?)
+    assert(record.errors[:title].any?)
   end
 
 private
+  def mock_api_request(record, request, response)
+    mock_token = mock
+    mock_response = mock(status: response[0], parsed: response[1])
+    mock_token.expects(:request)
+              .with(request[0], request[1], body: record.as_json, raise_errors: false)
+              .returns(mock_response)
+    adapter.client.access_token = mock_token
+  end
+
   def random_attribute
     @rattr ||= record_class.attribute_set.find { |att| att.type == Axiom::Types::String }.name
   end
