@@ -256,6 +256,7 @@ module Gecko
       def request(verb, path, options={})
         ActiveSupport::Notifications.instrument("request.gecko") do |payload|
           payload[:verb]         = verb
+          payload[:params]       = options[:params]
           payload[:model_class]  = model_class
           payload[:request_path] = path
           payload[:response]     = @client.access_token.request(verb, path, options)
