@@ -10,6 +10,11 @@ module SharedRecordExamples
     assert !record_class.new(client).persisted?
   end
 
+  def test_saving
+    @client.adapter_for(record_class.demodulized_name).expects(:save).with(@record)
+    @record.save
+  end
+
   def client
     @client ||= Gecko::Client.new("ABC", "DEF")
   end

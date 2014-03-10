@@ -40,6 +40,15 @@ module Gecko
         !!id
       end
 
+      # Save a record
+      #
+      # @return <Gecko::Record::Base>
+      #
+      # @api public
+      def save
+        @client.adapter_for(self.class.demodulized_name).save(self)
+      end
+
       # Return the demodulized class name
       #
       # @example
