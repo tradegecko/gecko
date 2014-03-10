@@ -96,6 +96,41 @@ module SharedAdapterExamples
     assert !record.persisted?
   end
 
+  def test_saving_new_record
+    record = adapter.build
+    mock_token    = mock
+    mock_response = mock(parsed: {plural_name.singularize => {id: 123}}, status: 200)
+    mock_token.expects(:request)
+              .with(:post, plural_name, body: record.as_json, raise_errors: false)
+              .returns(mock_response)
+    adapter.client.access_token = mock_token
+    adapter.save(record)
+    assert_equal(record.id, 123)
+    assert(record.valid?)
+  end
+
+  def test_saving_invalid_record
+    record = adapter.build
+    mock_token    = mock
+    mock_response = mock(parsed: {"errors" => {title: ["can not be bounced"]}}, status: 422)
+    mock_token.expects(:request)
+              .returns(mock_response)
+    adapter.client.access_token = mock_token
+    adapter.save(record)
+    assert_nil(record.id)
+    assert(!record.valid?)
+  end
+
+  def test_saving_existing_record
+    record = adapter.build(id: 123)
+    mock_token = mock
+    mock_token.expects(:request)
+              .with(:put, "#{plural_name}/#{record.id}", body: record.as_json)
+              .returns(true)
+    adapter.client.access_token = mock_token
+    adapter.save(record)
+  end
+
 private
   def random_attribute
     @rattr ||= record_class.attribute_set.find { |att| att.type == Axiom::Types::String }.name

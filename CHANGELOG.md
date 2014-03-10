@@ -1,5 +1,6 @@
 ## Unreleased
 
+- Adds `adapter.save(record)` for creating/updating records
 - Add support for readonly attributes in serialization
 - Basic serialization support via `as_json` and `serializable_hash` helpers
 

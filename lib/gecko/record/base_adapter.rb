@@ -173,13 +173,28 @@ module Gecko
       #
       # @params [#to_hash] attributes
       #
-      # @return <Gecko::Record::Base>
+      # @return [Gecko::Record::Base]
       #
       # @api public
       def build(attributes={})
         model_class.new(@client, attributes)
       end
 
+      # Save a record
+      #
+      # @params [Object] :record A Gecko::Record object
+      #
+      # @return [Boolean] whether the save was successful.
+      #                   If false the record will contain an errors hash
+      #
+      # @api private
+      def save(record)
+        if record.persisted?
+          update_record(record)
+        else
+          create_record(record)
+        end
+      end
     private
       # Returns the json key for a record adapter
       #
@@ -207,7 +222,6 @@ module Gecko
       # @example
       #   product_adapter.model_class #=> Gecko::Record::Product
       #
-      #
       # @return [Class]
       #
       # @api private
@@ -234,6 +248,55 @@ module Gecko
       # @api private
       def register_record(record)
         @identity_map[record.id] = record
+      end
+
+      # Create a record via API
+      #
+      # @return [OAuth2::Response]
+      #
+      # @api private
+      def create_record(record)
+        response = request(:post, plural_path, {
+          body: record.as_json,
+          raise_errors: false
+        })
+        handle_response(record, response)
+      end
+
+      # Update a record via API
+      #
+      # @return [OAuth2::Response]
+      #
+      # @api private
+      def update_record(record)
+        response = request(:put, plural_path + "/" + record.id.to_s, {
+          body: record.as_json,
+          raise_errors: false
+        })
+        handle_response(record, response)
+      end
+
+      # Handle the API response.
+      # - Updates the record if attributes are returned
+      # - Adds validation errors from a 422
+      #
+      # @return [OAuth2::Response]
+      #
+      # @api private
+      def handle_response(record, response)
+        case response.status
+        when 200..299
+          if (response_json = response.parsed[json_root])
+            record.attributes = response_json
+            register_record(record)
+          end
+          true
+        when 422
+          record.errors.from_response(response.parsed["errors"])
+          false
+        else
+          raise OAuth2::Error.new(response)
+        end
       end
 
       # Sets up the metadata on a record adapter
