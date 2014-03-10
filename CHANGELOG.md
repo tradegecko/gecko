@@ -1,6 +1,7 @@
 ## Unreleased
 
-- Parse server-side validation errors.
+- Add `record.save`
+- Parse server-side validation errors
 - Add support for readonly attributes in serialization
 - Basic serialization support via `as_json` and `serializable_hash` helpers
 
