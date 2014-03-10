@@ -1,3 +1,4 @@
+require 'faraday'
 require 'oauth2/version'
 require 'gecko/version'
 require 'gecko/helpers/record_helper'
@@ -111,6 +112,7 @@ module Gecko
       {
         'User-Agent' => [ "Gecko/#{Gecko::VERSION}",
                           "OAuth2/#{OAuth2::Version.to_s}",
+                          "Faraday/#{Faraday::VERSION}",
                           "Ruby/#{RUBY_VERSION}"].join(' ')
       }
     end
