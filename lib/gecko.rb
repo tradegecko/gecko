@@ -1,4 +1,5 @@
 require 'virtus'
+require 'active_support/core_ext'
 require 'active_support/inflector'
 require 'active_support/notifications'
 require 'oauth2'
