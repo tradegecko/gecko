@@ -8,6 +8,7 @@ module Gecko
     extend Helpers::RecordHelper
 
     record :Account
+    record :Currency
 
     record :Address
     record :Company

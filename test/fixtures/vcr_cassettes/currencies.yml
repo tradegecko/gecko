@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/currencies?limit=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Gecko/0.0.2 OAuth2/0.9.3 Faraday/0.9.0 Ruby/2.0.0
+      Authorization:
+      - Bearer 0e1bec2b61f1b40220121ca4717f2b5ff2c7f0e2b8ba3ed24b290d2685dd8e49
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 12 Mar 2014 11:30:13 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      X-Pagination:
+      - '{"total_records":11,"total_pages":3,"first_page":true,"last_page":false,"out_of_bounds":false,"offset":0}'
+      Link:
+      - <http://api.lvh.me:3000/ajax/currencies.json?limit=5&page=2>; rel="next",
+        <http://api.lvh.me:3000/ajax/currencies.json?limit=5&page=3>; rel="last"
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"70988a70a165365de34409664cd83202"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b74039c5-cbf6-4c8b-b3af-6048379df2e2
+      X-Runtime:
+      - '1.230886'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"currencies":[{"id":1909,"iso":"MYR","name":"Ringgit","rate":"2.54317","symbol":"RM","separator":".","delimiter":",","precision":2,"format":"%u%n"},{"id":2007,"iso":"AUD","name":"Australian
+        Dollar","rate":"0.85412","symbol":"$","separator":".","delimiter":",","precision":2,"format":"%u%n"},{"id":4387,"iso":"BTC","name":"BTC","rate":"0.0041","symbol":"$","separator":".","delimiter":",","precision":2,"format":"%u%n"},{"id":3056,"iso":"NZD","name":"New
+        Zealand","rate":"0.97851","symbol":"$","separator":".","delimiter":",","precision":2,"format":"%u%n"},{"id":4,"iso":"SGD","name":"Singapore
+        Dollars","rate":"1.0","symbol":"$","separator":".","delimiter":",","precision":2,"format":"%u%n"}]}'
+    http_version: 
+  recorded_at: Wed, 12 Mar 2014 11:30:13 GMT
+recorded_with: VCR 2.8.0
