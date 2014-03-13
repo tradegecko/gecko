@@ -38,7 +38,7 @@ module Gecko
       attribute :source_id,             String,     readonly: true
 
       ## DEPRECATED
-      attribute :source,                String
+      # attribute :source,                String
     end
 
     class OrderAdapter < BaseAdapter
