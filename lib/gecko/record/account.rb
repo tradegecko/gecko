@@ -45,6 +45,11 @@ module Gecko
     class AccountAdapter < BaseAdapter
       undef :count
 
+      # Return the account for the logged in user
+      #
+      # @return [Gecko::Record::Base]
+      #
+      # @api private
       def current
         if self.has_record_for_id?(:current)
           record_for_id(:current)

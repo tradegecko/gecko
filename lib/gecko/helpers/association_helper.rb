@@ -9,8 +9,8 @@ module Gecko
       #     belongs_to :product
       #   end
       #
-      # @param [Symbol]   model_name
-      # @param [#to_hash] options the options
+      # @param [Symbol] model_name
+      # @param [#to_hash] options options for setting up the relationship
       # @option options [String] :class_name Override the default class name
       # @option options [String] :readonly (false) Whether to serialize this attribute
       #
@@ -38,8 +38,8 @@ module Gecko
       #     has_many :variants
       #   end
       #
-      # @param [Symbol]   model_name
-      # @param [#to_hash] options the options
+      # @param [Symbol] model_name
+      # @param [#to_hash] options options for setting up the relationship
       # @option options [String] :class_name Override the default class name
       # @option options [String] :readonly (true) Whether to serialize this attribute
       #

@@ -3,6 +3,7 @@ module Gecko
     module SerializationHelper
 
       # Returns a full JSON representation of a record
+      #
       # @example
       #   product.as_json #=> {product: {id: 12, name: "Big"}}
       #
@@ -15,7 +16,7 @@ module Gecko
         }
       end
 
-      # Return a serialized Hash for a record
+      # Return a serialized hash of the record's attributes
       #
       # @example
       #   product.serializable_hash #=> {id: 12, name: "Big"}
@@ -34,8 +35,8 @@ module Gecko
 
       # Serialize a single attribute
       #
-      # @params [Hash] :attribute_hash Serialized record being iterated over
-      # @params [Virtus::Attribute] :attribute The attribute being serialized
+      # @param [Hash] attribute_hash Serialized record being iterated over
+      # @param [Virtus::Attribute] attribute The attribute being serialized
       #
       # @return [undefined]
       #

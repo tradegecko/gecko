@@ -22,7 +22,7 @@ module Gecko
       # @example
       #   client.Product.find(12)
       #
-      # @params [Integer] id ID of record
+      # @param [Integer] id ID of record
       #
       # @return [Gecko::Record::Base] if a record was found
       #   either in the identity map or via the API
@@ -69,7 +69,7 @@ module Gecko
       # @example
       #   client.Product.find_many([12, 13, 14])
       #
-      # @params [Array<Integer>] ids IDs of record
+      # @param [Array<Integer>] ids IDs of records to fetch
       #
       # @return [Array<Gecko::Record::Base>] Records for the ids
       #   either in the identity map or via the API
@@ -95,7 +95,7 @@ module Gecko
       # @example Search
       #   client.Product.where(q: "gecko")
       #
-      # @params [#to_hash] params
+      # @param [#to_hash] params
       # @option params [String] :q Search query
       # @option params [Integer] :page (1) Page number for pagination
       # @option params [Integer] :limit (100) Page limit for pagination
@@ -171,7 +171,7 @@ module Gecko
       #   new_order = client.Order.build
       #   new_order.order_number = 1234
       #
-      # @params [#to_hash] attributes
+      # @param [#to_hash] initial attributes to set up the record
       #
       # @return <Gecko::Record::Base>
       #

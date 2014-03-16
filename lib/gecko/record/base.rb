@@ -18,6 +18,7 @@ module Gecko
       # Overrides the default Virtus functionality to store:
       # - The Gecko::Client used to create the object
       # - a raw copy of the attributes for the association helpers to read from
+      #
       # @return [undefined]
       #
       # @api private

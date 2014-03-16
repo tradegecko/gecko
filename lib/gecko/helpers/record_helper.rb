@@ -5,7 +5,7 @@ module Gecko
       #
       # @example
       #  class Gecko::Client
-      #   record :Invoice
+      #    record :Invoice
       #  end
       #
       # @return [undefined]
