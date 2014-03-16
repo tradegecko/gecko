@@ -48,7 +48,7 @@ module Gecko
       attribute :stock_on_hand,   BigDecimal, readonly: true
       attribute :committed_stock, BigDecimal, readonly: true
 
-      attribute :prices,                 Hash[Symbol => BigDecimal],  readonly: true
+      attribute :prices,                 Hash[String => BigDecimal],  readonly: true
       attribute :stock_levels,           Hash[Integer => BigDecimal], readonly: true
       attribute :committed_stock_levels, Hash[Integer => BigDecimal], readonly: true
 
