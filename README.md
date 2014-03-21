@@ -1,4 +1,4 @@
-# TradeGecko RubyGem [![Build Status](https://travis-ci.org/tradegecko/gecko.png)](https://travis-ci.org/tradegecko/gecko)
+# TradeGecko RubyGem [![Build Status](https://travis-ci.org/tradegecko/gecko.png)](https://travis-ci.org/tradegecko/gecko) [![Code Climate](https://codeclimate.com/github/tradegecko/gecko.png)](https://codeclimate.com/github/tradegecko/gecko)
 The official TradeGecko API RubyGem
 
 ## Introduction
