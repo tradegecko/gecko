@@ -122,7 +122,7 @@ module SharedAdapterExamples
     record = adapter.build(id: 123)
     mock_api_request(record,
       [:put, "#{plural_name}/#{record.id}"],
-      [204, {}]
+      [204, '']
     )
     adapter.save(record)
     assert(record.valid?)

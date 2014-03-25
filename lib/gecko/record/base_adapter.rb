@@ -286,8 +286,7 @@ module Gecko
       def handle_response(record, response)
         case response.status
         when 200..299
-          if (response.parsed)
-            response_json = response.parsed[json_root]
+          if (parsed = response.parsed) && (response_json = parsed[json_root])
             record.attributes = response_json
             register_record(record)
           end
