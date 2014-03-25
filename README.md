@@ -73,7 +73,7 @@ geckobot.persisted?
 #=> false
 ```
 
-## Persisting Records (WIP)
+## Persisting Records
 
 #### Create Record
 
@@ -102,6 +102,21 @@ geckobot
 #=> <Gecko::Record::Product id=124 name="Geckobot" product_type: "Robo-boogie">
 ```
 
+#### Validations
+
+```ruby
+geckobot = client.Product.find(124)
+#=> <Gecko::Record::Product id=124 name="Geckobot" product_type: "Robot">
+geckobot.persisted?
+#=> true
+geckobot.name = nil
+geckobot.save # Attempts to persist to API
+#=> false
+geckobot.valid?
+#=> false
+geckobot.errors
+#=> #<Gecko::Errors:0x007ff46d961810 @base=#<Gecko::Record::Base:0x007ff46d96aaa0 id: 124, name: nil>, @messages={:name=>["can't be blank"]}>
+```
 
 ## Instrumentation
 
