@@ -73,6 +73,51 @@ geckobot.persisted?
 #=> false
 ```
 
+## Persisting Records
+
+#### Create Record
+
+```ruby
+geckobot = client.Product.build(name: "Geckobot", product_type: "Robot")
+#=> <Gecko::Record::Product id=nil name="Geckobot" product_type: "Robot">
+geckobot.persisted?
+#=> false
+geckobot.save # Persists to API
+#=> true
+geckobot
+#=> <Gecko::Record::Product id=124 name="Geckobot" product_type: "Robot">
+```
+
+#### Update Record
+
+```ruby
+geckobot = client.Product.find(124)
+#=> <Gecko::Record::Product id=124 name="Geckobot" product_type: "Robot">
+geckobot.persisted?
+#=> true
+geckobot.product_type = "Robo-boogie"
+geckobot.save # Persists to API
+#=> true
+geckobot
+#=> <Gecko::Record::Product id=124 name="Geckobot" product_type: "Robo-boogie">
+```
+
+#### Validations
+
+```ruby
+geckobot = client.Product.find(124)
+#=> <Gecko::Record::Product id=124 name="Geckobot" product_type: "Robot">
+geckobot.persisted?
+#=> true
+geckobot.name = nil
+geckobot.save # Attempts to persist to API
+#=> false
+geckobot.valid?
+#=> false
+geckobot.errors
+#=> #<Gecko::Errors:0x007ff46d961810 @base=#<Gecko::Record::Base:0x007ff46d96aaa0 id: 124, name: nil>, @messages={:name=>["can't be blank"]}>
+```
+
 ## Instrumentation
 
 The Gecko gem supports instrumentation via AS::Notifications.
