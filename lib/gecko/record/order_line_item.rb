@@ -12,7 +12,7 @@ module Gecko
       attribute :line_type, String
 
       attribute :freeform,  Boolean
-      attribute :shippable, Boolean
+      attribute :shippable, Boolean, readonly: true
 
       attribute :discount,  BigDecimal
       attribute :quantity,  BigDecimal

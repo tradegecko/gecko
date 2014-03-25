@@ -10,7 +10,7 @@ module Gecko
       belongs_to :company
       belongs_to :shipping_address,     class_name: "Address"
       belongs_to :billing_address,      class_name: "Address"
-      belongs_to :user
+      belongs_to :user,                 readonly: true
       belongs_to :assignee,             class_name: "User"
       belongs_to :stock_location,       class_name: "Location"
       belongs_to :currency
@@ -30,14 +30,14 @@ module Gecko
       attribute :issued_at,             Date
       attribute :ship_at,               Date
       attribute :tax_override,          String,     readonly: true
-      attribute :tax_label,             String
-      attribute :tracking_number,       String
+      attribute :tax_label,             String,     readonly: true
       attribute :source_url,            String
       attribute :total,                 BigDecimal, readonly: true
 
       attribute :source_id,             String,     readonly: true
 
       ## DEPRECATED
+      attribute :tracking_number,       String,     readonly: true
       # attribute :source,                String
     end
 
