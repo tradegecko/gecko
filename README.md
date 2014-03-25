@@ -130,9 +130,9 @@ end
 ```
 
 ## TODO
-- Saving records
+- Deleting records
 - Complete record collection
-- Handle API Errors
+- Handle more API Errors
 - Clean up Access Token management
 
 ## Contributing
