@@ -59,7 +59,7 @@ module Gecko
       #
       # @api private
       def self.demodulized_name
-        self.name.split("::").last
+        self.name.split('::').last
       end
     end
   end

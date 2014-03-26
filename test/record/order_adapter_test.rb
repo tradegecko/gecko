@@ -5,7 +5,7 @@ class Gecko::Record::OrderAdapterTest < Minitest::Test
   include SharedAdapterExamples
 
   let(:adapter)       { @client.Order }
-  let(:plural_name)   { "orders" }
+  let(:plural_name)   { 'orders' }
   let(:record_class)  { Gecko::Record::Order }
 
   def test_initializes_adapter

@@ -25,7 +25,6 @@ module Gecko
       attribute :product_status,  String,   readonly: true
       attribute :product_type,    String,   readonly: true
 
-
       attribute :wholesale_price, BigDecimal
       attribute :retail_price,    BigDecimal
       attribute :buy_price,       BigDecimal
@@ -55,7 +54,6 @@ module Gecko
       # attribute :is_online
       # attribute :online_id
 
-
       # Returns a display name for a variant
       #
       # @example
@@ -70,7 +68,7 @@ module Gecko
         else
           parts = [sku, name]
         end
-        parts.select { |part| part && part.length }.join(" - ")
+        parts.select { |part| part && part.length }.join(' - ')
       end
     end
 

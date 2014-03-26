@@ -1,7 +1,7 @@
 module Gecko
   module Helpers
+    # Provides serialization to records
     module SerializationHelper
-
       # Returns a full JSON representation of a record
       #
       # @example

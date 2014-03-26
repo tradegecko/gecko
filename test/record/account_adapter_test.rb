@@ -5,7 +5,7 @@ class Gecko::Record::AccountAdapterTest < Minitest::Test
   undef :test_adapter_count
 
   let(:adapter)       { @client.Account }
-  let(:plural_name)   { "accounts" }
+  let(:plural_name)   { 'accounts' }
   let(:record_class)  { Gecko::Record::Account }
 
   def test_initializes_adapter
@@ -13,9 +13,9 @@ class Gecko::Record::AccountAdapterTest < Minitest::Test
   end
 
   def test_current
-    VCR.use_cassette("accounts#current") do
+    VCR.use_cassette('accounts#current') do
       assert_instance_of(Gecko::Record::Account, @client.Account.current)
-      assert(@client.Account.current, "Account.current is identity mapped")
+      assert(@client.Account.current, 'Account.current is identity mapped')
     end
   end
 

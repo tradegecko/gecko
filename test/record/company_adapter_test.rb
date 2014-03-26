@@ -5,7 +5,7 @@ class Gecko::Record::CompanyAdapterTest < Minitest::Test
   include SharedAdapterExamples
 
   let(:adapter)       { @client.Company }
-  let(:plural_name)   { "companies" }
+  let(:plural_name)   { 'companies' }
   let(:record_class)  { Gecko::Record::Company }
 
   def test_initializes_adapter

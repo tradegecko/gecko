@@ -13,7 +13,7 @@ module Gecko
       def initialize(client, model_name)
         @client       = client
         @model_name   = model_name
-        @identity_map = Hash.new
+        @identity_map = {}
       end
 
       # Find a record via ID, first searches the Identity Map, then makes an
@@ -125,7 +125,7 @@ module Gecko
       # @api public
       def count
         self.where(limit: 0)
-        @metadata["total"]
+        @metadata['total']
       end
 
       # Fetch a record via API, regardless of whether it is already in identity map.
@@ -139,7 +139,7 @@ module Gecko
       # @api private
       def fetch(id)
         verify_id_presence!(id)
-        response    = request(:get, plural_path + "/" + id.to_s)
+        response    = request(:get, plural_path + '/' + id.to_s)
         record_json = response.parsed[json_root]
         instantiate_and_register_record(record_json)
       rescue OAuth2::Error => ex
@@ -195,7 +195,9 @@ module Gecko
           create_record(record)
         end
       end
+
     private
+
       # Returns the json key for a record adapter
       #
       # @example
@@ -214,7 +216,7 @@ module Gecko
       #
       # @api private
       def plural_path
-        json_root + "s"
+        json_root + 's'
       end
 
       # Returns the model class associated with an adapter
@@ -292,10 +294,10 @@ module Gecko
           end
           true
         when 422
-          record.errors.from_response(response.parsed["errors"])
+          record.errors.from_response(response.parsed['errors'])
           false
         else
-          raise OAuth2::Error.new(response)
+          fail OAuth2::Error.new(response)
         end
       end
 
@@ -303,7 +305,7 @@ module Gecko
       #
       # @api private
       def set_metadata(json)
-        @metadata = json["meta"] if json["meta"]
+        @metadata = json['meta'] if json['meta']
       end
 
       # Makes a request to the API.
@@ -317,7 +319,7 @@ module Gecko
       #
       # @api private
       def request(verb, path, options={})
-        ActiveSupport::Notifications.instrument("request.gecko") do |payload|
+        ActiveSupport::Notifications.instrument('request.gecko') do |payload|
           payload[:verb]         = verb
           payload[:params]       = options[:params]
           payload[:model_class]  = model_class
@@ -327,16 +329,16 @@ module Gecko
       end
 
       def record_not_found!(id)
-        raise RecordNotFound, "Couldn't find #{model_class.name} with id=#{id}"
+        fail RecordNotFound, "Couldn't find #{model_class.name} with id=#{id}"
       end
 
       def record_not_in_identity_map!(id)
-        raise RecordNotInIdentityMap, "Couldn't find #{model_class.name} with id=#{id}"
+        fail RecordNotInIdentityMap, "Couldn't find #{model_class.name} with id=#{id}"
       end
 
       def verify_id_presence!(id)
         if id.respond_to?(:empty?) ? id.empty? : !id
-          raise RecordNotFound, "Couldn't find #{model_class.name} without an ID"
+          fail RecordNotFound, "Couldn't find #{model_class.name} without an ID"
         end
       end
     end

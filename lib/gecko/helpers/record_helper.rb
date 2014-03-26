@@ -1,5 +1,6 @@
 module Gecko
   module Helpers
+    # Helper for registering valid record types
     module RecordHelper
       # Registers a record type on the Gecko::Client
       #
@@ -15,8 +16,10 @@ module Gecko
         define_method record_type do
           adapter_cache = "@#{record_type}_cache".to_sym
           unless instance_variable_defined?(adapter_cache)
-            adapter_klass = Gecko::Record.const_get("#{record_type}Adapter".to_sym)
-            self.instance_variable_set(adapter_cache, adapter_klass.new(self, record_type))
+            adapter_name  = "#{record_type}Adapter".to_sym
+            adapter_klass = Gecko::Record.const_get(adapter_name)
+            adapter = adapter_klass.new(self, record_type)
+            instance_variable_set(adapter_cache, adapter)
           end
           instance_variable_get(adapter_cache)
         end
@@ -24,6 +27,3 @@ module Gecko
     end
   end
 end
-
-
-

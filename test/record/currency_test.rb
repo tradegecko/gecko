@@ -4,11 +4,11 @@ class Gecko::CurrencyTest < Minitest::Test
   include VCRHelper
   include SharedRecordExamples
 
-  let(:plural_name)   { "currencies" }
+  let(:plural_name)   { 'currencies' }
   let(:record_class)  { Gecko::Record::Currency }
 
   def setup
-    @json   = load_vcr_hash("currencies", "currencies").first
+    @json   = load_vcr_hash('currencies', 'currencies').first
     @record = record_class.new(client, @json)
   end
 

@@ -19,7 +19,7 @@ module Gecko
 
       # Override plural_path to properly pluralize currency
       def plural_path
-        "currencies"
+        'currencies'
       end
     end
   end

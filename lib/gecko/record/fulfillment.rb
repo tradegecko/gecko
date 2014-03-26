@@ -5,8 +5,8 @@ module Gecko
   module Record
     class Fulfillment < Base
       belongs_to :order
-      belongs_to :shipping_address, class_name: "Address"
-      belongs_to :billing_address,  class_name: "Address"
+      belongs_to :shipping_address, class_name: 'Address'
+      belongs_to :billing_address,  class_name: 'Address'
       has_many :fulfillment_line_items
 
       attribute :status,           String
@@ -30,8 +30,12 @@ module Gecko
       # instead of refetching them
       def parse_records(json)
         records = super
-        @client.FulfillmentLineItem.parse_records(json) if json["fulfillment_line_items"]
+        parse_line_items(json) if json['fulfillment_line_items']
         records
+      end
+
+      def parse_line_items(json)
+        @client.FulfillmentLineItem.parse_records(json)
       end
     end
   end

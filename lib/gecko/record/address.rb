@@ -28,7 +28,7 @@ module Gecko
 
       # Override plural_path to properly pluralize address
       def plural_path
-        "addresses"
+        'addresses'
       end
     end
   end

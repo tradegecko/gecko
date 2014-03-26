@@ -1,0 +1,9 @@
+# I personally disagree with this default and much rather outdented keywords
+AccessModifierIndentation:
+  EnforcedStyle: outdent
+
+SpaceAroundEqualsInParameterDefault:
+  EnforcedStyle: no_space
+
+IndentHash:
+  Enabled: false

@@ -1,5 +1,6 @@
 module Gecko
   module Helpers
+    # Helper for providing custom #inspect values to Records
     module InspectionHelper
       # Overrides the default inspect to just return the defined attributes
       #
@@ -10,15 +11,17 @@ module Gecko
       #
       # @api public
       def inspect
-        inspection = self.class.attribute_set.collect do |attribute|
+        inspection = self.class.attribute_set.map do |attribute|
           name = attribute.name
           "#{name}: #{attribute_for_inspect(name)}"
-        end.join(", ")
+        end.join(', ')
         "#<#{self.class} #{inspection}>"
       end
 
     private
-      # Returns an #inspect-like string for the value of the attribute attr_name.
+
+      # Returns an #inspect-like string for the value of the attribute
+      # attr_name.
       # String attributes are truncated up to 50 characters,
       # and Date and Time attributes are returned in the :db format.
       # Other attributes return the value of #inspect without modification.

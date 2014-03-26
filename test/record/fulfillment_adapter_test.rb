@@ -5,7 +5,7 @@ class Gecko::Record::FulfillmentAdapterTest < Minitest::Test
   include SharedAdapterExamples
 
   let(:adapter)       { @client.Fulfillment }
-  let(:plural_name)   { "fulfillments" }
+  let(:plural_name)   { 'fulfillments' }
   let(:record_class)  { Gecko::Record::Fulfillment }
 
   def test_initializes_adapter
@@ -13,7 +13,7 @@ class Gecko::Record::FulfillmentAdapterTest < Minitest::Test
   end
 
   def test_identity_map_stores_sideloaded_line_items
-    VCR.use_cassette("fulfillments") do
+    VCR.use_cassette('fulfillments') do
       collection = @client.Fulfillment.where(limit: 5)
       fulfillment = collection.first
       item = fulfillment.fulfillment_line_items.first

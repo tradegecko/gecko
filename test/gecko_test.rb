@@ -5,5 +5,3 @@ class GeckoTest < Minitest::Test
     assert Gecko
   end
 end
-
-

@@ -1,7 +1,7 @@
 module Gecko
   module Helpers
+    # Provides record validation
     module ValidationHelper
-
       # Returns whether a record is considered valid or not
       #
       # @return [Boolean]
@@ -76,8 +76,8 @@ module Gecko
 
     # Parse JSON errors response into the error object
     #
-    # @params [#to_hash] :error_hash hash of errors where key is an attribute name
-    #                                and value is an array of error strings
+    # @params [#to_hash] :error_hash hash of errors where key is an attribute
+    #   name and value is an array of error strings
     #
     # @return [undefined]
     #

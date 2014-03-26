@@ -3,7 +3,7 @@ require 'gecko/record/base'
 module Gecko
   module Record
     class Company < Base
-      belongs_to :assignee, class_name: "User"
+      belongs_to :assignee, class_name: 'User'
 
       has_many :addresses
       has_many :contacts
@@ -30,10 +30,9 @@ module Gecko
     end
 
     class CompanyAdapter < BaseAdapter
-
       # Override plural_path to properly pluralize company
       def plural_path
-        "companies"
+        'companies'
       end
     end
   end

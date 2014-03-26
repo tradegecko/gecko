@@ -5,7 +5,7 @@ class Gecko::Record::AddressAdapterTest < Minitest::Test
   include SharedAdapterExamples
 
   let(:adapter)       { @client.Address }
-  let(:plural_name)   { "addresses" }
+  let(:plural_name)   { 'addresses' }
   let(:record_class)  { Gecko::Record::Address }
 
   def test_initializes_adapter

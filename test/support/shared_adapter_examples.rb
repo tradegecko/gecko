@@ -16,7 +16,7 @@ module SharedAdapterExamples
   end
 
   def test_adapter_count
-    VCR.use_cassette(plural_name + "_count") do
+    VCR.use_cassette(plural_name + '_count') do
       assert(adapter.count > 10)
     end
   end
@@ -30,13 +30,13 @@ module SharedAdapterExamples
 
   def test_record_for_id
     mock_record = Object.new
-    adapter.instance_variable_set(:@identity_map, {12 => mock_record})
+    adapter.instance_variable_set(:@identity_map, 12 => mock_record)
     assert_equal(mock_record, adapter.record_for_id(12))
   end
 
   def test_record_for_id_miss
     ex = assert_raises Gecko::Record::RecordNotInIdentityMap do
-     adapter.record_for_id(12345)
+      adapter.record_for_id(12_345)
     end
     assert_equal("Couldn't find #{record_class.name} with id=12345", ex.message)
   end

@@ -4,6 +4,7 @@ require 'gecko/version'
 require 'gecko/helpers/record_helper'
 
 module Gecko
+  # The Gecko::Client class
   class Client
     extend Helpers::RecordHelper
 
@@ -98,6 +99,7 @@ module Gecko
     end
 
   private
+
     def setup_oauth_client(client_id, client_secret, options)
       defaults = {
         site:          'https://api.tradegecko.com',
@@ -111,10 +113,10 @@ module Gecko
 
     def default_headers
       {
-        'User-Agent' => [ "Gecko/#{Gecko::VERSION}",
-                          "OAuth2/#{OAuth2::Version.to_s}",
-                          "Faraday/#{Faraday::VERSION}",
-                          "Ruby/#{RUBY_VERSION}"].join(' ')
+        'User-Agent' => ["Gecko/#{Gecko::VERSION}",
+                         "OAuth2/#{OAuth2::Version.to_s}",
+                         "Faraday/#{Faraday::VERSION}",
+                         "Ruby/#{RUBY_VERSION}"].join(' ')
       }
     end
   end

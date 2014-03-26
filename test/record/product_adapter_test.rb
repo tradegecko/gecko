@@ -5,7 +5,7 @@ class Gecko::Record::ProductAdapterTest < Minitest::Test
   include SharedAdapterExamples
 
   let(:adapter)       { @client.Product }
-  let(:plural_name)   { "products" }
+  let(:plural_name)   { 'products' }
   let(:record_class)  { Gecko::Record::Product }
 
   def test_initializes_adapter
@@ -13,8 +13,8 @@ class Gecko::Record::ProductAdapterTest < Minitest::Test
   end
 
   def test_saves_new_record
-    VCR.use_cassette(plural_name + "_new_valid") do
-      record = adapter.build(name: "Gary")
+    VCR.use_cassette(plural_name + '_new_valid') do
+      record = adapter.build(name: 'Gary')
       assert record.save
       assert record.id
       assert adapter.has_record_for_id?(record.id)
@@ -22,8 +22,8 @@ class Gecko::Record::ProductAdapterTest < Minitest::Test
   end
 
   def test_invalid_new_record
-    VCR.use_cassette(plural_name + "_new_invalid") do
-      record = adapter.build(product_type: "Gecko")
+    VCR.use_cassette(plural_name + '_new_invalid') do
+      record = adapter.build(product_type: 'Gecko')
       assert !record.save
       assert !record.id
       assert_equal record.errors[:name], ["can't be blank"]

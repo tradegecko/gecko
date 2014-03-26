@@ -3,7 +3,6 @@ require 'gecko/record/base'
 module Gecko
   module Record
     class Product < Base
-
       has_many :variants
       attribute :name,         String
       attribute :description,  String
