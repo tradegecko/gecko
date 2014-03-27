@@ -3,6 +3,19 @@ require 'gecko/record/base'
 module Gecko
   module Record
     class Variant < Base
+      class VariantLocation
+        include Virtus.model
+        attribute :location_id,     Integer
+        attribute :committed_stock, BigDecimal
+        attribute :stock_on_hand,   BigDecimal
+      end
+
+      class VariantPrice
+        include Virtus.model
+        attribute :price_list_id,    String
+        attribute :value,            BigDecimal
+      end
+
       belongs_to :product
       has_many :images
 
@@ -47,12 +60,8 @@ module Gecko
       attribute :stock_on_hand,   BigDecimal, readonly: true
       attribute :committed_stock, BigDecimal, readonly: true
 
-      attribute :prices,                 Hash[String => BigDecimal],  readonly: true
-      attribute :stock_levels,           Hash[Integer => BigDecimal], readonly: true
-      attribute :committed_stock_levels, Hash[Integer => BigDecimal], readonly: true
-
-      # attribute :is_online
-      # attribute :online_id
+      attribute :locations,       Array[VariantLocation]
+      attribute :variant_prices,  Array[VariantPrice]
 
       # Returns a display name for a variant
       #
@@ -70,6 +79,14 @@ module Gecko
         end
         parts.select { |part| part && part.length }.join(' - ')
       end
+
+      # attribute :is_online
+      # attribute :online_id
+
+      ## DEPRECATED
+      # attribute :prices,                 Hash[String => BigDecimal],  readonly: true
+      # attribute :stock_levels,           Hash[Integer => BigDecimal], readonly: true
+      # attribute :committed_stock_levels, Hash[Integer => BigDecimal], readonly: true
     end
 
     class VariantAdapter < BaseAdapter

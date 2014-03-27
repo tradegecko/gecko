@@ -24,7 +24,6 @@ module Gecko
       attribute :packed_status,         String,     readonly: true
       attribute :fulfillment_status,    String,     readonly: true
       attribute :invoice_status,        String,     readonly: true
-      attribute :invoice_numbers,       Hash[Integer => String], readonly: true
       attribute :payment_status,        String
       attribute :tax_type,              String
       attribute :issued_at,             Date
@@ -39,6 +38,7 @@ module Gecko
       ## DEPRECATED
       attribute :tracking_number,       String,     readonly: true
       # attribute :source,                String
+      # attribute :invoice_numbers,       Hash[Integer => String], readonly: true
     end
 
     class OrderAdapter < BaseAdapter
