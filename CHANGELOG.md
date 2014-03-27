@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 0.0.3 (2014-03-27)
+
 - Add `record.save`
 - Parse server-side validation errors
 - Add support for readonly attributes in serialization
