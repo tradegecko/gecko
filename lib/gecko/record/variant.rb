@@ -63,7 +63,7 @@ module Gecko
       #
       # @api public
       def display_name
-        if !name.include?(product_name)
+        if name.nil? || !name.include?(product_name)
           parts = [sku, product_name, name]
         else
           parts = [sku, name]

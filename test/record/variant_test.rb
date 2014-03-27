@@ -15,4 +15,9 @@ class Gecko::VariantTest < Minitest::Test
   def test_initializes_record
     assert_instance_of(Gecko::Record::Variant, @record)
   end
+
+  def test_blank_display_name
+    record = record_class.new(client, {})
+    assert_equal(record.display_name, "")
+  end
 end
