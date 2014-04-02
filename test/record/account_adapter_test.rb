@@ -4,6 +4,12 @@ class Gecko::Record::AccountAdapterTest < Minitest::Test
   include SharedAdapterExamples
   undef :test_adapter_count
 
+  # Can't build accounts via API
+  undef :test_build
+  undef :test_build_with_attributes
+  undef :test_saving_new_record
+  undef :test_saving_new_invalid_record
+
   let(:adapter)       { @client.Account }
   let(:plural_name)   { 'accounts' }
   let(:record_class)  { Gecko::Record::Account }

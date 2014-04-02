@@ -44,6 +44,7 @@ module Gecko
 
     class AccountAdapter < BaseAdapter
       undef :count
+      undef :build
 
       # Return the account for the logged in user
       #

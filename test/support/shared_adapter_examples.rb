@@ -107,7 +107,7 @@ module SharedAdapterExamples
     assert(record.valid?)
   end
 
-  def test_saving_invalid_record
+  def test_saving_new_invalid_record
     record = adapter.build
     mock_api_request(record,
       [:post, plural_name],
@@ -119,7 +119,7 @@ module SharedAdapterExamples
   end
 
   def test_saving_existing_record
-    record = adapter.build(id: 123)
+    record = existing_record
     mock_api_request(record,
       [:put, "#{plural_name}/#{record.id}"],
       [204, '']
@@ -129,7 +129,7 @@ module SharedAdapterExamples
   end
 
   def test_saving_existing_invalid_record
-    record = adapter.build(id: 123)
+    record = existing_record
     mock_api_request(record,
       [:put, "#{plural_name}/#{record.id}"],
       [422, {"errors" => {title: ["can not be bounced"]}}]
@@ -147,6 +147,10 @@ private
               .with(request[0], request[1], body: record.as_json, raise_errors: false)
               .returns(mock_response)
     adapter.client.access_token = mock_token
+  end
+
+  def existing_record
+    record_class.new(@client, id: 123)
   end
 
   def random_attribute
