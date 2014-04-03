@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/images?limit=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Gecko/0.0.2 OAuth2/0.9.3 Faraday/0.9.0 Ruby/2.0.0
+      Authorization:
+      - Bearer 0e1bec2b61f1b40220121ca4717f2b5ff2c7f0e2b8ba3ed24b290d2685dd8e49
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 12 Mar 2014 11:39:39 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      X-Pagination:
+      - '{"total_records":122,"total_pages":25,"first_page":true,"last_page":false,"out_of_bounds":false,"offset":0}'
+      Link:
+      - <http://api.lvh.me:3000/ajax/images.json?limit=5&page=2>; rel="next", <http://api.lvh.me:3000/ajax/images.json?limit=5&page=25>;
+        rel="last"
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"127002a57feaf40ed0e60f84cc355405"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 122688d9-1f23-491a-9ff2-c19b2d6cfcb9
+      X-Runtime:
+      - '0.234695'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"images":[{"id":204,"variant_id":1035,"uploader_id":26,"name":"p17e54uam11hmn11g019qg16gj1lvh4.jpeg","position":1,"base_path":"https://tradegecko-development-images.s3.amazonaws.com/uploads/variant_image/image/204","file_name":"Dead_Cool.jpeg","versions":["thumbnail"],"image_processing":null},{"id":5140,"variant_id":1995,"uploader_id":26,"name":"p17hgbcgn413jf2pi9h415jjjc74.jpeg","position":1,"base_path":"https://tradegecko-development-images.s3.amazonaws.com/uploads/variant_image/image/5140","file_name":"Broken_heart_copy.jpeg","versions":["thumbnail"],"image_processing":null},{"id":59274,"variant_id":92694,"uploader_id":"Shopify","name":null,"position":1,"base_path":"https://tradegecko-development-images.s3.amazonaws.com/uploads/variant_image/image/59274","file_name":"dellMON.jpg","versions":["thumbnail"],"image_processing":null},{"id":206,"variant_id":1034,"uploader_id":26,"name":"p17e54urld1ffth831j3ct6a1gl1e.jpeg","position":1,"base_path":"https://tradegecko-development-images.s3.amazonaws.com/uploads/variant_image/image/206","file_name":"Dead_Cool.jpeg","versions":["thumbnail"],"image_processing":null},{"id":251,"variant_id":5252,"uploader_id":213,"name":"p17eh9kpij1u771kg1rdc103vn5i.jpg","position":1,"base_path":"https://tradegecko-development-images.s3.amazonaws.com/uploads/variant_image/image/251","file_name":"Chance_PerfectBoatneck_WhiteW.Navy.jpg","versions":["thumbnail"],"image_processing":null}]}'
+    http_version: 
+  recorded_at: Wed, 12 Mar 2014 11:39:39 GMT
+recorded_with: VCR 2.8.0
