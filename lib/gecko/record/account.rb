@@ -33,7 +33,7 @@ module Gecko
       # has_one :primary_billing_location, class_name: "Location"
       # has_one :default_currency, class_name: "Currency"
       # has_one :default_payment_term, class_name: "PaymentTerm"
-      # has_one :billing_contact, class_name: "User"
+      belongs_to :billing_contact, class_name: "User"
 
       # attribute :stock_level_warn, String
       # attribute :subscription_name,          String
