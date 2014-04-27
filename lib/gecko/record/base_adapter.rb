@@ -140,7 +140,7 @@ module Gecko
       def fetch(id)
         verify_id_presence!(id)
         response    = request(:get, plural_path + '/' + id.to_s)
-        record_json = response.parsed[json_root]
+        record_json = extract_record(response.parsed)
         instantiate_and_register_record(record_json)
       rescue OAuth2::Error => ex
         case ex.response.status
@@ -157,9 +157,27 @@ module Gecko
       #
       # @api private
       def parse_records(json)
-        json[plural_path].map do |record_json|
+        extract_collection(json).map do |record_json|
           instantiate_and_register_record(record_json)
         end
+      end
+
+      # Extract a collection from an API response
+      #
+      # @return [Hash]
+      #
+      # @api private
+      def extract_collection(json)
+        json[plural_path]
+      end
+
+      # Extract a record from an API response
+      #
+      # @return Hash
+      #
+      # @api private
+      def extract_record(json)
+        json && json[json_root]
       end
 
       # Build a new record
@@ -288,7 +306,7 @@ module Gecko
       def handle_response(record, response)
         case response.status
         when 200..299
-          if (parsed = response.parsed) && (response_json = parsed[json_root])
+          if response_json = extract_record(response.parsed)
             record.attributes = response_json
             register_record(record)
           end
