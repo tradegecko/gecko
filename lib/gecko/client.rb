@@ -32,6 +32,7 @@ module Gecko
     record :TaxType
     record :PaymentTerm
 
+    record :PriceList
     # Return OAuth client
     #
     # @return [OAuth2::Client]
