@@ -27,13 +27,13 @@ module Gecko
       attribute :tax_number_label, String
       attribute :tax_label,        String
 
-      # has_one :default_purchase_order_price_type, class_name: "PriceList"
-      # has_one :default_order_price_type, class_name: "PriceList"
-      # has_one :primary_location, class_name: "Location"
-      # has_one :primary_billing_location, class_name: "Location"
-      # has_one :default_currency, class_name: "Currency"
-      # has_one :default_payment_term, class_name: "PaymentTerm"
-      belongs_to :billing_contact, class_name: "User"
+      belongs_to :billing_contact,          class_name: "User"
+      belongs_to :primary_location,         class_name: "Location"
+      belongs_to :primary_billing_location, class_name: "Location"
+      # belongs_to :default_currency, class_name: "Currency"
+      # belongs_to :default_payment_term, class_name: "PaymentTerm"
+      # belongs_to :default_purchase_order_price_type, class_name: "PriceList"
+      # belongs_to :default_order_price_type, class_name: "PriceList"
 
       # attribute :stock_level_warn, String
       # attribute :subscription_name,          String
