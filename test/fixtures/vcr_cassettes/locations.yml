@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/locations?limit=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Gecko/0.0.3 OAuth2/0.9.3 Faraday/0.9.0 Ruby/2.0.0
+      Authorization:
+      - Bearer 0a45b6958b71a3d0dcfe1d0879a7ee777e04e0d646d005b06f96d328db783fea
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 05 May 2014 02:51:19 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      X-Pagination:
+      - '{"total_records":12,"total_pages":3,"first_page":true,"last_page":false,"out_of_bounds":false,"offset":0}'
+      Link:
+      - <http://api.lvh.me:3000/ajax/locations?limit=5&page=2>; rel="next", <http://api.lvh.me:3000/ajax/locations?limit=5&page=3>;
+        rel="last"
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"c4bd4231dfa34d3c4344a2783b1ba6e9"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 31f73b8d-47cc-421c-9f50-3106a6dea619
+      X-Runtime:
+      - '0.285190'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"locations":[{"id":18,"city":"Auckland","country":"NZ","label":"Primary
+        Location","state":"s","address1":"65 Tennyson St","address2":"","suburb":"Mt
+        Eden","zip_code":"123456","status":"active","holds_stock":true},{"id":153,"city":"Singapore","country":"SG","label":"Something
+        else","state":"Singapore","address1":"555 Loko Pako","address2":"#03-01","suburb":"Singapore","zip_code":"123456","status":"active","holds_stock":true},{"id":159,"city":"","country":"SG","label":"Head
+        Office","state":"","address1":"42b Hong Kong Street","address2":"Singapore","suburb":"059681","zip_code":"059681","status":"active","holds_stock":true},{"id":160,"city":"Singapore","country":"SG","label":"Warehouse","state":"SG","address1":"999
+        Beach Road","address2":"","suburb":"Singapore","zip_code":"999999","status":"active","holds_stock":true},{"id":1395,"city":"Singapore","country":"SG","label":"Adler
+        Retailers Consignment","state":"","address1":"42B Hong Kong St","address2":"","suburb":"","zip_code":null,"status":"active","holds_stock":true}]}'
+    http_version: 
+  recorded_at: Mon, 05 May 2014 02:51:19 GMT
+recorded_with: VCR 2.9.0
