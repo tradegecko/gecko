@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/users?limit=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Gecko/0.0.3 OAuth2/0.9.3 Faraday/0.9.0 Ruby/2.0.0
+      Authorization:
+      - Bearer 0a45b6958b71a3d0dcfe1d0879a7ee777e04e0d646d005b06f96d328db783fea
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 05 May 2014 03:20:42 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      X-Pagination:
+      - '{"total_records":7,"total_pages":2,"first_page":true,"last_page":false,"out_of_bounds":false,"offset":0}'
+      Link:
+      - <http://api.lvh.me:3000/ajax/users?limit=5&page=2>; rel="next", <http://api.lvh.me:3000/ajax/users?limit=5&page=2>;
+        rel="last"
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"548f28fd1e6b968ebfad6d506179a628"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - af91827a-25c8-4533-8f35-96424d774ffe
+      X-Runtime:
+      - '0.272868'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"users":[{"id":8709,"first_name":"Yuh Wen","last_name":"Foong","email":"yuhwen@tradegecko.com","status":"active","location":null,"position":null,"phone_number":null,"mobile_phone":null,"last_sign_in_at":"2014-02-17T08:19:32.243Z","avatar_url":"/assets/avatars/avatar1.png","notification_email":false,"sales_report_email":false,"action_items_email":"off","billing_contact":false,"permissions":["read_reports","read_products","write_stocks","write_orders","write_settings","write_companies"],"account_id":4},{"id":829,"first_name":"Nadia","last_name":"Rozental","email":"nadia@tradegecko.com","status":"active","location":null,"position":null,"phone_number":null,"mobile_phone":null,"last_sign_in_at":"2014-02-17T03:28:05.763Z","avatar_url":"/assets/avatars/avatar1.png","notification_email":true,"sales_report_email":true,"action_items_email":"daily","billing_contact":false,"permissions":["read_reports","read_products","write_stocks","write_orders","write_settings","write_companies"],"account_id":4},{"id":13,"first_name":"Bradley","last_name":"Priest","email":"bradley@tradegecko.com","status":"active","location":null,"position":null,"phone_number":"1234567","mobile_phone":null,"last_sign_in_at":"2014-04-30T09:16:45.579Z","avatar_url":"https://tradegecko-development-images.s3.amazonaws.com/uploads/user/avatar/13/34b3e93704a811f2befad5a894e28072.jpeg","notification_email":true,"sales_report_email":true,"action_items_email":"weekly","billing_contact":true,"permissions":["read_reports","write_stocks","write_orders","write_products","write_settings","write_companies"],"account_id":4},{"id":1748,"first_name":"Kyrylo
+        ","last_name":"Savytskyi","email":"mail+tg@savytskyi.com","status":"active","location":null,"position":null,"phone_number":null,"mobile_phone":null,"last_sign_in_at":"2014-02-15T11:34:13.124Z","avatar_url":"/assets/avatars/avatar0.png","notification_email":false,"sales_report_email":false,"action_items_email":"weekly","billing_contact":false,"permissions":["read_reports","write_stocks","write_orders","write_products","write_settings","write_companies"],"account_id":4},{"id":5736,"first_name":"Patrick","last_name":"Barnes","email":"patrick@tradegecko.com","status":"active","location":null,"position":null,"phone_number":null,"mobile_phone":null,"last_sign_in_at":"2014-02-17T10:02:53.450Z","avatar_url":"/assets/avatars/avatar0.png","notification_email":false,"sales_report_email":false,"action_items_email":"off","billing_contact":false,"permissions":["read_reports","write_stocks","write_orders","write_settings","write_companies"],"account_id":4}]}'
+    http_version: 
+  recorded_at: Mon, 05 May 2014 03:20:42 GMT
+recorded_with: VCR 2.9.0
