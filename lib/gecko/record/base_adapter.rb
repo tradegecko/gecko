@@ -111,7 +111,7 @@ module Gecko
       def where(params={})
         response        = request(:get, plural_path, params: params)
         parsed_response = response.parsed
-        set_metadata(parsed_response)
+        set_pagination(response.headers)
         parse_records(parsed_response)
       end
 
@@ -125,7 +125,7 @@ module Gecko
       # @api public
       def count
         self.where(limit: 0)
-        @metadata['total']
+        @pagination['total_records']
       end
 
       # Fetch a record via API, regardless of whether it is already in identity map.
@@ -319,11 +319,11 @@ module Gecko
         end
       end
 
-      # Sets up the metadata on a record adapter
+      # Sets up the pagination metadata on a record adapter
       #
       # @api private
-      def set_metadata(json)
-        @metadata = json['meta'] if json['meta']
+      def set_pagination(headers)
+        @pagination = JSON.parse(headers["x-pagination"]) if headers["x-pagination"]
       end
 
       # Makes a request to the API.

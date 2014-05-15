@@ -20,7 +20,6 @@ module Gecko
     end
 
     class ContactAdapter < BaseAdapter
-      undef :count
     end
   end
 end

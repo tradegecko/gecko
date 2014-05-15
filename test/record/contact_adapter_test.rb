@@ -11,6 +11,4 @@ class Gecko::Record::ContactAdapterTest < Minitest::Test
   def test_initializes_adapter
     assert_instance_of(Gecko::Record::ContactAdapter, @client.Contact)
   end
-
-  undef :test_adapter_count
 end

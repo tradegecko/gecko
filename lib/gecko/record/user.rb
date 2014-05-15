@@ -25,7 +25,6 @@ module Gecko
     end
 
     class UserAdapter < BaseAdapter
-      undef :count
       undef :build
 
       # Return the the logged in user

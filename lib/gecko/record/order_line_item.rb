@@ -25,7 +25,6 @@ module Gecko
     end
 
     class OrderLineItemAdapter < BaseAdapter
-      undef :count
     end
   end
 end

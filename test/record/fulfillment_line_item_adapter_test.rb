@@ -11,10 +11,6 @@ class Gecko::Record::FulfillmentLineItemAdapterTest < Minitest::Test
     assert_instance_of(Gecko::Record::FulfillmentLineItemAdapter, @client.FulfillmentLineItem)
   end
 
-  def test_undef_count
-    assert !adapter.respond_to?(:count)
-  end
-
   def test_adapter_uses_identity_map
     VCR.use_cassette('fulfillments') do
       @client.Fulfillment.where(limit: 5)

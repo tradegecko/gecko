@@ -18,7 +18,6 @@ module Gecko
     end
 
     class LocationAdapter < BaseAdapter
-      undef :count
     end
   end
 end

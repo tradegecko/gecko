@@ -11,6 +11,4 @@ class Gecko::Record::ImageAdapterTest < Minitest::Test
   def test_initializes_adapter
     assert_instance_of(Gecko::Record::ImageAdapter, @client.Image)
   end
-
-  undef :test_adapter_count
 end
