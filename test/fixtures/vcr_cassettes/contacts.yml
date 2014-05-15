@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/contacts?limit=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Gecko/0.0.3 OAuth2/0.9.3 Faraday/0.9.0 Ruby/2.0.0
+      Authorization:
+      - Bearer 7d3ed5d622e3becc591f15132f07bb52f05fcbd899f6d9dce60409c0e2c712e5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 May 2014 08:33:22 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      X-Pagination:
+      - '{"total_records":91,"total_pages":19,"first_page":true,"last_page":false,"out_of_bounds":false,"offset":0}'
+      Link:
+      - <http://api.lvh.me:3000/ajax/contacts?limit=5&page=2>; rel="next", <http://api.lvh.me:3000/ajax/contacts?limit=5&page=19>;
+        rel="last"
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"562d38abb34e5ed26bb010865a8c39ec"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - dcb25712-58d9-433f-b461-2ae29c3a4df5
+      X-Runtime:
+      - '1.595610'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"contacts":[{"id":105132,"company_id":206086,"email":"carlthompsonnz@gmail.com","first_name":"Carlos","last_name":"","location":null,"mobile":null,"notes":null,"phone_number":"","fax":null,"position":null,"status":"active","phone":""},{"id":83195,"company_id":220982,"email":"carl@tradegecko.com","first_name":"Carl","last_name":"Thompson","location":null,"mobile":null,"notes":null,"phone_number":"98505109","fax":null,"position":"CMO","status":"active","phone":"98505109"},{"id":24785,"company_id":66045,"email":"jcarter@boldfoundry.com","first_name":"John","last_name":"carter","location":null,"mobile":null,"notes":null,"phone_number":null,"fax":null,"position":null,"status":"active","phone":null},{"id":24786,"company_id":66045,"email":"fazri@boldfoundry.com","first_name":"Phuze","last_name":"Down","location":null,"mobile":null,"notes":null,"phone_number":null,"fax":null,"position":null,"status":"active","phone":null},{"id":81752,"company_id":215564,"email":"fargo@gargo.com","first_name":"Adele","last_name":"Garry","location":null,"mobile":null,"notes":null,"phone_number":"0272
+        639 339","fax":null,"position":null,"status":"active","phone":"0272 639 339"}]}'
+    http_version: 
+  recorded_at: Thu, 15 May 2014 08:33:22 GMT
+recorded_with: VCR 2.9.0

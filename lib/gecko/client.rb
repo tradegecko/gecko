@@ -15,6 +15,7 @@ module Gecko
 
     record :Address
     record :Company
+    record :Contact
 
     record :Fulfillment
     record :FulfillmentLineItem

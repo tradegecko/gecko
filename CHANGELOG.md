@@ -1,5 +1,6 @@
 ## Unreleased
 
+- Add `Gecko::Record::Contact`
 - Add `Gecko::Record::User`
 - Add `Gecko::Record::Location`
 - Remove `@client.Account.build`
