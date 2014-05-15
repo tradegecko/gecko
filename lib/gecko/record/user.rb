@@ -26,6 +26,20 @@ module Gecko
 
     class UserAdapter < BaseAdapter
       undef :count
+      undef :build
+
+      # Return the the logged in user
+      #
+      # @return [Gecko::Record::User]
+      #
+      # @api public
+      def current
+        if self.has_record_for_id?(:current)
+          record_for_id(:current)
+        else
+          @identity_map[:current] = find(:current)
+        end
+      end
     end
   end
 end

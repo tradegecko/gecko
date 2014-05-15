@@ -48,9 +48,9 @@ module Gecko
 
       # Return the account for the logged in user
       #
-      # @return [Gecko::Record::Base]
+      # @return [Gecko::Record::Account]
       #
-      # @api private
+      # @api public
       def current
         if self.has_record_for_id?(:current)
           record_for_id(:current)
