@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/users?limit=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Gecko/0.0.3 OAuth2/0.9.3 Faraday/0.9.0 Ruby/2.0.0
+      Authorization:
+      - Bearer 7d3ed5d622e3becc591f15132f07bb52f05fcbd899f6d9dce60409c0e2c712e5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 May 2014 09:55:43 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      X-Pagination:
+      - '{"total_records":11,"total_pages":1,"first_page":true,"last_page":true,"out_of_bounds":false,"offset":0}'
+      Link:
+      - <http://api.lvh.me:3000/ajax/users?limit=0&page=1>; rel="last"
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"415a14c1d2a0aadba6cb4caa4ab9d59c"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 5dbd0a9a-57cd-4733-8da9-15b6991d3a19
+      X-Runtime:
+      - '0.267687'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"users":[]}'
+    http_version:
+  recorded_at: Thu, 15 May 2014 09:55:43 GMT
+recorded_with: VCR 2.9.0

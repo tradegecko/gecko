@@ -15,8 +15,6 @@ module Gecko
     end
 
     class CurrencyAdapter < BaseAdapter
-      undef :count
-
       # Override plural_path to properly pluralize currency
       def plural_path
         'currencies'

@@ -11,8 +11,4 @@ class Gecko::Record::LocationAdapterTest < Minitest::Test
   def test_initializes_adapter
     assert_instance_of(Gecko::Record::LocationAdapter, @client.Location)
   end
-
-  def test_adapter_count
-    assert !adapter.respond_to?(:count)
-  end
 end

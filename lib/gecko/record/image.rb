@@ -33,7 +33,6 @@ module Gecko
     end
 
     class ImageAdapter < BaseAdapter
-      undef :count
     end
   end
 end

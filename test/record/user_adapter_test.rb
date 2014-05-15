@@ -12,8 +12,6 @@ class Gecko::Record::UserAdapterTest < Minitest::Test
     assert_instance_of(Gecko::Record::UserAdapter, @client.User)
   end
 
-  undef :test_adapter_count
-
   # Can't build users via API
   undef :test_build
   undef :test_build_with_attributes

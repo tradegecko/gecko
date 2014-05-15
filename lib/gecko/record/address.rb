@@ -24,8 +24,6 @@ module Gecko
     end
 
     class AddressAdapter < BaseAdapter
-      undef :count
-
       # Override plural_path to properly pluralize address
       def plural_path
         'addresses'

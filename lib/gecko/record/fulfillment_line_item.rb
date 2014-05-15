@@ -13,8 +13,6 @@ module Gecko
     end
 
     class FulfillmentLineItemAdapter < BaseAdapter
-      undef :count
-
       # Returns all cached records for testing
       #
       # @return [Array<Gecko::Record::FulfillmentLineItem>]

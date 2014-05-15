@@ -11,6 +11,4 @@ class Gecko::Record::CurrencyAdapterTest < Minitest::Test
   def test_initializes_adapter
     assert_instance_of(Gecko::Record::CurrencyAdapter, @client.Currency)
   end
-
-  undef :test_adapter_count
 end
