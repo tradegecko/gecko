@@ -1,5 +1,6 @@
 ## Unreleased
 
+- Add `Gecko::Record::User`
 - Add `Gecko::Record::Location`
 - Remove `@client.Account.build`
 - TradeGecko API updates - Variant prices + locations now returned as arrays

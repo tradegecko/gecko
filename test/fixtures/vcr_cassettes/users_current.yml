@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/users/current
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Gecko/0.0.3 OAuth2/0.9.3 Faraday/0.9.0 Ruby/2.0.0
+      Authorization:
+      - Bearer 25c0b5c0d3626a6fd33f6a65f73111eb894a6221280dff67f585b292ff6f24e0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - chrome=1
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"1410dc0cc91ff7c45ada89c8395fcfbd"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b808f39f-23a3-4bfa-884c-dea9bf397467
+      X-Runtime:
+      - '0.134456'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.0.0/2014-02-24)
+      Date:
+      - Thu, 15 May 2014 00:38:47 GMT
+      Content-Length:
+      - '599'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"user":{"id":13,"first_name":"Bradley","last_name":"Priest","email":"bradley@tradegecko.com","status":"active","location":null,"position":null,"phone_number":"1234567","mobile_phone":null,"last_sign_in_at":"2014-05-13T23:47:11.418Z","avatar_url":"https://tradegecko-development-images.s3.amazonaws.com/uploads/user/avatar/13/34b3e93704a811f2befad5a894e28072.jpeg","notification_email":true,"sales_report_email":true,"action_items_email":"weekly","billing_contact":true,"permissions":["read_reports","write_stocks","write_orders","write_products","write_settings","write_companies"],"account_id":4}}'
+    http_version: 
+  recorded_at: Thu, 15 May 2014 00:38:47 GMT
+recorded_with: VCR 2.9.0

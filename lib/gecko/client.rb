@@ -10,6 +10,8 @@ module Gecko
 
     record :Account
     record :Currency
+    record :Location
+    record :User
 
     record :Address
     record :Company
@@ -22,7 +24,6 @@ module Gecko
     record :Product
     record :Variant
     record :Image
-    record :Location
 
     # Return OAuth client
     #
