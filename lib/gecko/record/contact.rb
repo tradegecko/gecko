@@ -16,7 +16,7 @@ module Gecko
       attribute :position,     String
       attribute :phone,        String
 
-      attribute :status,       String
+      attribute :status,       String,  readonly: true
     end
 
     class ContactAdapter < BaseAdapter
