@@ -8,11 +8,13 @@ module Gecko
       attribute :description,  String
       attribute :product_type, String
       attribute :supplier,     String
-      attribute :status,       String
-      attribute :tags,         String
+      attribute :brand,        String
       attribute :opt1,         String
       attribute :opt2,         String
       attribute :opt3,         String
+      attribute :tags,         String
+
+      attribute :status,       String
 
       # attribute :image_url,    String,  readonly: true
       # attribute :quantity,     Integer, readonly: true
