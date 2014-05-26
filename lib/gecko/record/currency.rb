@@ -7,11 +7,10 @@ module Gecko
       attribute :name,      String
       attribute :rate,      BigDecimal
       attribute :symbol,    String
-
-      # attribute :separator, String
-      # attribute :delimiter, String
-      # attribute :precision, Integer
-      # attribute :format,    String
+      attribute :separator, String
+      attribute :delimiter, String
+      attribute :precision, Integer
+      attribute :format,    String
     end
 
     class CurrencyAdapter < BaseAdapter
