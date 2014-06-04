@@ -23,6 +23,8 @@ module Gecko
       attribute :tax_number,             String
 
       attribute :default_tax_rate,       BigDecimal
+      attribute :default_tax_type_id,    Integer
+
       attribute :default_discount_rate,  BigDecimal
 
       # belongs_to :default_price_type,   class_name: "PriceList"

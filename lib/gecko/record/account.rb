@@ -23,13 +23,16 @@ module Gecko
       attribute :quote_details,    String
 
       attribute :default_tax_rate, String
-      attribute :default_tax_type, String
+
+      attribute :default_tax_type_id, Integer
+
       attribute :tax_number_label, String
       attribute :tax_label,        String
 
       belongs_to :billing_contact,          class_name: "User"
       belongs_to :primary_location,         class_name: "Location"
       belongs_to :primary_billing_location, class_name: "Location"
+
       # belongs_to :default_currency, class_name: "Currency"
       # belongs_to :default_payment_term, class_name: "PaymentTerm"
       # belongs_to :default_purchase_order_price_type, class_name: "PriceList"
