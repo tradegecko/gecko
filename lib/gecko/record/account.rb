@@ -35,8 +35,8 @@ module Gecko
 
       # belongs_to :default_currency, class_name: "Currency"
       # belongs_to :default_payment_term, class_name: "PaymentTerm"
-      # belongs_to :default_purchase_order_price_type, class_name: "PriceList"
-      # belongs_to :default_order_price_type, class_name: "PriceList"
+      # belongs_to :default_purchase_order_price_list, class_name: "PriceList"
+      # belongs_to :default_order_price_list, class_name: "PriceList"
 
       # attribute :stock_level_warn, String
       # attribute :subscription_name,          String

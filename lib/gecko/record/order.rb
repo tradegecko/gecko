@@ -14,6 +14,7 @@ module Gecko
       belongs_to :assignee,             class_name: 'User'
       belongs_to :stock_location,       class_name: 'Location'
       belongs_to :currency
+      # belongs_to :default_price_list,   class_name: 'PriceList'
 
       attribute :order_number,          String
       attribute :phone_number,          String
@@ -31,6 +32,7 @@ module Gecko
       attribute :tax_override,          String,     readonly: true
       attribute :tax_label,             String,     readonly: true
       attribute :source_url,            String
+      attribute :document_url,          String,     readonly: true
       attribute :total,                 BigDecimal, readonly: true
 
       attribute :source_id,             String,     readonly: true
