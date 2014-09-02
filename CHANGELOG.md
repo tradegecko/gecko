@@ -1,5 +1,6 @@
 ## Unreleased
 
+- Add `Gecko::Record::Invoice` & `Gecko::Record::InvoiceLineItem`
 - Change pagination numbers to fetch from the headers instead of the metadata object
 - Add `Gecko::Record::Contact`
 - Add `Gecko::Record::User`

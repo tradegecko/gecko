@@ -17,10 +17,12 @@ module Gecko
     record :Company
     record :Contact
 
-    record :Fulfillment
-    record :FulfillmentLineItem
     record :Order
     record :OrderLineItem
+    record :Fulfillment
+    record :FulfillmentLineItem
+    record :Invoice
+    record :InvoiceLineItem
 
     record :Product
     record :Variant
