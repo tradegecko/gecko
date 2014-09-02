@@ -1,4 +1,3 @@
-
 require 'active_support/inflector'
 class Generate < Thor
   include Thor::Actions

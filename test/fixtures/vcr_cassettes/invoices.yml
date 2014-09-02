@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/invoices?limit=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Gecko/0.0.3 OAuth2/1.0.0 Faraday/0.9.0 Ruby/2.0.0
+      Authorization:
+      - Bearer e6d789de2b19273c9f42fb7c050022297ea3a2330746e704c02ec7b015cd1084
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 Sep 2014 01:58:03 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Rate-Limit-Limit:
+      - '300'
+      X-Rate-Limit-Remaining:
+      - '294'
+      X-Rate-Limit-Reset:
+      - '1409623200'
+      X-Pagination:
+      - '{"total_records":58,"total_pages":12,"first_page":true,"last_page":false,"out_of_bounds":false,"offset":0}'
+      Link:
+      - <http://api.lvh.me:3000/ajax/invoices?limit=5&page=2>; rel="next", <http://api.lvh.me:3000/ajax/invoices?limit=5&page=12>;
+        rel="last"
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"1c698d4d8caf060daf3deac66060f2c2"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - d0bcd363-a036-49d4-8a15-44aed24bc95a
+      X-Runtime:
+      - '1.245256'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"invoice_line_items":[{"id":128,"quantity":"1.0","position":1,"invoice_id":65,"order_line_item_id":794,"ledger_account_id":1},{"id":129,"quantity":"1.0","position":2,"invoice_id":65,"order_line_item_id":795,"ledger_account_id":1},{"id":130,"quantity":"1.0","position":3,"invoice_id":65,"order_line_item_id":797,"ledger_account_id":1},{"id":131,"quantity":"1.0","position":4,"invoice_id":65,"order_line_item_id":796,"ledger_account_id":1},{"id":132,"quantity":"1.0","position":5,"invoice_id":65,"order_line_item_id":799,"ledger_account_id":1},{"id":133,"quantity":"1.0","position":6,"invoice_id":65,"order_line_item_id":798,"ledger_account_id":1},{"id":134,"quantity":"1.0","position":7,"invoice_id":65,"order_line_item_id":800,"ledger_account_id":1},{"id":135,"quantity":"1.0","position":8,"invoice_id":65,"order_line_item_id":801,"ledger_account_id":1},{"id":136,"quantity":"1.0","position":9,"invoice_id":65,"order_line_item_id":802,"ledger_account_id":1},{"id":137,"quantity":"1.0","position":10,"invoice_id":65,"order_line_item_id":803,"ledger_account_id":1},{"id":138,"quantity":"1.0","position":11,"invoice_id":65,"order_line_item_id":804,"ledger_account_id":1},{"id":139,"quantity":"1.0","position":12,"invoice_id":65,"order_line_item_id":805,"ledger_account_id":1},{"id":140,"quantity":"1.0","position":13,"invoice_id":65,"order_line_item_id":806,"ledger_account_id":1},{"id":141,"quantity":"1.0","position":14,"invoice_id":65,"order_line_item_id":807,"ledger_account_id":1},{"id":142,"quantity":"1.0","position":15,"invoice_id":65,"order_line_item_id":808,"ledger_account_id":1},{"id":143,"quantity":"1.0","position":16,"invoice_id":65,"order_line_item_id":810,"ledger_account_id":1},{"id":144,"quantity":"1.0","position":17,"invoice_id":65,"order_line_item_id":809,"ledger_account_id":1},{"id":145,"quantity":"1.0","position":18,"invoice_id":65,"order_line_item_id":811,"ledger_account_id":1},{"id":146,"quantity":"1.0","position":19,"invoice_id":65,"order_line_item_id":812,"ledger_account_id":1},{"id":147,"quantity":"1.0","position":20,"invoice_id":65,"order_line_item_id":813,"ledger_account_id":1},{"id":148,"quantity":"1.0","position":21,"invoice_id":65,"order_line_item_id":814,"ledger_account_id":1},{"id":149,"quantity":"1.0","position":22,"invoice_id":65,"order_line_item_id":815,"ledger_account_id":1},{"id":150,"quantity":"1.0","position":23,"invoice_id":65,"order_line_item_id":816,"ledger_account_id":1},{"id":151,"quantity":"1.0","position":24,"invoice_id":65,"order_line_item_id":817,"ledger_account_id":1},{"id":152,"quantity":"1.0","position":25,"invoice_id":65,"order_line_item_id":818,"ledger_account_id":1},{"id":153,"quantity":"1.0","position":26,"invoice_id":65,"order_line_item_id":819,"ledger_account_id":1},{"id":154,"quantity":"1.0","position":27,"invoice_id":65,"order_line_item_id":820,"ledger_account_id":1},{"id":155,"quantity":"1.0","position":28,"invoice_id":65,"order_line_item_id":821,"ledger_account_id":1},{"id":156,"quantity":"1.0","position":29,"invoice_id":65,"order_line_item_id":822,"ledger_account_id":1},{"id":157,"quantity":"1.0","position":30,"invoice_id":65,"order_line_item_id":823,"ledger_account_id":1},{"id":158,"quantity":"1.0","position":31,"invoice_id":65,"order_line_item_id":824,"ledger_account_id":1},{"id":159,"quantity":"1.0","position":32,"invoice_id":65,"order_line_item_id":825,"ledger_account_id":1},{"id":160,"quantity":"1.0","position":33,"invoice_id":65,"order_line_item_id":826,"ledger_account_id":1},{"id":161,"quantity":"1.0","position":34,"invoice_id":65,"order_line_item_id":827,"ledger_account_id":1},{"id":162,"quantity":"1.0","position":35,"invoice_id":65,"order_line_item_id":828,"ledger_account_id":1},{"id":163,"quantity":"1.0","position":36,"invoice_id":65,"order_line_item_id":829,"ledger_account_id":1},{"id":164,"quantity":"1.0","position":37,"invoice_id":65,"order_line_item_id":830,"ledger_account_id":1},{"id":165,"quantity":"1.0","position":38,"invoice_id":65,"order_line_item_id":831,"ledger_account_id":1},{"id":166,"quantity":"1.0","position":39,"invoice_id":65,"order_line_item_id":832,"ledger_account_id":1},{"id":167,"quantity":"1.0","position":40,"invoice_id":65,"order_line_item_id":833,"ledger_account_id":1},{"id":168,"quantity":"1.0","position":41,"invoice_id":65,"order_line_item_id":834,"ledger_account_id":1},{"id":118,"quantity":"1.0","position":1,"invoice_id":64,"order_line_item_id":960,"ledger_account_id":null},{"id":120,"quantity":"1.0","position":3,"invoice_id":64,"order_line_item_id":961,"ledger_account_id":null},{"id":127,"quantity":"1.0","position":10,"invoice_id":64,"order_line_item_id":969,"ledger_account_id":null},{"id":117,"quantity":"1.0","position":0,"invoice_id":63,"order_line_item_id":233,"ledger_account_id":null},{"id":116,"quantity":"1.0","position":0,"invoice_id":62,"order_line_item_id":232,"ledger_account_id":null},{"id":115,"quantity":"1.0","position":0,"invoice_id":61,"order_line_item_id":231,"ledger_account_id":null}],"invoices":[{"id":65,"document_url":"http://api.lvh.me:3000/d/4Y0iA-QV1Kw1bWlDY12d1Jum","order_id":126,"shipping_address_id":347,"billing_address_id":347,"payment_term_id":3,"invoice_number":"GHINV-0065","invoiced_at":"2014-08-01","due_at":"2014-08-31","notes":null,"created_at":"2014-08-01T03:11:52.042Z","updated_at":"2014-08-01T03:11:52.042Z","exchange_rate":"1.0","destination_url":null,"invoice_line_item_ids":[128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168]},{"id":64,"document_url":"http://api.lvh.me:3000/d/5T3WulUpNKTy677N6QAEs6gi","order_id":136,"shipping_address_id":311,"billing_address_id":311,"payment_term_id":3,"invoice_number":"GHINV-0064","invoiced_at":"2014-07-09","due_at":"2014-08-08","notes":null,"created_at":"2014-07-09T03:27:06.085Z","updated_at":"2014-07-09T03:27:06.085Z","exchange_rate":"1.0","destination_url":null,"invoice_line_item_ids":[118,120,127]},{"id":63,"document_url":"http://api.lvh.me:3000/d/Vc6H9McQD8AxOaE2CecsqxnM","order_id":112,"shipping_address_id":336,"billing_address_id":336,"payment_term_id":3,"invoice_number":"GHINV-0063","invoiced_at":"2014-06-12","due_at":"2014-07-12","notes":null,"created_at":"2014-06-12T08:12:01.375Z","updated_at":"2014-06-12T08:12:01.375Z","exchange_rate":"2.0","destination_url":"https://go.xero.com/AccountsReceivable/View.aspx?InvoiceID=861a580e-4391-40a4-ad96-15da08da0687","invoice_line_item_ids":[117]},{"id":62,"document_url":"http://api.lvh.me:3000/d/dVbTdJyg1FqqmlYFI7OT1_Bk","order_id":111,"shipping_address_id":336,"billing_address_id":336,"payment_term_id":3,"invoice_number":"GHINV-0062","invoiced_at":"2014-06-12","due_at":"2014-07-12","notes":null,"created_at":"2014-06-12T08:10:33.059Z","updated_at":"2014-06-12T08:10:33.059Z","exchange_rate":"1.0","destination_url":"https://go.xero.com/AccountsReceivable/View.aspx?InvoiceID=1e6be457-4d4a-4c78-abf7-e79190d4b285","invoice_line_item_ids":[116]},{"id":61,"document_url":"http://api.lvh.me:3000/d/IGVkF0v75J_n9VLvLc9vCwBe","order_id":110,"shipping_address_id":336,"billing_address_id":336,"payment_term_id":3,"invoice_number":"GHINV-0061","invoiced_at":"2014-06-12","due_at":"2014-07-12","notes":null,"created_at":"2014-06-12T08:09:59.664Z","updated_at":"2014-06-12T08:09:59.664Z","exchange_rate":"0.9","destination_url":"https://go.xero.com/AccountsReceivable/View.aspx?InvoiceID=97993caa-0fc4-45eb-bc5f-2748157b30de","invoice_line_item_ids":[115]}]}'
+    http_version: 
+  recorded_at: Tue, 02 Sep 2014 01:58:03 GMT
+recorded_with: VCR 2.9.2

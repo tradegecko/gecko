@@ -21,6 +21,7 @@ module Gecko
     record :FulfillmentLineItem
     record :Order
     record :OrderLineItem
+    record :Invoice
 
     record :Product
     record :Variant

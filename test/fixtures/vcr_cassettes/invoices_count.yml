@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/invoices?limit=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Gecko/0.0.3 OAuth2/1.0.0 Faraday/0.9.0 Ruby/2.0.0
+      Authorization:
+      - Bearer e6d789de2b19273c9f42fb7c050022297ea3a2330746e704c02ec7b015cd1084
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 Sep 2014 01:58:02 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Rate-Limit-Limit:
+      - '300'
+      X-Rate-Limit-Remaining:
+      - '295'
+      X-Rate-Limit-Reset:
+      - '1409623200'
+      X-Pagination:
+      - '{"total_records":58,"total_pages":1,"first_page":true,"last_page":true,"out_of_bounds":false,"offset":0}'
+      Link:
+      - <http://api.lvh.me:3000/ajax/invoices?limit=0&page=1>; rel="last"
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"33893aed6ce6dc420d9e398e859c61af"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a8331dff-8da2-4c46-bc6d-db9a040a22df
+      X-Runtime:
+      - '0.406148'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"invoices":[]}'
+    http_version: 
+  recorded_at: Tue, 02 Sep 2014 01:58:02 GMT
+recorded_with: VCR 2.9.2
