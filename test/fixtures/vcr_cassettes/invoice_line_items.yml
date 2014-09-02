@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/invoice_line_items?limit=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Gecko/0.0.3 OAuth2/1.0.0 Faraday/0.9.0 Ruby/2.0.0
+      Authorization:
+      - Bearer e6d789de2b19273c9f42fb7c050022297ea3a2330746e704c02ec7b015cd1084
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 Sep 2014 02:09:34 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Rate-Limit-Limit:
+      - '300'
+      X-Rate-Limit-Remaining:
+      - '299'
+      X-Rate-Limit-Reset:
+      - '1409623800'
+      X-Pagination:
+      - '{"total_records":159,"total_pages":32,"first_page":true,"last_page":false,"out_of_bounds":false,"offset":0}'
+      Link:
+      - <http://api.lvh.me:3000/ajax/invoice_line_items?limit=5&page=2>; rel="next",
+        <http://api.lvh.me:3000/ajax/invoice_line_items?limit=5&page=32>; rel="last"
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"e7dcab514349a0a7a2467061f1603650"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ba342f2b-2ad0-4fd3-aaf0-ca288d0b2393
+      X-Runtime:
+      - '0.145349'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"invoice_line_items":[{"id":117,"quantity":"1.0","position":0,"invoice_id":63,"order_line_item_id":233,"ledger_account_id":null},{"id":116,"quantity":"1.0","position":0,"invoice_id":62,"order_line_item_id":232,"ledger_account_id":null},{"id":115,"quantity":"1.0","position":0,"invoice_id":61,"order_line_item_id":231,"ledger_account_id":null},{"id":114,"quantity":"1.0","position":0,"invoice_id":60,"order_line_item_id":230,"ledger_account_id":null},{"id":113,"quantity":"1.0","position":0,"invoice_id":59,"order_line_item_id":229,"ledger_account_id":null}]}'
+    http_version: 
+  recorded_at: Tue, 02 Sep 2014 02:09:34 GMT
+recorded_with: VCR 2.9.2
