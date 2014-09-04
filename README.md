@@ -11,7 +11,7 @@ If you are unfamiliar with the TradeGecko API, you can read the documentation lo
 
 Add this line to your application's Gemfile:
 
-    gem 'gecko'
+    gem 'gecko', github: 'tradegecko/gecko'
 
 And then execute:
 
