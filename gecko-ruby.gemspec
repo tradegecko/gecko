@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'gecko/version'
 
 Gem::Specification.new do |spec|
-  spec.name = 'gecko'
+  spec.name = 'gecko-ruby'
   spec.version = Gecko::VERSION
   spec.authors = ["Bradley Priest"]
   spec.email = ['bradley@tradegecko.com']

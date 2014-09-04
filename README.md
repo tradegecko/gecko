@@ -11,7 +11,7 @@ If you are unfamiliar with the TradeGecko API, you can read the documentation lo
 
 Add this line to your application's Gemfile:
 
-    gem 'gecko', github: 'tradegecko/gecko'
+    gem 'gecko-ruby', '~> 0.0.4'
 
 And then execute:
 
@@ -19,7 +19,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install gecko
+    $ gem install gecko-ruby
 
 ## Basic Usage
 

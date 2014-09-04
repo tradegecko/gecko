@@ -13,7 +13,7 @@ desc "Open an irb session with Gecko"
 task :console do
   require 'irb'
   require 'irb/completion'
-  require 'gecko'
+  require 'gecko-ruby'
   ARGV.clear
   IRB.start
 end

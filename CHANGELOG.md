@@ -1,5 +1,6 @@
 ## Unreleased
 
+- Renamed gem so we can publish it on RubyGems.org
 - Add `Gecko::Record::TaxType`
 - Add `Gecko::Record::PurchaseOrder` and `Gecko::Record::PurchaseOrderLineItem`
 - Add `Gecko::Record::Invoice` & `Gecko::Record::InvoiceLineItem`
