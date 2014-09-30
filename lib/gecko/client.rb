@@ -29,6 +29,7 @@ module Gecko
     record :Image
     record :PurchaseOrder
     record :PurchaseOrderLineItem
+    record :TaxType
 
     # Return OAuth client
     #
