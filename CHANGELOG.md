@@ -1,5 +1,6 @@
 ## Unreleased
 
+- Add `Gecko::Record::TaxType`
 - Add `Gecko::Record::PurchaseOrder` and `Gecko::Record::PurchaseOrderLineItem`
 - Add `Gecko::Record::Invoice` & `Gecko::Record::InvoiceLineItem`
 - Change pagination numbers to fetch from the headers instead of the metadata object
