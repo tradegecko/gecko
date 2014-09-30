@@ -8,34 +8,32 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Gecko/0.0.3 OAuth2/0.9.3 Faraday/0.9.0 Ruby/2.0.0
+      - Gecko/0.0.3 OAuth2/1.0.0 Faraday/0.9.0 Ruby/2.0.0
       Authorization:
-      - Bearer 7d3ed5d622e3becc591f15132f07bb52f05fcbd899f6d9dce60409c0e2c712e5
+      - Bearer d7ebf96f5550d6ffc05474c4da3ce9d8e408ca2540ee0bbcb9e2140d47e64963
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - '*/*'
+      - "*/*"
   response:
     status:
       code: 200
-      message: OK
+      message: 'OK '
     headers:
-      Date:
-      - Thu, 15 May 2014 09:55:43 GMT
-      Status:
-      - 200 OK
-      Connection:
-      - close
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
-      X-Ua-Compatible:
-      - chrome=1
+      X-Rate-Limit-Limit:
+      - '300'
+      X-Rate-Limit-Remaining:
+      - '299'
+      X-Rate-Limit-Reset:
+      - '1412079600'
       X-Pagination:
-      - '{"total_records":1251,"total_pages":1,"first_page":true,"last_page":true,"out_of_bounds":false,"offset":0}'
+      - '{"total_records":2367,"total_pages":1,"first_page":true,"last_page":true,"out_of_bounds":false,"offset":0}'
       Link:
       - <http://api.lvh.me:3000/ajax/order_line_items?limit=0&page=1>; rel="last"
       Content-Type:
@@ -45,14 +43,20 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 12c72b88-6055-4392-a3ca-b5bd2c0d0b6f
+      - 9e5b6934-bd93-480c-b27c-d39158928070
       X-Runtime:
-      - '0.613382'
-      Transfer-Encoding:
-      - chunked
+      - '0.068132'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.0.0/2014-05-08)
+      Date:
+      - Tue, 30 Sep 2014 12:19:01 GMT
+      Content-Length:
+      - '23'
+      Connection:
+      - Keep-Alive
     body:
       encoding: UTF-8
       string: '{"order_line_items":[]}'
     http_version: 
-  recorded_at: Thu, 15 May 2014 09:55:43 GMT
-recorded_with: VCR 2.9.0
+  recorded_at: Tue, 30 Sep 2014 12:19:01 GMT
+recorded_with: VCR 2.9.2
