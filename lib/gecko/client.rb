@@ -28,6 +28,7 @@ module Gecko
     record :Variant
     record :Image
     record :PurchaseOrder
+    record :PurchaseOrderLineItem
 
     # Return OAuth client
     #
