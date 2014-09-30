@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/purchase_orders?limit=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Gecko/0.0.3 OAuth2/1.0.0 Faraday/0.9.0 Ruby/2.0.0
+      Authorization:
+      - Bearer d7ebf96f5550d6ffc05474c4da3ce9d8e408ca2540ee0bbcb9e2140d47e64963
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 30 Sep 2014 11:37:40 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Rate-Limit-Limit:
+      - '300'
+      X-Rate-Limit-Remaining:
+      - '294'
+      X-Rate-Limit-Reset:
+      - '1412077200'
+      X-Pagination:
+      - '{"total_records":11,"total_pages":3,"first_page":true,"last_page":false,"out_of_bounds":false,"offset":0}'
+      Link:
+      - <http://api.lvh.me:3000/ajax/purchase_orders?limit=5&page=2>; rel="next",
+        <http://api.lvh.me:3000/ajax/purchase_orders?limit=5&page=3>; rel="last"
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"bbf0796169c05fe999b7900cd40d7425"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 341f9a44-0cd7-4c33-88cd-1da49a7376f1
+      X-Runtime:
+      - '0.307226'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"purchase_orders":[{"id":28381,"document_url":"http://api.lvh.me:3000/d/-QGxZnwxiGsx19hvWW3wpzN4","company_id":633468,"supplier_address_id":947745,"stock_location_id":159,"billing_address_id":159,"currency_id":4,"status":"active","procurement_status":"unprocured","order_number":"PO0435","reference_number":null,"notes":"webinar","email":null,"tax_treatment":"exclusive","created_at":"2014-09-30T11:37:19.501Z","updated_at":"2014-09-30T11:37:24.218Z","due_at":"2014-10-14","default_price_list_id":"buy","destination_url":null,"total":"232311.62","cached_quantity":"10000.0","cached_total":"232311.62","default_price_type_id":"buy","tax_type":"exclusive","purchase_order_line_item_ids":[177770,177772,177771,177773],"procurement_ids":[]},{"id":28380,"document_url":"http://api.lvh.me:3000/d/3TEvZFHksd2QC_c9Jp2LVPYZ","company_id":633468,"supplier_address_id":947745,"stock_location_id":159,"billing_address_id":159,"currency_id":4,"status":"active","procurement_status":"unprocured","order_number":"PO0434","reference_number":null,"notes":"webinar","email":null,"tax_treatment":"exclusive","created_at":"2014-09-30T11:35:26.417Z","updated_at":"2014-09-30T11:36:41.571Z","due_at":"2014-10-14","default_price_list_id":"buy","destination_url":null,"total":"232311.62","cached_quantity":"10000.0","cached_total":"232311.62","default_price_type_id":"buy","tax_type":"exclusive","purchase_order_line_item_ids":[177769,177767,177766,177768],"procurement_ids":[]},{"id":28379,"document_url":"http://api.lvh.me:3000/d/sJkFWQ7XrhfLvAhyW292Zw55","company_id":633468,"supplier_address_id":947745,"stock_location_id":159,"billing_address_id":159,"currency_id":4,"status":"active","procurement_status":"unprocured","order_number":"PO0433","reference_number":null,"notes":"webinar","email":null,"tax_treatment":"exclusive","created_at":"2014-09-30T11:35:18.776Z","updated_at":"2014-09-30T11:35:22.324Z","due_at":"2014-10-14","default_price_list_id":"buy","destination_url":null,"total":"232311.62","cached_quantity":"10000.0","cached_total":"232311.62","default_price_type_id":"buy","tax_type":"exclusive","purchase_order_line_item_ids":[177764,177763,177762,177765],"procurement_ids":[]},{"id":28378,"document_url":"http://api.lvh.me:3000/d/icf2HDvwvuNnmSy93JDoy8oG","company_id":633461,"supplier_address_id":947739,"stock_location_id":159,"billing_address_id":159,"currency_id":4,"status":"active","procurement_status":"unprocured","order_number":"PO0432","reference_number":null,"notes":null,"email":null,"tax_treatment":"exclusive","created_at":"2014-09-30T11:34:54.829Z","updated_at":"2014-09-30T11:35:03.149Z","due_at":"2014-10-14","default_price_list_id":"buy","destination_url":null,"total":"144.02","cached_quantity":"2.0","cached_total":"144.02","default_price_type_id":"buy","tax_type":"exclusive","purchase_order_line_item_ids":[177760,177761],"procurement_ids":[]},{"id":28377,"document_url":"http://api.lvh.me:3000/d/zY0d9IWlFZA0oBpJOUsVR2ad","company_id":633461,"supplier_address_id":947739,"stock_location_id":159,"billing_address_id":159,"currency_id":4,"status":"active","procurement_status":"unprocured","order_number":"PO0431","reference_number":null,"notes":null,"email":null,"tax_treatment":"exclusive","created_at":"2014-09-30T11:34:48.419Z","updated_at":"2014-09-30T11:34:51.749Z","due_at":"2014-10-14","default_price_list_id":"buy","destination_url":null,"total":"144.02","cached_quantity":"2.0","cached_total":"144.02","default_price_type_id":"buy","tax_type":"exclusive","purchase_order_line_item_ids":[177758,177759],"procurement_ids":[]}]}'
+    http_version: 
+  recorded_at: Tue, 30 Sep 2014 11:37:40 GMT
+recorded_with: VCR 2.9.2

@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/purchase_order_line_items?limit=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Gecko/0.0.3 OAuth2/1.0.0 Faraday/0.9.0 Ruby/2.0.0
+      Authorization:
+      - Bearer d7ebf96f5550d6ffc05474c4da3ce9d8e408ca2540ee0bbcb9e2140d47e64963
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 30 Sep 2014 11:38:37 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Rate-Limit-Limit:
+      - '300'
+      X-Rate-Limit-Remaining:
+      - '292'
+      X-Rate-Limit-Reset:
+      - '1412077200'
+      X-Pagination:
+      - '{"total_records":1848,"total_pages":1,"first_page":true,"last_page":true,"out_of_bounds":false,"offset":0}'
+      Link:
+      - <http://api.lvh.me:3000/ajax/purchase_order_line_items?limit=0&page=1>; rel="last"
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"2c5b679996e7d0df8708181e6cdacd3a"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 5e11d201-e0a0-4dd1-aca8-245337ac691e
+      X-Runtime:
+      - '0.137388'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"purchase_order_line_items":[]}'
+    http_version: 
+  recorded_at: Tue, 30 Sep 2014 11:38:37 GMT
+recorded_with: VCR 2.9.2
