@@ -8,6 +8,7 @@ module Gecko
         attribute :location_id,     Integer
         attribute :committed_stock, BigDecimal
         attribute :stock_on_hand,   BigDecimal
+        attribute :bin_location,    String
       end
 
       class VariantPrice
@@ -81,12 +82,12 @@ module Gecko
       end
 
       # attribute :is_online
-      # attribute :online_id
 
       ## DEPRECATED
       # attribute :prices,                 Hash[String => BigDecimal],  readonly: true
       # attribute :stock_levels,           Hash[Integer => BigDecimal], readonly: true
       # attribute :committed_stock_levels, Hash[Integer => BigDecimal], readonly: true
+      # attribute :online_id
     end
 
     class VariantAdapter < BaseAdapter
