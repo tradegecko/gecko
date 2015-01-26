@@ -21,6 +21,12 @@ module SharedAdapterExamples
     end
   end
 
+  def test_adapter_size
+    VCR.use_cassette(plural_name + '_count') do
+      assert(adapter.size > 10)
+    end
+  end
+
   def test_adapter_uses_identity_map
     VCR.use_cassette(plural_name) do
       collection = adapter.where(limit: 5)
