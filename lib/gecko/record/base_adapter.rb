@@ -115,17 +115,30 @@ module Gecko
         parse_records(parsed_response)
       end
 
-      # Return total count for a record type. Fetched from the metadata
+      # Returns the total count for a record type via API request.
       #
       # @example
       #   client.Product.count
       #
-      # @return [Integer] Total record count
+      # @return [Integer] Total number of available records
       #
       # @api public
       def count
         self.where(limit: 0)
         @pagination['total_records']
+      end
+
+      # Returns the total count for a record type. Reads from the last request or
+      # makes a new request if not available.
+      #
+      # @example
+      #   client.Product.size
+      #
+      # @return [Integer] Total number of available records
+      #
+      # @api public
+      def size
+        (@pagination && @pagination['total_records']) || count
       end
 
       # Fetch a record via API, regardless of whether it is already in identity map.

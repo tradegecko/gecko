@@ -1,5 +1,7 @@
 ## Unreleased
+- Add size to base adapter
 
+## 0.0.4 (2015-01-09)
 - Renamed gem so we can publish it on RubyGems.org
 - Add `Gecko::Record::TaxType`
 - Add `Gecko::Record::PurchaseOrder` and `Gecko::Record::PurchaseOrderLineItem`

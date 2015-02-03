@@ -3,6 +3,7 @@ class Gecko::Record::AccountAdapterTest < Minitest::Test
   include TestingAdapter
   include SharedAdapterExamples
   undef :test_adapter_count
+  undef :test_adapter_size
 
   # Can't build accounts via API
   undef :test_build
