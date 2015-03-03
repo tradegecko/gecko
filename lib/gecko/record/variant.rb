@@ -5,6 +5,7 @@ module Gecko
     class Variant < Base
       class VariantLocation
         include Virtus.model
+        include Gecko::Helpers::SerializationHelper
         attribute :location_id,     Integer
         attribute :committed_stock, BigDecimal
         attribute :stock_on_hand,   BigDecimal
@@ -13,6 +14,7 @@ module Gecko
 
       class VariantPrice
         include Virtus.model
+        include Gecko::Helpers::SerializationHelper
         attribute :price_list_id,    String
         attribute :value,            BigDecimal
       end
