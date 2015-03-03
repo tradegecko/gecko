@@ -16,8 +16,8 @@ module Gecko
 
       # URL for image
       #
-      # @param [Symbol] :size (:full) The image size, currently only :full
-      #   and :thumbnail supported
+      # @param [Symbol] :size (:full) The image size, currently only :full,
+      #  :medium and :thumbnail supported
       #
       # @return [String]
       #

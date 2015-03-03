@@ -7,3 +7,7 @@ SpaceAroundEqualsInParameterDefault:
 
 IndentHash:
   Enabled: false
+
+# We like to line up the attribute definitions
+ExtraSpacing:
+  Enabled: false
