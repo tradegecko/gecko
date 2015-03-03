@@ -3,7 +3,8 @@ require 'gecko/record/base'
 module Gecko
   module Record
     class Company < Base
-      belongs_to :assignee, class_name: 'User'
+      belongs_to :assignee,         class_name: "User"
+      belongs_to :default_tax_type, class_name: "TaxType"
 
       has_many :addresses
       has_many :contacts
@@ -23,8 +24,6 @@ module Gecko
       attribute :tax_number,             String
 
       attribute :default_tax_rate,       BigDecimal
-      attribute :default_tax_type_id,    Integer
-
       attribute :default_discount_rate,  BigDecimal
 
       # belongs_to :default_price_list,   class_name: "PriceList"
