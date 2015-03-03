@@ -1,30 +1,78 @@
 require 'gecko'
+require 'test_helper'
 
 class Gecko::Helpers::SerializationHelperTest < Minitest::Test
-  def setup
-    @klass = Class.new(Gecko::Record::Base) do
-      attribute :name,   String
-      attribute :secret, String, readonly: true
+  Wodget = Class.new(Gecko::Record::Base) do
+    attribute :name, String
 
-      def root
-        :widget
-      end
+    def root
+      :wodget
     end
-    @client = Gecko::Client.new('ABC', 'DEF')
   end
 
-  def test_serializable_hash
-    record = @klass.new(@client, name: "Gecko", secret: "Iguana")
-    assert_equal({name: "Gecko"}, record.serializable_hash)
+  Widget = Class.new(Gecko::Record::Base) do
+    attribute :name,       String
+    attribute :secret,     String,       readonly: true
+    attribute :score,      BigDecimal
+    attribute :started_on, Date
+    attribute :started_at, DateTime
+    attribute :wodgets,    Array[Wodget]
+
+    def root
+      :widget
+    end
+  end
+
+  let(:record) do
+    Widget.new(@client, {
+      name:       "Gecko",
+      secret:     "Iguana",
+      score:      1.234,
+      started_at: DateTime.now,
+      started_on: Date.today,
+      wodgets:    [Wodget.new(@client, name: "Hi")]
+    })
+  end
+
+  def setup
+    Timecop.freeze
+    @client = Gecko::Client.new("ABC", "DEF")
+  end
+
+  def teardown
+    Timecop.return
   end
 
   def test_as_json
-    record = @klass.new(@client, name: "Gecko", secret: "Iguana")
-    assert_equal({widget: {name: "Gecko"}}, record.as_json)
+    assert_equal({widget: record.serializable_hash}, record.as_json)
+  end
+
+  def test_serializable_hash
+    assert_equal(serialized_record, record.serializable_hash)
+  end
+
+  def test_serializes_big_decimal_in_math_notation
+    assert_equal("1.234", record.serializable_hash[:score])
+  end
+
+  def test_serializes_arrays
+    assert_equal([{name: "Hi"}], record.serializable_hash[:wodgets])
   end
 
   def test_root_key
     record = Gecko::Record::OrderLineItem.new(@client, @json)
     assert_equal(:order_line_item, record.root)
+  end
+
+private
+
+  def serialized_record
+    {
+      name:       "Gecko",
+      score:      "1.234",
+      started_on: Date.today,
+      started_at: DateTime.now,
+      wodgets:    [{name: "Hi"}]
+    }
   end
 end

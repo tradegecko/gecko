@@ -4,6 +4,7 @@ require 'minitest/pride'
 require 'mocha/mini_test'
 require 'vcr'
 require 'webmock/minitest'
+require 'timecop'
 
 require 'support/let'
 require 'support/shared_adapter_examples'

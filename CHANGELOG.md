@@ -1,5 +1,6 @@
 ## Unreleased
 - Add size to base adapter
+- Update serialization_helper to support serializing arrays correctly
 
 ## 0.0.4 (2015-01-09)
 - Renamed gem so we can publish it on RubyGems.org

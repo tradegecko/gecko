@@ -33,7 +33,7 @@ module Gecko
         attribute_hash
       end
 
-      # Serialize a single attribute
+      # Store the serialized representation of a single attribute
       #
       # @param [Hash] attribute_hash Serialized record being iterated over
       # @param [Virtus::Attribute] attribute The attribute being serialized
@@ -42,7 +42,29 @@ module Gecko
       #
       # @api private
       def serialize_attribute(attribute_hash, attribute)
-        attribute_hash[attribute.name] = attributes[attribute.name]
+        attribute_hash[attribute.name] = _serialize(attributes[attribute.name])
+      end
+
+      # Serialize an attribute
+      #
+      # @param [Object] serialized The attribute to serialize
+      #
+      # @return [String]
+      #
+      # @api private
+      def _serialize(serialized)
+        if serialized.respond_to?(:serializable_hash)
+          serialized.serializable_hash
+        else
+          case serialized
+          when Array
+            serialized.map { |attr| _serialize(attr) }
+          when BigDecimal
+            serialized.to_s("F")
+          else
+            serialized
+          end
+        end
       end
 
       # Return JSON root key for a record
