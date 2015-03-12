@@ -26,17 +26,6 @@ module Gecko
     end
 
     class FulfillmentAdapter < BaseAdapter
-      # Parse sideloaded FulfillmentLineItems into the Identity map
-      # instead of refetching them
-      def parse_records(json)
-        records = super
-        parse_line_items(json) if json['fulfillment_line_items']
-        records
-      end
-
-      def parse_line_items(json)
-        @client.FulfillmentLineItem.parse_records(json)
-      end
     end
   end
 end

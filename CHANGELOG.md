@@ -1,5 +1,6 @@
 ## 0.0.7 (2015-03-17)
 - Fix issue with Order#tax_override
+- Support sideloaded records without a hack
 
 ## 0.0.6 (2015-03-17)
 - Add `Gecko::Record::PaymentTerm`

@@ -146,6 +146,8 @@ module Gecko
       # @example
       #   client.Product.fetch(12)
       #
+      # @param [Integer] id ID of record
+      #
       # @return [Gecko::Record::Base] if a record was found
       # @return [nil] if no record was found
       #
@@ -170,6 +172,7 @@ module Gecko
       #
       # @api private
       def parse_records(json)
+        parse_sideloaded_records(json)
         extract_collection(json).map do |record_json|
           instantiate_and_register_record(record_json)
         end
@@ -227,6 +230,18 @@ module Gecko
         end
       end
 
+      # Instantiates a record from it's JSON representation and registers
+      # it into the identity map
+      #
+      # @return [Gecko::Record::Base]
+      #
+      # @api private
+      def instantiate_and_register_record(record_json)
+        record = model_class.new(@client, record_json)
+        register_record(record)
+        record
+      end
+
     private
 
       # Returns the json key for a record adapter
@@ -260,18 +275,6 @@ module Gecko
       # @api private
       def model_class
         Gecko::Record.const_get(@model_name)
-      end
-
-      # Instantiates a record from it's JSON representation and registers
-      # it into the identity map
-      #
-      # @return [Gecko::Record::Base]
-      #
-      # @api private
-      def instantiate_and_register_record(record_json)
-        record = model_class.new(@client, record_json)
-        register_record(record)
-        record
       end
 
       # Registers a record into the identity map
@@ -337,6 +340,24 @@ module Gecko
       # @api private
       def set_pagination(headers)
         @pagination = JSON.parse(headers["x-pagination"]) if headers["x-pagination"]
+      end
+
+      # Parse and instantiate sideloaded records
+      #
+      # @api private
+      def parse_sideloaded_records(json)
+        json.each do |record_type, records|
+          next if record_type == "meta"
+          next if record_type == @model_name.to_s
+
+          record_class = record_type.singularize.classify
+          next unless Gecko::Record.const_defined?(record_class)
+          adapter = @client.adapter_for(record_class)
+
+          records.each do |record_json|
+            adapter.instantiate_and_register_record(record_json)
+          end
+        end
       end
 
       # Makes a request to the API.

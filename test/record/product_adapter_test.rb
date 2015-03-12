@@ -3,10 +3,12 @@ require 'test_helper'
 class Gecko::Record::ProductAdapterTest < Minitest::Test
   include TestingAdapter
   include SharedAdapterExamples
+  include SharedSideloadedDataParsingExamples
 
   let(:adapter)       { @client.Product }
   let(:plural_name)   { 'products' }
   let(:record_class)  { Gecko::Record::Product }
+  let(:children)      { ["variants"] }
 
   def test_initializes_adapter
     assert_instance_of(Gecko::Record::ProductAdapter, @client.Product)
