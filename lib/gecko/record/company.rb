@@ -5,6 +5,7 @@ module Gecko
     class Company < Base
       belongs_to :assignee,         class_name: "User"
       belongs_to :default_tax_type, class_name: "TaxType"
+      belongs_to :default_payment_term, class_name: "PaymentTerm"
 
       has_many :addresses
       has_many :contacts
@@ -27,7 +28,6 @@ module Gecko
       attribute :default_discount_rate,  BigDecimal
 
       # belongs_to :default_price_list,   class_name: "PriceList"
-      # belongs_to :default_payment_term, class_name: "PaymentTerm"
     end
 
     class CompanyAdapter < BaseAdapter

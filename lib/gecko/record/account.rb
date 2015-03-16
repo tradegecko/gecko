@@ -32,9 +32,9 @@ module Gecko
       belongs_to :primary_location,         class_name: "Location"
       belongs_to :primary_billing_location, class_name: "Location"
       belongs_to :default_tax_type,         class_name: "TaxType"
+      belongs_to :default_payment_term,     class_name: "PaymentTerm"
 
       # belongs_to :default_currency, class_name: "Currency"
-      # belongs_to :default_payment_term, class_name: "PaymentTerm"
       # belongs_to :default_purchase_order_price_list, class_name: "PriceList"
       # belongs_to :default_order_price_list, class_name: "PriceList"
 

@@ -30,6 +30,7 @@ module Gecko
     record :PurchaseOrder
     record :PurchaseOrderLineItem
     record :TaxType
+    record :PaymentTerm
 
     # Return OAuth client
     #
