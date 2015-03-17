@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/payment_terms?limit=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Gecko/0.0.5 OAuth2/1.0.0 Faraday/0.9.1 Ruby/2.1.5
+      Authorization:
+      - Bearer 07084fd170b00327dd26e0cff0ff659afc7ada07bec0b58ce91e3f8667cf5ac4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - ALLOW-FROM https://login.bigcommerce.com
+      X-Rate-Limit-Limit:
+      - '300'
+      X-Rate-Limit-Remaining:
+      - '299'
+      X-Rate-Limit-Reset:
+      - '1426503900'
+      X-Pagination:
+      - '{"total_records":11,"total_pages":3,"first_page":true,"last_page":false,"out_of_bounds":false,"offset":0}'
+      Link:
+      - <http://api.lvh.me:3000/ajax/payment_terms?limit=5&page=2>; rel="next", <http://api.lvh.me:3000/ajax/payment_terms?limit=5&page=3>;
+        rel="last"
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"f5f819a402b3b2a646d6931a72b7a685"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 258907c7-a514-4e1b-917d-f3b27df2120b
+      X-Runtime:
+      - '0.248622'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
+      Date:
+      - Mon, 16 Mar 2015 11:02:29 GMT
+      Content-Length:
+      - '384'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"payment_terms":[{"id":77,"name":"NET55","due_in_days":55,"status":"active","from":"eom"},{"id":76,"name":"NET66","due_in_days":66,"status":"active","from":"now"},{"id":75,"name":"NET45","due_in_days":45,"status":"active","from":"now"},{"id":74,"name":"NET40","due_in_days":40,"status":"active","from":"now"},{"id":73,"name":"NET25","due_in_days":25,"status":"active","from":"now"}]}'
+    http_version: 
+  recorded_at: Mon, 16 Mar 2015 11:02:29 GMT
+recorded_with: VCR 2.9.3
