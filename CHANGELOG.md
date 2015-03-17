@@ -1,7 +1,9 @@
-## Unreleased
+## 0.0.6 (2015-03-17)
+- Add `Gecko::Record::PaymentTerm`
+
+## 0.0.5 (2015-03-04)
 - Add size to base adapter
 - Update serialization_helper to support serializing arrays correctly
-- Add `Gecko::Record::PaymentTerm`
 
 ## 0.0.4 (2015-01-09)
 - Renamed gem so we can publish it on RubyGems.org
