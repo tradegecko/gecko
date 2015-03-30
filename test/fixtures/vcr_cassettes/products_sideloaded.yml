@@ -1,0 +1,84 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/products?_include=variants&limit=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Gecko/0.0.5 OAuth2/1.0.0 Faraday/0.9.1 Ruby/2.1.5
+      Authorization:
+      - Bearer 57b0f2b0a4ffe949eef65796429f7089e967dc6f4b197f60e387f03e44afd27c
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 12 Mar 2015 09:39:55 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      X-Frame-Options:
+      - ALLOW-FROM https://login.bigcommerce.com
+      X-Rate-Limit-Limit:
+      - '300'
+      X-Rate-Limit-Remaining:
+      - '299'
+      X-Rate-Limit-Reset:
+      - '1426153200'
+      X-Pagination:
+      - '{"total_records":5,"total_pages":1,"first_page":true,"last_page":true,"out_of_bounds":false,"offset":0}'
+      Link:
+      - <http://api.lvh.me:3000/ajax/products?limit=5&page=1&include=variants>; rel="last"
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"e627dcd7fcdb904e75f5f34e99d52769"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 2d51871d-5944-41b9-839d-6d1c0560866d
+      X-Runtime:
+      - '0.588396'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"variants":[{"id":457,"created_at":"2015-02-26T09:54:05.506Z","updated_at":"2015-03-05T10:38:54.377Z","product_id":104,"default_ledger_account_id":null,"buy_price":null,"committed_stock":"1","incoming_stock":"0","composite":false,"description":null,"is_online":false,"keep_selling":false,"last_cost_price":"111.0","manage_stock":true,"max_online":null,"moving_average_cost":"111","name":"Gecko
+        Guitar X1","online_ordering":false,"opt1":"Default","opt2":null,"opt3":null,"position":1,"product_name":"Gecko
+        Guitar X1","product_status":"active","product_type":"Acoustic Electric","retail_price":null,"sellable":true,"sku":null,"status":"active","stock_on_hand":"111","supplier_code":null,"taxable":true,"upc":null,"weight":null,"wholesale_price":null,"image_ids":[],"variant_prices":[],"locations":[{"location_id":2,"stock_on_hand":"111","committed":"1","incoming":null,"bin_location":null,"reorder_point":null}],"prices":{},"stock_levels":{"2":"111.0"},"committed_stock_levels":{"2":"1.0"},"incoming_stock_levels":{}},{"id":39,"created_at":"2015-02-11T09:02:36.850Z","updated_at":"2015-02-11T09:39:00.988Z","product_id":13,"default_ledger_account_id":null,"buy_price":"900.0","committed_stock":"10","incoming_stock":"0","composite":false,"description":null,"is_online":false,"keep_selling":false,"last_cost_price":"1000.0","manage_stock":true,"max_online":null,"moving_average_cost":"1000","name":"Hummingbird
+        Pro 2","online_ordering":true,"opt1":"1","opt2":null,"opt3":null,"position":3,"product_name":"Hummingbird","product_status":"active","product_type":"Acoustic
+        Electric","retail_price":"2500.0","sellable":true,"sku":null,"status":"active","stock_on_hand":"10","supplier_code":null,"taxable":true,"upc":null,"weight":null,"wholesale_price":"1200.0","image_ids":[15],"variant_prices":[{"price_list_id":"buy","value":"900.0"},{"price_list_id":"retail","value":"2500.0"},{"price_list_id":"wholesale","value":"1200.0"}],"locations":[{"location_id":2,"stock_on_hand":"10","committed":"10","incoming":null,"bin_location":null,"reorder_point":null}],"prices":{"buy":"900.0","retail":"2500.0","wholesale":"1200.0"},"stock_levels":{"2":"10.0"},"committed_stock_levels":{"2":"10.0"},"incoming_stock_levels":{}},{"id":38,"created_at":"2015-02-11T06:42:14.748Z","updated_at":"2015-02-11T09:01:12.979Z","product_id":13,"default_ledger_account_id":null,"buy_price":"2000.0","committed_stock":"0","incoming_stock":"0","composite":false,"description":null,"is_online":false,"keep_selling":false,"last_cost_price":"1000.0","manage_stock":true,"max_online":null,"moving_average_cost":"1000","name":"Hummingbird
+        Pro","online_ordering":true,"opt1":null,"opt2":null,"opt3":null,"position":2,"product_name":"Hummingbird","product_status":"active","product_type":"Acoustic
+        Electric","retail_price":"2000.0","sellable":true,"sku":null,"status":"active","stock_on_hand":"1000","supplier_code":null,"taxable":true,"upc":null,"weight":null,"wholesale_price":"1000.0","image_ids":[],"variant_prices":[{"price_list_id":"buy","value":"2000.0"},{"price_list_id":"retail","value":"2000.0"},{"price_list_id":"wholesale","value":"1000.0"}],"locations":[{"location_id":2,"stock_on_hand":"1000","committed":null,"incoming":null,"bin_location":null,"reorder_point":null}],"prices":{"buy":"2000.0","retail":"2000.0","wholesale":"1000.0"},"stock_levels":{"2":1000.0},"committed_stock_levels":{},"incoming_stock_levels":{}},{"id":37,"created_at":"2015-02-11T04:40:52.557Z","updated_at":"2015-02-11T09:05:16.322Z","product_id":13,"default_ledger_account_id":null,"buy_price":"100.0","committed_stock":"5","incoming_stock":"0","composite":false,"description":null,"is_online":false,"keep_selling":false,"last_cost_price":"1000.0","manage_stock":true,"max_online":null,"moving_average_cost":"1000","name":"Hummingbird","online_ordering":true,"opt1":"Default","opt2":null,"opt3":null,"position":1,"product_name":"Hummingbird","product_status":"active","product_type":"Acoustic
+        Electric","retail_price":"1200.0","sellable":true,"sku":"","status":"active","stock_on_hand":"105","supplier_code":null,"taxable":true,"upc":null,"weight":null,"wholesale_price":"600.0","image_ids":[],"variant_prices":[{"price_list_id":"buy","value":"100.0"},{"price_list_id":"retail","value":"1200.0"},{"price_list_id":"wholesale","value":"600.0"}],"locations":[{"location_id":2,"stock_on_hand":"105","committed":"5","incoming":null,"bin_location":null,"reorder_point":null}],"prices":{"buy":"100.0","retail":"1200.0","wholesale":"600.0"},"stock_levels":{"2":"105.0"},"committed_stock_levels":{"2":"5.0"},"incoming_stock_levels":{}},{"id":36,"created_at":"2015-02-10T06:08:31.340Z","updated_at":"2015-02-12T02:13:08.518Z","product_id":12,"default_ledger_account_id":null,"buy_price":"700.0","committed_stock":"0","incoming_stock":"0","composite":false,"description":null,"is_online":false,"keep_selling":false,"last_cost_price":"1000.0","manage_stock":true,"max_online":null,"moving_average_cost":"1000","name":"Epiphone
+        EJ 200 CE","online_ordering":true,"opt1":"Default","opt2":null,"opt3":null,"position":1,"product_name":"Epiphone
+        EJ 200 CE","product_status":"active","product_type":"Acoustic Electric","retail_price":"1500.0","sellable":true,"sku":"","status":"active","stock_on_hand":"1111","supplier_code":null,"taxable":true,"upc":null,"weight":null,"wholesale_price":"900.0","image_ids":[9],"variant_prices":[{"price_list_id":"buy","value":"700.0"},{"price_list_id":"retail","value":"1500.0"},{"price_list_id":"wholesale","value":"900.0"}],"locations":[{"location_id":2,"stock_on_hand":"1111","committed":null,"incoming":null,"bin_location":null,"reorder_point":null}],"prices":{"buy":"700.0","retail":"1500.0","wholesale":"900.0"},"stock_levels":{"2":1111.0},"committed_stock_levels":{},"incoming_stock_levels":{}},{"id":40,"created_at":"2015-02-18T04:11:56.125Z","updated_at":"2015-02-23T04:01:21.475Z","product_id":8,"default_ledger_account_id":null,"buy_price":"2222.0","committed_stock":"0","incoming_stock":"0","composite":false,"description":null,"is_online":false,"keep_selling":false,"last_cost_price":"2222.0","manage_stock":true,"max_online":null,"moving_average_cost":"2222","name":null,"online_ordering":true,"opt1":"M","opt2":null,"opt3":null,"position":2,"product_name":"AJ
+        300","product_status":"active","product_type":"Acoustic Guitar","retail_price":"2222.0","sellable":true,"sku":null,"status":"active","stock_on_hand":"19","supplier_code":null,"taxable":true,"upc":null,"weight":null,"wholesale_price":"2222.0","image_ids":[],"variant_prices":[{"price_list_id":"buy","value":"2222.0"},{"price_list_id":"retail","value":"2222.0"},{"price_list_id":"wholesale","value":"2222.0"}],"locations":[{"location_id":2,"stock_on_hand":"19","committed":null,"incoming":null,"bin_location":null,"reorder_point":null}],"prices":{"buy":"2222.0","retail":"2222.0","wholesale":"2222.0"},"stock_levels":{"2":19.0},"committed_stock_levels":{},"incoming_stock_levels":{}},{"id":41,"created_at":"2015-02-18T04:11:56.279Z","updated_at":"2015-02-20T05:31:14.070Z","product_id":8,"default_ledger_account_id":null,"buy_price":"2222.0","committed_stock":"0","incoming_stock":"0","composite":false,"description":null,"is_online":false,"keep_selling":false,"last_cost_price":"2222.0","manage_stock":true,"max_online":null,"moving_average_cost":"2222","name":"AJ
+        300 B","online_ordering":false,"opt1":"L","opt2":null,"opt3":null,"position":3,"product_name":"AJ
+        300","product_status":"active","product_type":"Acoustic Guitar","retail_price":"2222.0","sellable":true,"sku":null,"status":"active","stock_on_hand":"11","supplier_code":null,"taxable":true,"upc":null,"weight":null,"wholesale_price":"2222.0","image_ids":[],"variant_prices":[{"price_list_id":"buy","value":"2222.0"},{"price_list_id":"retail","value":"2222.0"},{"price_list_id":"wholesale","value":"2222.0"}],"locations":[{"location_id":2,"stock_on_hand":"11","committed":null,"incoming":null,"bin_location":null,"reorder_point":null}],"prices":{"buy":"2222.0","retail":"2222.0","wholesale":"2222.0"},"stock_levels":{"2":11.0},"committed_stock_levels":{},"incoming_stock_levels":{}},{"id":24,"created_at":"2015-01-26T02:28:49.992Z","updated_at":"2015-02-20T04:58:11.742Z","product_id":8,"default_ledger_account_id":null,"buy_price":"2000.0","committed_stock":"3","incoming_stock":"0","composite":false,"description":null,"is_online":false,"keep_selling":false,"last_cost_price":"2000.0","manage_stock":true,"max_online":null,"moving_average_cost":"2000","name":"AJ
+        300","online_ordering":true,"opt1":"Default","opt2":null,"opt3":null,"position":1,"product_name":"AJ
+        300","product_status":"active","product_type":"Acoustic Guitar","retail_price":"3000.0","sellable":true,"sku":"","status":"active","stock_on_hand":"29","supplier_code":null,"taxable":true,"upc":null,"weight":null,"wholesale_price":"2200.0","image_ids":[3],"variant_prices":[{"price_list_id":"buy","value":"2000.0"},{"price_list_id":"retail","value":"3000.0"},{"price_list_id":"wholesale","value":"2200.0"},{"price_list_id":"1","value":null}],"locations":[{"location_id":2,"stock_on_hand":"29","committed":"3","incoming":null,"bin_location":null,"reorder_point":null}],"prices":{"buy":"2000.0","retail":"3000.0","wholesale":"2200.0","1":null},"stock_levels":{"2":"29.0"},"committed_stock_levels":{"2":"3.0"},"incoming_stock_levels":{}},{"id":23,"created_at":"2015-01-26T02:28:13.702Z","updated_at":"2015-02-09T03:03:20.021Z","product_id":7,"default_ledger_account_id":null,"buy_price":"1000.0","committed_stock":"4","incoming_stock":"0","composite":false,"description":null,"is_online":false,"keep_selling":false,"last_cost_price":"1000.0","manage_stock":true,"max_online":null,"moving_average_cost":"1000","name":"Gibson
+        J200","online_ordering":true,"opt1":"Default","opt2":null,"opt3":null,"position":1,"product_name":"Gibson
+        J200","product_status":"active","product_type":"Acoustic Guitar","retail_price":"1500.0","sellable":true,"sku":"","status":"active","stock_on_hand":"100","supplier_code":null,"taxable":true,"upc":null,"weight":null,"wholesale_price":"1100.0","image_ids":[],"variant_prices":[{"price_list_id":"buy","value":"1000.0"},{"price_list_id":"retail","value":"1500.0"},{"price_list_id":"wholesale","value":"1100.0"}],"locations":[{"location_id":2,"stock_on_hand":"100","committed":"4","incoming":null,"bin_location":null,"reorder_point":null}],"prices":{"buy":"1000.0","retail":"1500.0","wholesale":"1100.0"},"stock_levels":{"2":"100.0"},"committed_stock_levels":{"2":"4.0"},"incoming_stock_levels":{}}],"products":[{"id":104,"created_at":"2015-02-26T09:54:05.453Z","updated_at":"2015-02-26T09:54:05.453Z","brand":null,"description":"","image_url":null,"name":"Gecko
+        Guitar X1","opt1":"Size","opt2":null,"opt3":null,"product_type":"Acoustic
+        Electric","quantity":"110","search_cache":"Gecko Guitar X1","status":"active","supplier":null,"tags":null,"vendor":null,"variant_ids":[457]},{"id":13,"created_at":"2015-02-11T04:40:52.175Z","updated_at":"2015-02-11T04:40:52.175Z","brand":"Epiphone","description":null,"image_url":"https://tradegecko-development-images.s3.amazonaws.com/uploads/variant_image/image/15/thumbnail_Screen_Shot_2015-02-10_at_12.53.34_pm.png","name":"Hummingbird","opt1":"Size","opt2":null,"opt3":null,"product_type":"Acoustic
+        Electric","quantity":"1100","search_cache":"Hummingbird Pro 2 Hummingbird
+        Pro Hummingbird","status":"active","supplier":"Epiphone","tags":null,"vendor":"Epiphone","variant_ids":[39,38,37]},{"id":12,"created_at":"2015-02-10T06:08:31.185Z","updated_at":"2015-02-10T06:08:31.185Z","brand":"Epiphone","description":null,"image_url":"https://tradegecko-development-images.s3.amazonaws.com/uploads/variant_image/image/9/thumbnail_testimage00001.png","name":"Epiphone
+        EJ 200 CE","opt1":"Size","opt2":null,"opt3":null,"product_type":"Acoustic
+        Electric","quantity":"1111","search_cache":"Epiphone EJ 200 CE","status":"active","supplier":"Epiphone","tags":null,"vendor":"Epiphone","variant_ids":[36]},{"id":8,"created_at":"2015-01-26T02:28:49.958Z","updated_at":"2015-02-09T09:09:00.338Z","brand":"Gibson","description":null,"image_url":"https://tradegecko-development-images.s3.amazonaws.com/uploads/variant_image/image/3/thumbnail_Screen_Shot_2015-02-10_at_12.42.58_pm.png","name":"AJ
+        300","opt1":"Size","opt2":null,"opt3":null,"product_type":"Acoustic Guitar","quantity":"56","search_cache":"AJ
+        300 B AJ 300","status":"active","supplier":"Gibson","tags":"acoustic","vendor":"Gibson","variant_ids":[40,41,24]},{"id":7,"created_at":"2015-01-26T02:28:13.510Z","updated_at":"2015-02-09T09:18:51.078Z","brand":"Gibson","description":null,"image_url":null,"name":"Gibson
+        J200","opt1":"Size","opt2":null,"opt3":null,"product_type":"Acoustic Guitar","quantity":"96","search_cache":"Gibson
+        J200","status":"active","supplier":"Gibson","tags":"Acoustic Premium,acoustic","vendor":"Gibson","variant_ids":[23]}],"meta":{"total":5}}'
+    http_version: 
+  recorded_at: Thu, 12 Mar 2015 09:39:55 GMT
+recorded_with: VCR 2.9.3
