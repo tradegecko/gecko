@@ -7,6 +7,7 @@ module Gecko
         include Virtus.model
         attribute :location_id,     Integer
         attribute :committed_stock, BigDecimal
+        attribute :incoming_stock,  BigDecimal
         attribute :stock_on_hand,   BigDecimal
         attribute :bin_location,    String
       end
@@ -60,6 +61,7 @@ module Gecko
 
       attribute :stock_on_hand,   BigDecimal, readonly: true
       attribute :committed_stock, BigDecimal, readonly: true
+      attribute :incoming_stock,  BigDecimal, readonly: true
 
       attribute :locations,       Array[VariantLocation]
       attribute :variant_prices,  Array[VariantPrice]
