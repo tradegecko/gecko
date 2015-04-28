@@ -1,3 +1,6 @@
+## 0.0.8 (2015-04-28)
+- Fetch VariantLocation#committed_stock as committed
+
 ## 0.0.7 (2015-03-17)
 - Fix issue with Order#tax_override
 - Support sideloaded records without a hack
