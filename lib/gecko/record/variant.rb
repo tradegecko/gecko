@@ -7,9 +7,11 @@ module Gecko
         include Virtus.model
         include Gecko::Helpers::SerializationHelper
         attribute :location_id,     Integer
-        attribute :committed_stock, BigDecimal
+        attribute :committed,       BigDecimal
         attribute :stock_on_hand,   BigDecimal
         attribute :bin_location,    String
+
+        alias_method :committed_stock, :committed
       end
 
       class VariantPrice
