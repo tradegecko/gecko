@@ -31,6 +31,16 @@ products = client.Product.where(q: "Gecko")
 #=> [<Gecko::Record::Product id=1 name="Geckotron">, <Gecko::Record::Product id=3 name="Green Gecko">]
 ```
 
+## Basic Usage Using a Privileged Access Token
+
+```ruby
+client = Gecko::Client.new(CLIENT_ID, CLIENT_SECRET)
+client.authorize_from_existing(PRIVILEGED_ACCESS_TOKEN, nil, nil)
+
+products = client.Product.where(q: "Gecko")
+#=> [<Gecko::Record::Product id=1 name="Geckotron">, <Gecko::Record::Product id=3 name="Green Gecko">]
+```
+
 ## Finding Records
 
 #### Basic finders
