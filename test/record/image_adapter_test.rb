@@ -11,4 +11,8 @@ class Gecko::Record::ImageAdapterTest < Minitest::Test
   def test_initializes_adapter
     assert_instance_of(Gecko::Record::ImageAdapter, @client.Image)
   end
+
+  # Updating images via the API is currently unsupported
+  undef :test_saving_existing_invalid_record
+  undef :test_saving_existing_record
 end
