@@ -8,10 +8,12 @@ module Gecko
       belongs_to :variant
       belongs_to :uploader, class_name: "User"
       attribute :name,             String
+      attribute :url,              String
       attribute :position,         Integer
-      attribute :base_path,        String
-      attribute :file_name,        String
-      attribute :versions,         Array[String]
+      attribute :base_path,        String,        readonly: true
+      attribute :file_name,        String,        readonly: true
+      attribute :versions,         Array[String], readonly: true
+
       # attribute :image_processing, Boolean
 
       # URL for image
@@ -23,6 +25,12 @@ module Gecko
       #
       # @api public
       def url(size = :full)
+        super() || build_url(size)
+      end
+
+    private
+
+      def build_url(size)
         if size == :full
           file_path = file_name
         else
@@ -33,6 +41,11 @@ module Gecko
     end
 
     class ImageAdapter < BaseAdapter
+    private
+
+      def update_record(_record)
+        raise NotImplementedError
+      end
     end
   end
 end
