@@ -1,7 +1,7 @@
 module Gecko
   module Record
     class BaseAdapter
-      attr_reader :client
+      attr_reader :client, :last_response
       # Instantiates a new Record Adapter
       #
       # @param [Gecko::Client] client
@@ -109,7 +109,7 @@ module Gecko
       #
       # @api public
       def where(params={})
-        response        = request(:get, plural_path, params: params)
+        response = @last_response = request(:get, plural_path, params: params)
         parsed_response = response.parsed
         set_pagination(response.headers)
         parse_records(parsed_response)
@@ -189,7 +189,7 @@ module Gecko
       # @api private
       def fetch(id)
         verify_id_presence!(id)
-        response    = request(:get, plural_path + '/' + id.to_s)
+        response = @last_response = request(:get, plural_path + '/' + id.to_s)
         record_json = extract_record(response.parsed)
         instantiate_and_register_record(record_json)
       rescue OAuth2::Error => ex
