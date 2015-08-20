@@ -115,13 +115,13 @@ module Gecko
         site:          'https://api.tradegecko.com',
         authorize_url: 'https://go.tradegecko.com/oauth/authorize',
         connection_opts: {
-          headers:     default_headers
+          headers:     self.class.default_headers
         }
       }
       @oauth_client = OAuth2::Client.new(client_id, client_secret, defaults.merge(options))
     end
 
-    def default_headers
+    def self.default_headers
       {
         'User-Agent' => ["Gecko/#{Gecko::VERSION}",
                          "OAuth2/#{OAuth2::Version.to_s}",
