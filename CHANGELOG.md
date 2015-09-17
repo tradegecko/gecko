@@ -1,6 +1,9 @@
 ## Unreleased
 - Make image uploading work
 
+## 0.0.9 (2015-09-17)
+- Add tags to order
+
 ## 0.0.8 (2015-04-28)
 - Fetch VariantLocation#committed_stock as committed
 
