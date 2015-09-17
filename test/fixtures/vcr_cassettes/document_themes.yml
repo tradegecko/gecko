@@ -1,0 +1,97 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/document_themes?limit=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Gecko/0.0.7 OAuth2/1.0.0 Faraday/0.9.1 Ruby/2.2.3
+      Authorization:
+      - Bearer 6c565ae9b0f11967842de246ac48af77a461a07d7f78ba6619d42c2a27d234c9
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Rate-Limit-Limit:
+      - '300'
+      X-Rate-Limit-Remaining:
+      - '299'
+      X-Rate-Limit-Reset:
+      - '1442472900'
+      X-Pagination:
+      - '{"total_records":7,"total_pages":2,"first_page":true,"last_page":false,"out_of_bounds":false,"offset":0}'
+      Link:
+      - <http://api.lvh.me:3000/ajax/document_themes?limit=5&page=2>; rel="next",
+        <http://api.lvh.me:3000/ajax/document_themes?limit=5&page=2>; rel="last"
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-store, must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 5dc9af44-651b-40b7-9c20-098ced194832
+      X-Runtime:
+      - '0.165839'
+      X-Miniprofiler-Ids:
+      - '["pyqb68rqgas3s9ttm9x9","ck649g19ztke6t3h0uif","2a36x60nkep6vo6fnt8c","y5x7rci5vlr31wyrwfdz","5fmkus3lafbm57gfa5vx","58whj29mvt5li6wu7e5r","4nffzg3mzgxjpz1n60v2","l3aa9o4d0ucux1f7asq1","keo9vi6r0wir7vwbpywb","sw1cvhy3upf4o8q2892t"]'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.3/2015-08-18)
+      Date:
+      - Thu, 17 Sep 2015 06:52:28 GMT
+      Content-Length:
+      - '3706'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+      - __profilin=p%3Dt; path=/
+    body:
+      encoding: UTF-8
+      string: '{"document_themes":[{"id":7,"name":"Bob''s Burgers","invoice_details":"Your
+        prompt payment is greatly appreciated","quote_details":null,"sales_order_details":null,"invoice_title":"Tax
+        Invoice","packing_slip_title":"Packing Slip","pick_list_title":"Pick List","pick_list_expand_composite":false,"credit_note_title":"Credit
+        Note","purchase_order_title":"Purchase Order","quote_title":"Quote","sales_order_title":"Sales
+        Order","shipping_details_title":"Shipping Details","shipping_label_title":"Shipping
+        Label","stock_transfer_title":"Stock Transfer","footer":"Proudly created using
+        TradeGecko http://tradegecko.com","font_colour":"#74c2d0","base_colour":"#e4b462","email_logo_url":null,"pdf_logo_url":null,"subdomain":"bobs-burgers-6","email_template_ids":[]},{"id":6,"name":"Bob''s
+        Burgers","invoice_details":"Your prompt payment is greatly appreciated","quote_details":null,"sales_order_details":null,"invoice_title":"Tax
+        Invoice","packing_slip_title":"Packing Slip","pick_list_title":"Pick List","pick_list_expand_composite":false,"credit_note_title":"Credit
+        Note","purchase_order_title":"Purchase Order","quote_title":"Quote","sales_order_title":"Sales
+        Order","shipping_details_title":"Shipping Details","shipping_label_title":"Shipping
+        Label","stock_transfer_title":"Stock Transfer","footer":"Proudly created using
+        TradeGecko http://tradegecko.com","font_colour":"#74c2d0","base_colour":"#e4b462","email_logo_url":null,"pdf_logo_url":null,"subdomain":"bobs-burgers-5","email_template_ids":[]},{"id":5,"name":"Bob''s
+        Burgers","invoice_details":"Your prompt payment is greatly appreciated","quote_details":null,"sales_order_details":null,"invoice_title":"Tax
+        Invoice","packing_slip_title":"Packing Slip","pick_list_title":"Pick List","pick_list_expand_composite":false,"credit_note_title":"Credit
+        Note","purchase_order_title":"Purchase Order","quote_title":"Quote","sales_order_title":"Sales
+        Order","shipping_details_title":"Shipping Details","shipping_label_title":"Shipping
+        Label","stock_transfer_title":"Stock Transfer","footer":"Proudly created using
+        TradeGecko http://tradegecko.com","font_colour":"#74c2d0","base_colour":"#e4b462","email_logo_url":null,"pdf_logo_url":null,"subdomain":"bobs-burgers-4","email_template_ids":[]},{"id":4,"name":"Bob''s
+        Burgers","invoice_details":"Your prompt payment is greatly appreciated","quote_details":null,"sales_order_details":null,"invoice_title":"Tax
+        Invoice","packing_slip_title":"Packing Slip","pick_list_title":"Pick List","pick_list_expand_composite":false,"credit_note_title":"Credit
+        Note","purchase_order_title":"Purchase Order","quote_title":"Quote","sales_order_title":"Sales
+        Order","shipping_details_title":"Shipping Details","shipping_label_title":"Shipping
+        Label","stock_transfer_title":"Stock Transfer","footer":"Proudly created using
+        TradeGecko http://tradegecko.com","font_colour":"#74c2d0","base_colour":"#e4b462","email_logo_url":null,"pdf_logo_url":null,"subdomain":"bobs-burgers-3","email_template_ids":[]},{"id":3,"name":"Bob''s
+        Burgers","invoice_details":"Your prompt payment is greatly appreciated","quote_details":null,"sales_order_details":null,"invoice_title":"Tax
+        Invoice","packing_slip_title":"Packing Slip","pick_list_title":"Pick List","pick_list_expand_composite":false,"credit_note_title":"Credit
+        Note","purchase_order_title":"Purchase Order","quote_title":"Quote","sales_order_title":"Sales
+        Order","shipping_details_title":"Shipping Details","shipping_label_title":"Shipping
+        Label","stock_transfer_title":"Stock Transfer","footer":"Proudly created using
+        TradeGecko http://tradegecko.com","font_colour":"#74c2d0","base_colour":"#e4b462","email_logo_url":null,"pdf_logo_url":null,"subdomain":"bobs-burgers-2","email_template_ids":[]}]}'
+    http_version: 
+  recorded_at: Thu, 17 Sep 2015 06:52:28 GMT
+recorded_with: VCR 2.9.3

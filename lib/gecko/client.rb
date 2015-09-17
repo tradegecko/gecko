@@ -31,6 +31,9 @@ module Gecko
     record :PurchaseOrderLineItem
     record :TaxType
     record :PaymentTerm
+    record :DocumentTheme
+    record :EmailTemplate
+    record :Channel
 
     # Return OAuth client
     #
