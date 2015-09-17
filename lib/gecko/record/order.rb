@@ -30,6 +30,7 @@ module Gecko
       attribute :tax_type,              String
       attribute :issued_at,             Date
       attribute :ship_at,               Date
+      attribute :tags,                  Array[String]
       attribute :tax_override,          BigDecimal, readonly: true
       attribute :tax_label,             String,     readonly: true
       attribute :source_url,            String
