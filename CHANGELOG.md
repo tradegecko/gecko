@@ -1,3 +1,6 @@
+## 0.0.10 (2015-10-21)
+- Add first_name/last_name to addresses
+
 ## 0.0.9 (2015-10-02)
 - Add tags to order
 
