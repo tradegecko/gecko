@@ -21,7 +21,7 @@ module Gecko
         attribute :value,            BigDecimal
       end
 
-      belongs_to :product
+      belongs_to :product, writeable_on: :create
       has_many :images
 
       attribute :name,            String
