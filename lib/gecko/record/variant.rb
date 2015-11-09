@@ -21,6 +21,13 @@ module Gecko
         attribute :value,            BigDecimal
       end
 
+      class CompositePart
+        include Virtus.model
+        include Gecko::Helpers::SerializationHelper
+        attribute :variant_id,       Integer
+        attribute :quantity,         BigDecimal
+      end
+
       belongs_to :product
       has_many :images
 
