@@ -28,9 +28,28 @@ module Gecko
         attribute_hash = {}
         attribute_set.each do |attribute|
           next if attribute.options[:readonly]
+          next unless writeable?(attribute)
           serialize_attribute(attribute_hash, attribute)
         end
         attribute_hash
+      end
+
+      # Returns true if an attribute can be serialized
+      #
+      # @example
+      #   product.readonly(:initial_cost_price) #=> true
+      #
+      # @return [Boolean]
+      #
+      # @api private
+      def writeable?(attribute)
+        return true unless attribute.options[:writeable_on]
+        case attribute.options[:writeable_on]
+        when :update
+          persisted?
+        when :create
+          !persisted?
+        end
       end
 
       # Store the serialized representation of a single attribute

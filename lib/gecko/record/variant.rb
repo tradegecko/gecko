@@ -55,7 +55,6 @@ module Gecko
       attribute :reorder_point,   Integer
       attribute :max_online,      Integer
 
-      attribute :composite,       Boolean
       attribute :keep_selling,    Boolean
       attribute :taxable,         Boolean
       attribute :sellable,        Boolean
@@ -69,6 +68,10 @@ module Gecko
 
       attribute :locations,       Array[VariantLocation]
       attribute :variant_prices,  Array[VariantPrice]
+
+      attribute :composite,           Boolean,    writeable_on: :create
+      attribute :initial_stock_level, BigDecimal, writeable_on: :create
+      attribute :initial_cost_price,  BigDecimal, writeable_on: :create
 
       # Returns a display name for a variant
       #

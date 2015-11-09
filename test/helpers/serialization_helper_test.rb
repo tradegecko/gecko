@@ -13,6 +13,8 @@ class Gecko::Helpers::SerializationHelperTest < Minitest::Test
   Widget = Class.new(Gecko::Record::Base) do
     attribute :name,       String
     attribute :secret,     String,       readonly: true
+    attribute :initial_stock, BigDecimal, writeable_on: :create
+    attribute :update_stock, BigDecimal, writeable_on: :update
     attribute :score,      BigDecimal
     attribute :started_on, Date
     attribute :started_at, DateTime
@@ -27,6 +29,8 @@ class Gecko::Helpers::SerializationHelperTest < Minitest::Test
     Widget.new(@client, {
       name:       "Gecko",
       secret:     "Iguana",
+      initial_stock: 10.0,
+      update_stock: 10.0,
       score:      1.234,
       started_at: DateTime.now,
       started_on: Date.today,
@@ -45,6 +49,18 @@ class Gecko::Helpers::SerializationHelperTest < Minitest::Test
 
   def test_as_json
     assert_equal({widget: record.serializable_hash}, record.as_json)
+  end
+
+  def test_writeable_on_create
+    assert_equal(serialized_record, record.serializable_hash)
+  end
+
+  def test_writeable_on_update
+    cleaned_record = serialized_record
+    cleaned_record.delete(:initial_stock)
+    cleaned_record.merge!(update_stock: "10.0")
+    record.id = 1
+    assert_equal(cleaned_record, record.serializable_hash)
   end
 
   def test_serializable_hash
@@ -69,6 +85,7 @@ private
   def serialized_record
     {
       name:       "Gecko",
+      initial_stock: "10.0",
       score:      "1.234",
       started_on: Date.today,
       started_at: DateTime.now,
