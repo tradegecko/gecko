@@ -6,10 +6,10 @@ module Gecko
       AVAILABLE_SIZES = [:full, :thumbnail]
 
       belongs_to :variant
-      belongs_to :uploader, class_name: "User"
+      belongs_to :uploader, class_name: "User",   readonly: true
       attribute :name,             String
       attribute :url,              String
-      attribute :position,         Integer
+      attribute :position,         Integer,       readonly: true
       attribute :base_path,        String,        readonly: true
       attribute :file_name,        String,        readonly: true
       attribute :versions,         Array[String], readonly: true
