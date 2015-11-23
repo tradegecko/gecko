@@ -20,16 +20,16 @@ module Gecko
       attribute :due_at,                Date
 
       attribute :status,                String
-      attribute :procurement_status,    String
+      attribute :procurement_status,    String, readonly: true
       attribute :notes,                 String
       attribute :tax_treatment,         String
 
       attribute :destination_url,       String
-      attribute :document_url,          String
+      attribute :document_url,          String, readonly: true
 
-      attribute :total,                 BigDecimal
-      attribute :cached_quantity,       BigDecimal
-      attribute :cached_total,          BigDecimal
+      attribute :total,                 BigDecimal, readonly: true
+      attribute :cached_quantity,       BigDecimal, readonly: true
+      attribute :cached_total,          BigDecimal, readonly: true
 
       # DEPRECATED
       # attribute :tax_type, String
