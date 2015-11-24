@@ -58,7 +58,7 @@ class Gecko::Helpers::SerializationHelperTest < Minitest::Test
   def test_writeable_on_update
     cleaned_record = serialized_record
     cleaned_record.delete(:initial_stock)
-    cleaned_record.merge!(update_stock: "10.0")
+    cleaned_record[:update_stock] = "10.0"
     record.id = 1
     assert_equal(cleaned_record, record.serializable_hash)
   end
