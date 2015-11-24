@@ -14,9 +14,11 @@ module Gecko
       attribute :phone_number, String
       attribute :fax,          String
       attribute :position,     String
-      attribute :phone,        String
 
       attribute :status,       String,  readonly: true
+
+      ## DEPRECATED
+      attribute :phone,        String
     end
 
     class ContactAdapter < BaseAdapter

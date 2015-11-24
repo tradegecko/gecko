@@ -18,8 +18,6 @@ module Gecko
 
       attribute :destination_url, String,   readonly: true
       attribute :document_url,    String,   readonly: true
-      attribute :created_at,      DateTime, readonly: true
-      attribute :updated_at,      DateTime, readonly: true
     end
 
     class InvoiceAdapter < BaseAdapter
