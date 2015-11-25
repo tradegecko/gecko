@@ -1,3 +1,7 @@
+## 0.1.0 (2015-11-25)
+- Move default headers to the adapter base class to make it easier to merge them when overriding
+- Clean up old attributes
+
 ## 0.0.10 (2015-10-21)
 - Add first_name/last_name to addresses
 
