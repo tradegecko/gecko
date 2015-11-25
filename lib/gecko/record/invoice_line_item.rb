@@ -5,7 +5,8 @@ module Gecko
     class InvoiceLineItem < Base
       belongs_to :invoice
       belongs_to :order_line_item
-      belongs_to :ledger_account
+      # belongs_to :ledger_account
+      attribute :ledger_account_id, Integer
 
       attribute :quantity, BigDecimal
       attribute :position, Integer

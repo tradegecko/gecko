@@ -21,6 +21,7 @@ module Gecko
       attribute :packed_at,        Date
       attribute :shipped_at,       DateTime
       attribute :received_at,      DateTime
+      attribute :service,          String
 
       attribute :receipt,          Hash
     end

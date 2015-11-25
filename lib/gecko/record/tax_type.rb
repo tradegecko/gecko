@@ -5,8 +5,6 @@ module Gecko
     class TaxType < Base
       attribute :name,              String
       attribute :code,              String
-      attribute :xero_online_id,    String,     readonly: true
-      attribute :imported_from,     String,     readonly: true
       attribute :effective_rate,    BigDecimal, readonly: true
 
       attribute :status,            String,     readonly: true
