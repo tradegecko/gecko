@@ -16,7 +16,6 @@ module Gecko
       attribute :notes,           String
       attribute :exchange_rate,   BigDecimal
 
-      attribute :destination_url, String,   readonly: true
       attribute :document_url,    String,   readonly: true
     end
 

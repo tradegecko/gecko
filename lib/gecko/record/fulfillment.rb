@@ -16,7 +16,6 @@ module Gecko
       attribute :notes,            String
       attribute :tracking_url,     String
       attribute :tracking_company, String
-      attribute :destination_url,  String,  readonly: true
 
       attribute :packed_at,        Date
       attribute :shipped_at,       DateTime

@@ -25,7 +25,6 @@ module Gecko
       attribute :notes,                 String
       attribute :tax_treatment,         String
 
-      attribute :destination_url,       String,     readonly: true
       attribute :document_url,          String,     readonly: true
 
       attribute :total,                 BigDecimal, readonly: true
