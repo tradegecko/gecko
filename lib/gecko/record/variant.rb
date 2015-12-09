@@ -36,6 +36,7 @@ module Gecko
       attribute :opt3,            String
 
       attribute :weight,          String
+      attribute :weight_unit,     String
 
       attribute :status,          String,   readonly: true
 
@@ -63,6 +64,7 @@ module Gecko
       attribute :position,        Integer
 
       attribute :stock_on_hand,   BigDecimal, readonly: true
+      attribute :incoming_stock,  BigDecimal, readonly: true
       attribute :committed_stock, BigDecimal, readonly: true
 
       attribute :locations,       Array[VariantLocation]

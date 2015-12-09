@@ -18,7 +18,7 @@ module Gecko
       attribute :status,       String,  readonly: true
 
       ## DEPRECATED
-      attribute :phone,        String
+      # attribute :phone,        String
     end
 
     class ContactAdapter < BaseAdapter

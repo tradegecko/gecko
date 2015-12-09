@@ -9,7 +9,7 @@ module Gecko
 
       attribute :status,            String,     readonly: true
 
-      # has_many :tax_components
+      has_many :tax_components
     end
 
     class TaxTypeAdapter < BaseAdapter

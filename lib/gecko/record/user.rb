@@ -16,11 +16,6 @@ module Gecko
       attribute :status,             String,   readonly: true
       attribute :billing_contact,    Boolean,  readonly: true
 
-      # attribute :sales_report_email, Boolean
-      # attribute :action_items_email, String
-
-      # attribute :notification_email, Boolean
-      # attribute :permissions,        Array[String]
       # attribute :account_id,         Integer
 
       ## DEPRECATED

@@ -59,7 +59,8 @@ class Gecko::#{@model_name}Test < Minitest::Test
   def test_initializes_record
     assert_instance_of(Gecko::Record::#{@model_name}, @record)
   end
-end}
+end
+}
   end
 
   def test_adapter_template
@@ -76,6 +77,7 @@ class Gecko::Record::#{@model_name}AdapterTest < Minitest::Test
   def test_initializes_adapter
     assert_instance_of(Gecko::Record::#{@model_name}Adapter, @client.#{@model_name})
   end
-end}
+end
+}
   end
 end
