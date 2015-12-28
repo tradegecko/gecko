@@ -35,7 +35,9 @@ module Gecko
       attribute :opt2,            String
       attribute :opt3,            String
 
-      attribute :weight,          String
+      attribute :weight,          String,   readonly: true
+      attribute :weight_unit,     String
+      attribute :weight_value,    BigDecimal
 
       attribute :status,          String,   readonly: true
 
