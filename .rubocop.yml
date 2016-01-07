@@ -1,13 +1,66 @@
-# I personally disagree with this default and much rather outdented keywords
-AccessModifierIndentation:
+AllCops:
+  DisplayCopNames: true
+
+# class Example
+# ...
+# private
+# ...
+# end
+Style/AccessModifierIndentation:
   EnforcedStyle: outdent
 
-SpaceAroundEqualsInParameterDefault:
-  EnforcedStyle: no_space
-
-IndentHash:
+Style/Blocks:
   Enabled: false
 
-# We like to line up the attribute definitions
-ExtraSpacing:
+# Allows foo(bar: baz)
+Style/BracesAroundHashParameters:
   Enabled: false
+
+Style/DotPosition:
+  EnforcedStyle: leading
+
+Style/IndentHash:
+  EnforcedStyle: consistent
+
+Style/LineLength:
+  Max: 120
+
+Style/RedundantSelf:
+  Enabled: false
+
+# We like neatly-aligned code
+Style/SingleSpaceBeforeFirstArg:
+  Enabled: false
+
+Style/SpaceAroundEqualsInParameterDefault:
+  Enabled: false
+
+Style/SpaceInsideHashLiteralBraces:
+  Enabled: false
+
+# Allow single or double quotes
+Style/StringLiterals:
+  Enabled: false
+
+# Disable this until we can work out how to allow aligning of assignments
+# https://github.com/bbatsov/rubocop/blob/master/spec/rubocop/cop/style/extra_spacing_spec.rb#L23
+Style/ExtraSpacing:
+  Enabled: false
+
+Style/WordArray:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/SignalException:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Style/MultilineOperationIndentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
