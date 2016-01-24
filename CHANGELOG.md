@@ -1,3 +1,6 @@
+## 0.1.1 (Unreleased)
+- Allow passing query parameters to `Adapter#count`
+
 ## 0.1.0 (2015-11-25)
 - Move default headers to the adapter base class to make it easier to merge them when overriding
 - Clean up old attributes
