@@ -120,11 +120,13 @@ module Gecko
       # @example
       #   client.Product.count
       #
+      # @param [#to_hash] params
+      #
       # @return [Integer] Total number of available records
       #
       # @api public
-      def count
-        self.where(limit: 0)
+      def count(params = {})
+        self.where(params.merge(limit: 0))
         @pagination['total_records']
       end
 
