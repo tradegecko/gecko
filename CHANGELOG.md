@@ -1,5 +1,6 @@
 ## 0.1.1 (Unreleased)
 - Allow passing query parameters to `Adapter#count`
+- Add `@client.Record.first` and `@client.Record.forty_two` as helpers
 
 ## 0.1.0 (2015-11-25)
 - Move default headers to the adapter base class to make it easier to merge them when overriding
