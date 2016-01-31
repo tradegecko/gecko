@@ -84,10 +84,10 @@ module Gecko
         end
       end
 
-      # Make an API request with parameters. Parameters vary via Record Type
+      # Fetch a record collection via the API. Parameters vary via Record Type
       #
       # @example Fetch via ID
-      #   client.Product.where(ids: [1,2]
+      #   client.Product.where(ids: [1,2])
       #
       # @example Fetch via date
       #   client.Product.where(updated_at_min: "2014-03-03T21:09:00")
@@ -113,6 +113,39 @@ module Gecko
         parsed_response = response.parsed
         set_pagination(response.headers)
         parse_records(parsed_response)
+      end
+
+      # Fetch the first record for the given parameters
+      #
+      # @example Fetch via ID
+      #   client.Product.first
+      #
+      # @example Fetch via date
+      #   client.Product.first(updated_at_min: "2014-03-03T21:09:00")
+      #
+      # @example Search
+      #   client.Product.first(q: "gecko")
+      #
+      # @param [#to_hash] params
+      # @option params [String] :q Search query
+      # @option params [Array<Integer>] :ids IDs to search for
+      # @option params [String] :updated_at_min Last updated_at minimum
+      # @option params [String] :updated_at_max Last updated_at maximum
+      # @option params [String] :order Sort order i.e 'name asc'
+      # @option params [String, Array<String>] :status Record status/es
+      #
+      # @return <Gecko::Record::Base> A record instance
+      #
+      # @api public
+      def first(params={})
+        where(params.merge(limit: 1)).first
+      end
+
+      # Fetch the forty-second record for the given parameters
+      #
+      # @api public
+      def forty_two(params={})
+        where(params.merge(limit: 1, page: 42)).first
       end
 
       # Returns the total count for a record type via API request.
