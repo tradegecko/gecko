@@ -139,6 +139,21 @@ ActiveSupport::Notifications.subscribe('request.gecko') do |name, start, finish,
 end
 ```
 
+## Checking API limits
+
+The Gecko gem stores a copy of the last API response per adapter.
+You can use this to access headers such as cache controls or current API limit usages.
+
+```ruby
+client.Product.find(124)
+client.Product.last_response.headers['X-Rate-Limit-Limit']
+#=> '300'
+client.Product.last_response.headers['X-Rate-Limit-Remaining']
+#=> '290'
+client.Product.last_response.headers['X-Rate-Limit-Reset']
+#=> '1412079600'
+```
+
 ## TODO
 - Deleting records
 - Complete record collection
