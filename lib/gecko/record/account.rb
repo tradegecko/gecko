@@ -37,10 +37,8 @@ module Gecko
       attribute :tax_label,        String
       attribute :tax_number_label, String
 
-      # attribute :stock_level_warn, String
-
       ## DEPRECATED
-      attribute :default_tax_rate, String
+      # attribute :default_tax_rate, String
       # attribute :default_tax_type, String
     end
 

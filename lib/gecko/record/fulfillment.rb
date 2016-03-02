@@ -7,6 +7,8 @@ module Gecko
       belongs_to :order
       belongs_to :shipping_address, class_name: 'Address'
       belongs_to :billing_address,  class_name: 'Address'
+      belongs_to :stock_location,  class_name: 'Location'
+
       has_many :fulfillment_line_items
 
       attribute :status,           String

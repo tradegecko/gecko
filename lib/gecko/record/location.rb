@@ -3,7 +3,6 @@ require 'gecko/record/base'
 module Gecko
   module Record
     class Location < Base
-
       attribute :address1,     String
       attribute :address2,     String
       attribute :suburb,       String

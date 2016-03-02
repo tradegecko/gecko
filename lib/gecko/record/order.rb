@@ -28,7 +28,11 @@ module Gecko
       attribute :packed_status,         String,     readonly: true
       attribute :fulfillment_status,    String,     readonly: true
       attribute :invoice_status,        String,     readonly: true
-      attribute :payment_status,        String
+      attribute :payment_status,        String,     readonly: true
+      attribute :return_status,         String,     readonly: true
+      attribute :returning_status,      String,     readonly: true
+      attribute :shippability_status,   String,     readonly: true
+      attribute :backordering_status,   String,     readonly: true
       attribute :tax_treatment,         String
       attribute :issued_at,             Date
       attribute :ship_at,               Date

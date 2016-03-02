@@ -17,8 +17,6 @@ module Gecko
       attribute :status,       String
 
       attribute :image_url,    String,  readonly: true
-      # attribute :quantity,     Integer, readonly: true
-      # attribute :search_cache, String,  readonly: true
     end
 
     class ProductAdapter < BaseAdapter
