@@ -39,14 +39,15 @@ module Gecko
       #
       # @api private
       def writeable?(attribute)
-        return false if attribute.options[:readonly]
+        return if attribute.options[:readonly]
+        return true unless attribute.options[:writeable_on]
         case attribute.options[:writeable_on]
         when :update
           persisted?
         when :create
           !persisted?
         else
-          true
+          raise ArgumentError
         end
       end
 
