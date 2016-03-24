@@ -412,6 +412,8 @@ module Gecko
           payload[:body]         = options[:body]
           payload[:model_class]  = model_class
           payload[:request_path] = path
+          options[:headers]      = options.fetch(:headers, {}).tap { |headers| headers['Content-Type'] = 'application/json' }
+          options[:body]         = options[:body].to_json if options[:body]
           payload[:response]     = @client.access_token.request(verb, path, options)
         end
       end
