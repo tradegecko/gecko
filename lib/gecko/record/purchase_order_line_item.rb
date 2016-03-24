@@ -3,8 +3,8 @@ require 'gecko/record/base'
 module Gecko
   module Record
     class PurchaseOrderLineItem < Base
-      belongs_to :purchase_order
-      belongs_to :variant
+      belongs_to :purchase_order, writeable_on: :create
+      belongs_to :variant, writeable_on: :create
       belongs_to :procurement
       belongs_to :tax_type
 

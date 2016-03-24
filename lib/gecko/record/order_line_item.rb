@@ -3,8 +3,8 @@ require 'gecko/record/base'
 module Gecko
   module Record
     class OrderLineItem < Base
-      belongs_to :order
-      belongs_to :variant
+      belongs_to :order, writeable_on: :create
+      belongs_to :variant, writeable_on: :create
       belongs_to :tax_type
 
       has_many :fulfillment_line_items

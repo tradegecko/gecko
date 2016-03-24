@@ -3,7 +3,7 @@ require 'gecko/record/base'
 module Gecko
   module Record
     class Contact < Base
-      belongs_to :company
+      belongs_to :company, writeable_on: :create
 
       attribute :email,        String
       attribute :first_name,   String
