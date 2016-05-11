@@ -21,6 +21,13 @@ module Gecko
         attribute :value,            BigDecimal
       end
 
+      class CompositePart
+        include Virtus.model
+        include Gecko::Helpers::SerializationHelper
+        attribute :variant_id,        String
+        attribute :quantity,          BigDecimal
+      end
+
       belongs_to :product, writeable_on: :create
       has_many :images
 
@@ -70,6 +77,7 @@ module Gecko
       attribute :variant_prices,  Array[VariantPrice]
 
       attribute :composite,           Boolean,    writeable_on: :create
+      attribute :composite_parts,     Array[CompositePart],  writeable_on: :update
       attribute :initial_stock_level, BigDecimal, writeable_on: :create
       attribute :initial_cost_price,  BigDecimal, writeable_on: :create
 
