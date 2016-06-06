@@ -16,7 +16,10 @@ module Gecko
       attribute :notes,           String
       attribute :exchange_rate,   BigDecimal
 
-      attribute :document_url,    String,   readonly: true
+      attribute :status,          String,     readonly: true
+      attribute :payment_status,  String,     readonly: true
+      attribute :total,           BigDecimal, readonly: true
+      attribute :document_url,    String,     readonly: true
     end
 
     class InvoiceAdapter < BaseAdapter
