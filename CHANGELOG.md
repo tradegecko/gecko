@@ -1,7 +1,10 @@
-## 0.1.1 (Unreleased)
+## 0.2.0 (2016-06-06)
+- Support `writeable_on :create` for attributes
 - Allow passing query parameters to `Adapter#count`
 - Add `@client.Record.first` and `@client.Record.forty_two` as helpers
 - Store the last API response at `@client.Record.last_response`
+- Make sure to set Content-Type to `application/json`
+- Clean up some deprecated fields leading up to API release (See [https://developer.tradegecko.com](https://developer.tradegecko.com) for up-to-date attribute list)
 
 ## 0.1.0 (2015-11-25)
 - Move default headers to the adapter base class to make it easier to merge them when overriding
