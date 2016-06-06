@@ -115,6 +115,18 @@ module Gecko
         parse_records(parsed_response)
       end
 
+      # Returns all the records currently in the identity map.
+      #
+      # @example Return all Products previously fetched
+      #   client.Product.peek_all
+      #
+      # @return [Array<Gecko::Record::Base>]
+      #
+      # @api public
+      def peek_all
+        @identity_map.values
+      end
+
       # Fetch the first record for the given parameters
       #
       # @example Fetch via ID

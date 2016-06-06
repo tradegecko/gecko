@@ -14,7 +14,7 @@ class Gecko::Record::FulfillmentLineItemAdapterTest < Minitest::Test
   def test_adapter_uses_identity_map
     VCR.use_cassette('fulfillments') do
       @client.Fulfillment.where(limit: 5)
-      collection = adapter.all
+      collection = adapter.peek_all
       assert_equal(collection.first, adapter.find(collection.first.id))
     end
   end
