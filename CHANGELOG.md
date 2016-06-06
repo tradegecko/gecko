@@ -1,6 +1,6 @@
-## 0.2.1 (2016-06-06)
+## 0.2.2 (2016-06-06)
 - Add `@client.Record.peek_all` to return all items currently in identity map
-
+## 0.2.1 (2016-06-06) (Yanked)
 ## 0.2.0 (2016-06-06)
 - Support `writeable_on :create` for attributes
 - Allow passing query parameters to `Adapter#count`

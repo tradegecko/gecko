@@ -11,5 +11,9 @@ module Gecko
 
       attribute :position,   Integer
     end
+
+    class FulfillmentLineItemAdapter < BaseAdapter
+
+    end
   end
 end
