@@ -1,4 +1,4 @@
-## 0.2.1 (Unreleased)
+## 0.2.1 (2016-06-06)
 - Add `@client.Record.peek_all` to return all items currently in identity map
 
 ## 0.2.0 (2016-06-06)
