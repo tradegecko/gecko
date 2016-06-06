@@ -11,16 +11,5 @@ module Gecko
 
       attribute :position,   Integer
     end
-
-    class FulfillmentLineItemAdapter < BaseAdapter
-      # Returns all cached records for testing
-      #
-      # @return [Array<Gecko::Record::FulfillmentLineItem>]
-      #
-      # @api private
-      def all
-        @identity_map.values
-      end
-    end
   end
 end
