@@ -66,7 +66,7 @@ module SharedAdapterExamples
   end
 
   def test_fetch_miss
-    request_stub = stub_request(:get, /#{plural_name}\/\d+/)
+    stub_request(:get, /#{plural_name}\/\d+/)
       .to_return({
         status:  404,
         headers: {"Content-Type" => "application/json"},

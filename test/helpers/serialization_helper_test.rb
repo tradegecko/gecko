@@ -76,7 +76,7 @@ class Gecko::Helpers::SerializationHelperTest < Minitest::Test
   end
 
   def test_root_key
-    record = Gecko::Record::OrderLineItem.new(@client, @json)
+    record = Gecko::Record::OrderLineItem.new(@client, {})
     assert_equal(:order_line_item, record.root)
   end
 

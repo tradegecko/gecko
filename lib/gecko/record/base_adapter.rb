@@ -185,7 +185,7 @@ module Gecko
       #
       # @api public
       def size
-        (@pagination && @pagination['total_records']) || count
+        (defined?(@pagination) && @pagination['total_records']) || count
       end
 
       # Fetch a record via API, regardless of whether it is already in identity map.
