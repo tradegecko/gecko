@@ -29,6 +29,8 @@ module Gecko
 
       attribute :tax_number,             String
 
+      attribute :tags,                   Array[String]
+
       attribute :default_tax_rate,       BigDecimal
       attribute :default_discount_rate,  BigDecimal
     end
