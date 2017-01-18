@@ -213,6 +213,33 @@ module Gecko
         end
       end
 
+      # Deletes a record by id.
+      # 
+      # @example
+      #   client.Product.delete(12)
+      # 
+      # @raise [OAuth2::Error] if record was not found
+      # @return [OAuth2::Response] if record was found and deleted
+      # @return [nil] If deletion was unsuccessful
+      #  
+      # @example
+      #   if client.Product.delete(12)
+      #      #product deleted
+      #   else
+      #      #could not delete
+      #   end
+      # @api public
+      def delete(id)
+        verify_id_presence!(id)
+        response = access_token.delete(plural_path + "/" + id.to_s)
+        
+        if response.status == 204
+          response
+        else
+          nil
+        end
+      end
+      
       # Parse a json collection and instantiate records
       #
       # @return [Array<Gecko::Record::Base>]
