@@ -6,7 +6,7 @@ AllCops:
 # private
 # ...
 # end
-Style/AccessModifierIndentation:
+Layout/AccessModifierIndentation:
   EnforcedStyle: outdent
 
 Style/Blocks:
@@ -16,26 +16,26 @@ Style/Blocks:
 Style/BracesAroundHashParameters:
   Enabled: false
 
-Style/DotPosition:
+Layout/DotPosition:
   EnforcedStyle: leading
 
-Style/IndentHash:
+Layout/IndentHash:
   EnforcedStyle: consistent
 
-Style/LineLength:
+Metrics/LineLength:
   Max: 120
 
 Style/RedundantSelf:
   Enabled: false
 
 # We like neatly-aligned code
-Style/SingleSpaceBeforeFirstArg:
+Layout/SpaceBeforeFirstArg:
   Enabled: false
 
-Style/SpaceAroundEqualsInParameterDefault:
+Layout/SpaceAroundEqualsInParameterDefault:
   Enabled: false
 
-Style/SpaceInsideHashLiteralBraces:
+Layout/SpaceInsideHashLiteralBraces:
   Enabled: false
 
 # Allow single or double quotes
@@ -44,7 +44,7 @@ Style/StringLiterals:
 
 # Disable this until we can work out how to allow aligning of assignments
 # https://github.com/bbatsov/rubocop/blob/master/spec/rubocop/cop/style/extra_spacing_spec.rb#L23
-Style/ExtraSpacing:
+Layout/ExtraSpacing:
   Enabled: false
 
 Style/WordArray:
@@ -59,7 +59,7 @@ Style/SignalException:
 Metrics/ClassLength:
   Enabled: false
 
-Style/MultilineOperationIndentation:
+Layout/MultilineOperationIndentation:
   Enabled: false
 
 Style/ClassAndModuleChildren:
