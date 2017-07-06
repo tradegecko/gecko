@@ -145,6 +145,23 @@ module SharedAdapterExamples
     assert(record.errors[:title].any?)
   end
 
+  def test_saving_record_with_idempotency_key
+    record = adapter.build
+    mock_token = mock
+    mock_response = mock(status: 200, parsed: {plural_name.singularize => {id: 123}})
+    mock_token.expects(:request)
+              .with(:post, plural_name, {
+                body: record.as_json.to_json,
+                raise_errors: false,
+                headers: {
+                  'Content-Type' => 'application/json',
+                  'Idempotency-Key' => 'abcdefghijkl'
+                }
+              }).returns(mock_response)
+    adapter.client.access_token = mock_token
+    adapter.save(record, idempotency_key: 'abcdefghijkl')
+  end
+
 private
   def mock_api_request(record, request, response)
     mock_token = mock

@@ -264,16 +264,18 @@ module Gecko
       # Save a record
       #
       # @params [Object] :record A Gecko::Record object
+      # @param [Hash] opts the options to make the request with
+      # @option opts [Hash] :idempotency_key A unique identifier for this action
       #
       # @return [Boolean] whether the save was successful.
       #                   If false the record will contain an errors hash
       #
       # @api private
-      def save(record)
+      def save(record, opts = {})
         if record.persisted?
-          update_record(record)
+          update_record(record, opts)
         else
-          create_record(record)
+          create_record(record, opts)
         end
       end
 
@@ -338,11 +340,11 @@ module Gecko
       # @return [OAuth2::Response]
       #
       # @api private
-      def create_record(record)
+      def create_record(record, opts = {})
         response = request(:post, plural_path, {
           body: record.as_json,
           raise_errors: false
-        })
+        }.merge(headers: headers_from_opts(opts)))
         handle_response(record, response)
       end
 
@@ -351,11 +353,11 @@ module Gecko
       # @return [OAuth2::Response]
       #
       # @api private
-      def update_record(record)
+      def update_record(record, opts = {})
         response = request(:put, plural_path + "/" + record.id.to_s, {
           body: record.as_json,
           raise_errors: false
-        })
+        }.merge(headers: headers_from_opts(opts)))
         handle_response(record, response)
       end
 
@@ -387,6 +389,15 @@ module Gecko
       # @api private
       def set_pagination(headers)
         @pagination = JSON.parse(headers["x-pagination"]) if headers["x-pagination"]
+      end
+
+      # Applies an idempotency key to the request if provided
+      #
+      # @api private
+      def headers_from_opts(opts)
+        headers = {}
+        headers['Idempotency-Key'] = opts[:idempotency_key] if opts[:idempotency_key]
+        headers
       end
 
       # Parse and instantiate sideloaded records
