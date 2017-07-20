@@ -10,6 +10,7 @@ class Gecko::Record::AccountAdapterTest < Minitest::Test
   undef :test_build_with_attributes
   undef :test_saving_new_record
   undef :test_saving_new_invalid_record
+  undef :test_saving_record_with_idempotency_key
 
   let(:adapter)       { @client.Account }
   let(:plural_name)   { 'accounts' }

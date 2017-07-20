@@ -17,6 +17,7 @@ class Gecko::Record::UserAdapterTest < Minitest::Test
   undef :test_build_with_attributes
   undef :test_saving_new_record
   undef :test_saving_new_invalid_record
+  undef :test_saving_record_with_idempotency_key
 
   def test_current
     VCR.use_cassette('users#current') do

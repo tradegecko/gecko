@@ -43,11 +43,14 @@ module Gecko
 
       # Save a record
       #
+      # @param [Hash] opts the options to save the record with
+      # @option opts [Hash] :idempotency_key A unique identifier for this action
+      #
       # @return <Gecko::Record::Base>
       #
       # @api public
-      def save
-        @client.adapter_for(self.class.demodulized_name).save(self)
+      def save(opts = {})
+        @client.adapter_for(self.class.demodulized_name).save(self, opts)
       end
 
       # Return the demodulized class name
