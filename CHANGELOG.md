@@ -2,6 +2,9 @@
 - Add support for API idempotency @client.Record.save(idempotency_key: 'ABCDEF123456')
 - Marked a couple of fields as readonly that weren't correctly marked so
 
+## 0.2.3 (2017-08-01)
+- Add weight_value to variant
+
 ## 0.2.2 (2016-06-06)
 - Add `@client.Record.peek_all` to return all items currently in identity map
 
