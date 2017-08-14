@@ -80,6 +80,21 @@ class Gecko::Helpers::SerializationHelperTest < Minitest::Test
     assert_equal(:order_line_item, record.root)
   end
 
+  def test_serializing_new_embedded_items
+    record = Gecko::Record::Order.new(@client, {})
+    record.order_line_items.build(quantity: 1, variant_id: 1)
+    serialized = record.serializable_hash
+    assert(1, serialized[:order_line_items].length)
+    assert_equal(1, serialized[:order_line_items][0][:variant_id])
+    assert_equal('1.0', serialized[:order_line_items][0][:quantity])
+  end
+
+  def test_doesnt_add_embedded_keys_unless_required
+    record = Gecko::Record::Order.new(@client, {})
+    serialized = record.serializable_hash
+    assert(!serialized.key?(:order_line_items))
+  end
+
 private
 
   def serialized_record

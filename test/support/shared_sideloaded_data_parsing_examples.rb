@@ -8,7 +8,7 @@ module SharedSideloadedDataParsingExamples
         child_adapter = @client.adapter_for(child.singularize.classify)
 
         identity_map = child_adapter.instance_variable_get(:@identity_map)
-        child_collection = collection.flat_map { |record| record.send(child) }
+        child_collection = collection.flat_map { |record| record.send(child).to_a }
 
         assert_equal child_collection, identity_map.values
       end

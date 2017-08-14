@@ -30,6 +30,11 @@ module Gecko
           next unless writeable?(attribute)
           serialize_attribute(attribute_hash, attribute)
         end
+
+        embedded_collections_for_serialization.each do |collection|
+          serialize_new_records(attribute_hash, collection)
+        end
+
         attribute_hash
       end
 
@@ -95,6 +100,29 @@ module Gecko
       # @api private
       def root
         self.class.demodulized_name.underscore.to_sym
+      end
+
+    private
+
+      # Returns embedded collections
+      #
+      # @return [Array<Gecko::Helpers::CollectionProxy>]
+      #
+      # @api private
+      def embedded_collections_for_serialization
+        collection_proxies.values.select(&:embed_records?)
+      end
+
+      # Serialize newly built embedded records into the payload
+      #
+      # @return [undefined]
+      #
+      # @api private
+      def serialize_new_records(serialized, collection_proxy)
+        new_records = collection_proxy.reject(&:persisted?)
+        return unless new_records.any?
+
+        serialized[collection_proxy.association_name] = new_records.map(&:serializable_hash)
       end
     end
   end

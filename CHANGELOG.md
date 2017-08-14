@@ -1,3 +1,13 @@
+## 0.5.0 (Unreleased)
+- [BREAKING CHANGE] has_many associations now return an enumerable
+  `CollectionProxy` where they used to return a plain array.
+- `has_many` associations now support `.build` which automatically assigns the parent
+  relation. `item = order.order_line_items.build(quantity: 123, variant_id: 123, price: 123)`
+  `item.order == order`.
+- Support for embedded serialization.
+  i.e `order.order_line_items.build(quantity: 123, price: 123, variant_id: 123); order.save`
+  will now save the Order and the order line items in a single API request.
+
 ## 0.2.5 (2018-01-15)
 - Add `User#account_name`
 
