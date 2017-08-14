@@ -1,4 +1,4 @@
-## Unreleased
+## 0.2.3 (2017-08-14)
 - Add support for API idempotency @client.Record.save(idempotency_key: 'ABCDEF123456')
 - Marked a couple of fields as readonly that weren't correctly marked so
 
