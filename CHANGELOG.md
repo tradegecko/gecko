@@ -1,5 +1,5 @@
 ## 0.2.3 (2017-08-14)
-- Add support for API idempotency @client.Record.save(idempotency_key: 'ABCDEF123456')
+- Add support for API idempotency `@client.Record.save(idempotency_key: 'ABCDEF123456')`
 - Marked a couple of fields as readonly that weren't correctly marked so
 
 ## 0.2.2 (2016-06-06)
@@ -19,17 +19,17 @@
 - Clean up old attributes
 
 ## 0.0.10 (2015-10-21)
-- Add first_name/last_name to addresses
+- Add `first_name`/`last_name` to addresses
 
 ## 0.0.9 (2015-10-02)
 - Add tags to order
 
 ## 0.0.8 (2015-09-10)
-- Fetch VariantLocation#committed_stock as committed
+- Fetch `VariantLocation#committed_stock` as committed
 - Make image uploading work
 
 ## 0.0.7 (2015-03-17)
-- Fix issue with Order#tax_override
+- Fix issue with `Order#tax_override`
 - Support sideloaded records without a hack
 
 ## 0.0.6 (2015-03-17)
