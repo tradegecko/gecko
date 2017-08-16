@@ -87,6 +87,7 @@ class Gecko::Helpers::SerializationHelperTest < Minitest::Test
     assert(1, serialized[:order_line_items].length)
     assert_equal(1, serialized[:order_line_items][0][:variant_id])
     assert_equal('1.0', serialized[:order_line_items][0][:quantity])
+    assert(!serialized[:order_line_items][0].key?(:order_id))
   end
 
   def test_doesnt_add_embedded_keys_unless_required

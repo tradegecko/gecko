@@ -122,7 +122,11 @@ module Gecko
         new_records = collection_proxy.reject(&:persisted?)
         return unless new_records.any?
 
-        serialized[collection_proxy.association_name] = new_records.map(&:serializable_hash)
+        parent_key = collection_proxy.parent.class.demodulized_name.foreign_key.to_sym
+
+        serialized[collection_proxy.association_name] = new_records.map do |record|
+          record.serializable_hash.except(parent_key)
+        end
       end
     end
   end

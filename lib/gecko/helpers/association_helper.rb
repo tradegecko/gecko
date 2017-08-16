@@ -115,7 +115,7 @@ module Gecko
       include Enumerable
       delegate :each, :empty?, to: :@target
 
-      attr_reader :association_name
+      attr_reader :association_name, :parent
 
       # Setup the child collection proxy
       #

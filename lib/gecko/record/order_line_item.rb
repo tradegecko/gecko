@@ -24,9 +24,6 @@ module Gecko
       attribute :position,  Integer
 
       attribute :image_url, String,     readonly: true
-
-      # DEPRECATED
-      attribute :tax_rate,  BigDecimal
     end
 
     class OrderLineItemAdapter < BaseAdapter
