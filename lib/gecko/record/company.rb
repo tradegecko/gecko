@@ -24,6 +24,7 @@ module Gecko
       attribute :email,                  String
       attribute :website,                String
       attribute :company_type,           String
+      attribute :tags,                   Array[String]
 
       attribute :status,                 String
 
