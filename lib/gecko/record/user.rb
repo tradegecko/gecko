@@ -17,6 +17,7 @@ module Gecko
       attribute :billing_contact,    Boolean,  readonly: true
 
       # attribute :account_id,         Integer
+      attribute :account_name,       String
 
       ## DEPRECATED
       attribute :mobile_phone,       String

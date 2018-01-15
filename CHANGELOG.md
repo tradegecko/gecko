@@ -1,3 +1,6 @@
+## 0.2.5 (2018-01-15)
+- Add `User#account_name`
+
 ## 0.2.4 (2017-08-28)
 - Add `Company#tags`
 
