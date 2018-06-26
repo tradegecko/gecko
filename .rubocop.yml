@@ -64,3 +64,6 @@ Layout/MultilineOperationIndentation:
 
 Style/ClassAndModuleChildren:
   EnforcedStyle: compact
+
+Style/DoubleNegation:
+  Enabled: false
