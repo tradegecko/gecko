@@ -1,7 +1,7 @@
 require 'gecko'
 require 'minitest/autorun'
 require 'minitest/pride'
-require 'mocha/mini_test'
+require 'mocha/minitest'
 require 'vcr'
 require 'webmock/minitest'
 require 'timecop'
