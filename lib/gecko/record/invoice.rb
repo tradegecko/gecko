@@ -8,7 +8,7 @@ module Gecko
       belongs_to :billing_address
       belongs_to :payment_term
 
-      has_many :invoice_line_items
+      has_many :invoice_line_items, embedded: true
 
       attribute :invoice_number,  String
       attribute :invoiced_at,     Date

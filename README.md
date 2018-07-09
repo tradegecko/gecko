@@ -76,6 +76,8 @@ client.Product.where(ids: [123, 124])
 
 ## Building Records
 
+You can create new records by calling `build` on the appropriate adapter.
+
 ```ruby
 geckobot = client.Product.build(name: "Geckobot", product_type: "Robot")
 #=> <Gecko::Record::Product id=nil name="Geckobot" product_type: "Robot">
@@ -87,6 +89,8 @@ geckobot.persisted?
 
 #### Create Record
 
+You can persist new records by calling `save`.
+
 ```ruby
 geckobot = client.Product.build(name: "Geckobot", product_type: "Robot")
 #=> <Gecko::Record::Product id=nil name="Geckobot" product_type: "Robot">
@@ -96,6 +100,19 @@ geckobot.save # Persists to API
 #=> true
 geckobot
 #=> <Gecko::Record::Product id=124 name="Geckobot" product_type: "Robot">
+```
+
+You can also create new records from inside a parent object.
+
+```ruby
+variant = product.variants.build(name: "Geckobot", sku: "ROBO")
+#=> <Gecko::Record::Variant id=nil product_id=123 name="Geckobot" sku: "ROBO">
+variant.persisted?
+#=> false
+variant.save #=> Persists to API
+#=> true
+variant
+#=> <Gecko::Record::Variant id=125 product_id=123 name="Geckobot" sku: "ROBO">
 ```
 
 #### Update Record
@@ -111,6 +128,39 @@ geckobot.save # Persists to API
 geckobot
 #=> <Gecko::Record::Product id=124 name="Geckobot" product_type: "Robo-boogie">
 ```
+
+#### Embedded Record Serialization
+
+Some records support being saved inside of their parents.
+A good example is creating a Sales Order and it's line items.
+
+```ruby
+order = client.Order.build(company_id: 123, shipping_address_id: 123)
+order.order_line_items.build(quantity: 1, variant_id: 123, price: 10.5)
+order.order_line_items.build(quantity: 2, variant_id: 124, price: 11.0)
+order.save # Persists to API
+#=> true
+order.order_line_items
+#=> [<Gecko::Record::OrderLineItem id=125 variant_id=123 quantity: 1 price: '10.5'>,
+     <Gecko::Record::OrderLineItem id=126 variant_id=124 quantity: 2 price: '11.0'>]
+```
+
+This also works when adding new items to an existing order.
+
+```ruby
+order = client.Order.find(123)
+order.order_line_items.build(quantity: 1, variant_id: 123, price: 10.5)
+order.order_line_items.build(quantity: 2, variant_id: 124, price: 11.0)
+order.save # Persists to API
+#=> true
+order.order_line_items
+#=> [<Gecko::Record::OrderLineItem id=125 variant_id=123 quantity: 1 price: '10.5'>,
+     <Gecko::Record::OrderLineItem id=126 variant_id=124 quantity: 2 price: '11.0'>]
+```
+
+N.B. Only creation of embedded objects works at this time.
+Updating/Deleting embedded items must still be done by calling `save/destroy`
+on each of the child objects themselves.
 
 #### Validations
 

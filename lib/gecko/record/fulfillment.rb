@@ -9,7 +9,7 @@ module Gecko
       belongs_to :billing_address,  class_name: 'Address'
       belongs_to :stock_location,  class_name: 'Location'
 
-      has_many :fulfillment_line_items
+      has_many :fulfillment_line_items, embedded: true
 
       attribute :status,           String
       attribute :exchange_rate,    String
