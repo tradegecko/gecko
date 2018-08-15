@@ -5,7 +5,7 @@ The official TradeGecko API RubyGem
 
 This library provides a Ruby interface to publicly available (beta) API for TradeGecko.
 
-If you are unfamiliar with the TradeGecko API, you can read the documentation located at [http://developer.tradegecko.com](http://developer.tradegecko.com)
+If you are unfamiliar with the TradeGecko API, you can read the documentation located at [https://developer.tradegecko.com](https://developer.tradegecko.com)
 
 ## Installation
 
@@ -212,7 +212,7 @@ client.Product.last_response.headers['X-Rate-Limit-Reset']
 
 ## Contributing
 
-1. Fork it ( http://github.com/tradegecko/gecko/fork )
+1. Fork it ( https://github.com/tradegecko/gecko/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
