@@ -1,4 +1,4 @@
-## 0.5.0 (Unreleased)
+## 0.5.0 (2018-08-15)
 - [BREAKING CHANGE] has_many associations now return an enumerable
   `CollectionProxy` where they used to return a plain array.
 - `has_many` associations now support `.build` which automatically assigns the parent
