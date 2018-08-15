@@ -7,6 +7,7 @@
 - Support for embedded serialization.
   i.e `order.order_line_items.build(quantity: 123, price: 123, variant_id: 123); order.save`
   will now save the Order and the order line items in a single API request.
+- Add minimum `oauth2` gem dependency
 
 ## 0.2.5 (2018-01-15)
 - Add `User#account_name`
