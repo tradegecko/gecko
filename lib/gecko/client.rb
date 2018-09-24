@@ -31,6 +31,7 @@ module Gecko
     record :PurchaseOrderLineItem
     record :TaxType
     record :PaymentTerm
+    record :Webhook
 
     # Return OAuth client
     #
