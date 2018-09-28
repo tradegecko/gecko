@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+require 'gecko/helpers/action_helper'
 require 'gecko/helpers/association_helper'
 require 'gecko/helpers/inspection_helper'
 require 'gecko/helpers/serialization_helper'
@@ -7,7 +10,8 @@ module Gecko
   module Record
     class Base
       include Virtus.model
-      include  Gecko::Helpers::AssociationHelper
+      include Gecko::Helpers::ActionHelper
+      include Gecko::Helpers::AssociationHelper
       include Gecko::Helpers::InspectionHelper
       include Gecko::Helpers::SerializationHelper
       include Gecko::Helpers::ValidationHelper

@@ -11,6 +11,7 @@ class Gecko::Record::AccountAdapterTest < Minitest::Test
   undef :test_saving_new_record
   undef :test_saving_new_invalid_record
   undef :test_saving_record_with_idempotency_key
+  undef :test_action_error
 
   let(:adapter)       { @client.Account }
   let(:plural_name)   { 'accounts' }

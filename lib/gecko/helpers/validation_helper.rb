@@ -87,5 +87,9 @@ module Gecko
         @messages[attr.to_sym] = errors
       end
     end
+
+    def from_action(action_name, errors)
+      @messages[action_name] = errors
+    end
   end
 end

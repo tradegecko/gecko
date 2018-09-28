@@ -21,4 +21,11 @@ class Gecko::Helpers::ValidationHelperTest < Minitest::Test
     assert(!record.valid?)
     assert_equal(record.errors[:name], ["is not shiny"])
   end
+
+  def test_from_action
+    record = @klass.new(@client, name: "Gecko")
+    record.errors.from_action(:pay, "Can't pay")
+    assert(!record.valid?)
+    assert_equal(record.errors[:pay], "Can't pay")
+  end
 end

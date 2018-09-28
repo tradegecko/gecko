@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Shared tests for Gecko::Record Adapters
 # requires definition of several variables
 # - adapter
@@ -5,6 +7,7 @@
 # - record_class
 
 require 'json'
+
 module SharedAdapterExamples
   def test_adapter_all
     VCR.use_cassette(plural_name) do
@@ -62,6 +65,36 @@ module SharedAdapterExamples
       })
     record = adapter.fetch(12345)
     assert_equal(12345, record.id)
+    assert_requested(request_stub)
+  end
+
+  def test_action_success
+    record = existing_record
+
+    request_stub = stub_request(:post, %r/#{plural_name}\/#{record.id}\/actions\/fire/)
+                    .to_return({
+                      headers: {"Content-Type" => "application/json"},
+                      body:    JSON.dump({ 'irrelevant_response' => true })
+                    })
+
+    action_result = adapter.action(record, :fire)
+    assert_equal(true, action_result)
+    assert_requested(request_stub)
+  end
+
+  def test_action_error
+    record = existing_record
+
+    request_stub = stub_request(:post, %r/#{plural_name}\/#{record.id}\/actions\/fire/)
+                   .to_return({
+                     status: 422,
+                     headers: {"Content-Type" => "application/json"},
+                     body:    JSON.dump({ "errors" => ['something'] })
+                   })
+
+    action_result = adapter.action(record, :fire)
+    assert_equal(false, action_result)
+    assert(record.errors[:fire].any?)
     assert_requested(request_stub)
   end
 

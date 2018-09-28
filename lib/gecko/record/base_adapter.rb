@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Gecko
   module Record
     class BaseAdapter
@@ -186,6 +188,28 @@ module Gecko
       # @api public
       def size
         (defined?(@pagination) && @pagination['total_records']) || count
+      end
+
+      # Executes an action for that record type.
+      #
+      # @example
+      #   client.Order.first.receive
+      #
+      # @return [Boolean] whether the save was successful.
+      #                   If false the record will contain an errors hash
+      #
+      # @api private
+      def action(record, action_name, options = {})
+        http_action = options[:action] || :post
+        response = request(http_action, "#{plural_path}/#{record.id}/actions/#{action_name}", { raise_errors: false }.merge(options))
+
+        if [200, 201].include?(response.status)
+          true
+        else
+          parsed_errors = JSON.parse(response.body)['errors']
+          record.errors.from_action(action_name, parsed_errors)
+          false
+        end
       end
 
       # Fetch a record via API, regardless of whether it is already in identity map.

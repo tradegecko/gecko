@@ -50,6 +50,11 @@ module Gecko
       # attribute :source,                String
 
       # attribute :invoice_numbers,       Hash[Integer => String], readonly: true
+
+      action :invoice
+      action :pay
+      action :pack
+      action :fulfil
     end
 
     class OrderAdapter < BaseAdapter
