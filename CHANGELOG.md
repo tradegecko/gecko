@@ -1,4 +1,4 @@
-## Unreleased
+## 0.6.0 (2018-11-13)
 - Add `Gecko::Record::Webhook` model.
 - Expose new `available` attribute on a Variant#VariantLocation model, this should remove the need to calculate available stock on the client.
 
