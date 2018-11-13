@@ -1,5 +1,6 @@
 ## Unreleased
 - Add `Gecko::Record::Webhook` model.
+- Expose new `available` attribute on a Variant#VariantLocation model, this should remove the need to calculate available stock on the client.
 
 ## 0.5.0 (2018-08-15)
 - [BREAKING CHANGE] has_many associations now return an enumerable
