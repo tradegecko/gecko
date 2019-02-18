@@ -16,6 +16,7 @@ module Gecko
     record :Address
     record :Company
     record :Contact
+    record :Note
 
     record :Order
     record :OrderLineItem
