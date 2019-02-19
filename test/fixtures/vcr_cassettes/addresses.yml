@@ -53,15 +53,15 @@ http_interactions:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"addresses":[{"id":3,"company_id":3,"city":"Auckland","company_name":"TradeGecko","country":"NZ","label":"Shipping","state":"","address1":"14a
+      string: '{"addresses":[{"id":3,"company_id":3,"city":"Auckland","company_name":"TradeGecko","country":"NZ","country_code":"NZ","label":"Shipping","state":"","address1":"14a
         York St","address2":null,"suburb":"Parnell","zip_code":"123456","phone_number":null,"email":null,"status":"active"},{"id":42,"company_id":2,"city":"Auckland","company_name":"Saks
-        Fifth Avenue","country":"NZL","label":"Billing","state":"","address1":"7 jhsjhsd
+        Fifth Avenue","country":"New Zealand","country_code":"NZ","label":"Billing","state":"","address1":"7 jhsjhsd
         jsd","address2":null,"suburb":"hernebay","zip_code":"1022","phone_number":null,"email":null,"status":"active"},{"id":43,"company_id":2,"city":"auckland","company_name":"Saks
-        Fifth Avenue","country":"NZL","label":"Shipping","state":"","address1":"65
+        Fifth Avenue","country":"NZL","country_code":"NZ","label":"Shipping","state":"","address1":"65
         hgsdhsgd","address2":null,"suburb":"ytdy hnb","zip_code":"7637","phone_number":null,"email":null,"status":"active"},{"id":101,"company_id":103,"city":null,"company_name":"Mike''s
-        Bikes","country":null,"label":"Billing Address","state":null,"address1":"234
+        Bikes","country":null,"country_code":null,"label":"Billing Address","state":null,"address1":"234
         test st","address2":null,"suburb":null,"zip_code":null,"phone_number":null,"email":null,"status":"active"},{"id":102,"company_id":104,"city":null,"company_name":"Stove
-        Top Cafe","country":null,"label":"Billing Address","state":null,"address1":"54
+        Top Cafe","country":null,"country_code":null,"label":"Billing Address","state":null,"address1":"54
         test st","address2":null,"suburb":null,"zip_code":null,"phone_number":null,"email":null,"status":"active"}]}'
     http_version: 
   recorded_at: Mon, 03 Mar 2014 03:54:00 GMT
