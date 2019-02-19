@@ -16,14 +16,13 @@ module Gecko
       attribute :city,         String
       attribute :state,        String
       attribute :country,      String
+      attribute :country_code, String
       attribute :zip_code,     String
 
       attribute :phone_number, String
       attribute :email,        String
 
       attribute :status,       String,  readonly: true
-
-      alias_method :country_code, :country
     end
 
     class AddressAdapter < BaseAdapter
