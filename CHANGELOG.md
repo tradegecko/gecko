@@ -1,5 +1,6 @@
-## Unreleased
+## 0.7.0 (2019-02-19)
 - Add new `country_code` attribute to Address model.
+- Stop testing on Ruby 2.1 and 2.2
 
 ## 0.6.0 (2018-11-13)
 - Add `Gecko::Record::Webhook` model.
