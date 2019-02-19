@@ -8,6 +8,7 @@ module Gecko
       belongs_to :tax_type
 
       has_many :fulfillment_line_items
+      has_many :fulfillment_return_line_items
       has_many :invoice_line_items
 
       attribute :label,     String
