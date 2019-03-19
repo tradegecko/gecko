@@ -1,5 +1,6 @@
 ## Unreleased
 - Add `Gecko::Record::Note` model.
+- Fix issue with `find_many` where by duplicated records will be retrieved if there are > 100 records
 
 ## 0.7.0 (2019-02-19)
 - Add new `country_code` attribute to Address model.
