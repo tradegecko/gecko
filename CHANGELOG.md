@@ -1,3 +1,6 @@
+## 0.2.6 (2019-03-19)
+- [BACKPORT] Fix issue with find_many which manifested as a bug in has_many definitions with cached records being duplicated when more than 100 children existed.
+
 ## 0.2.5 (2018-01-15)
 - Add `User#account_name`
 

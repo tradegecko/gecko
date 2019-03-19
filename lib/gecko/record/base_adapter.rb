@@ -78,7 +78,7 @@ module Gecko
       def find_many(ids)
         existing, required = ids.partition { |id| has_record_for_id?(id) }
         if required.any?
-          where(ids: ids) + existing.map { |id| record_for_id(id) }
+          where(ids: required) + existing.map { |id| record_for_id(id) }
         else
           existing.map { |id| record_for_id(id) }
         end
