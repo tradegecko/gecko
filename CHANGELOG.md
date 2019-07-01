@@ -1,3 +1,6 @@
+## Unreleased
+- Add `discount_amount` attribute and `discounted_price` helper to `OrderLineItem`'s
+
 ## 0.7.1 (2019-03-19)
 - Add `Gecko::Record::Note` model.
 - Fix issue with `find_many` which manifested as a bug in `has_many` definitions with cached records being duplicated when more than 100 children existed.

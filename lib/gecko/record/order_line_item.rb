@@ -17,6 +17,8 @@ module Gecko
       attribute :shippable, Boolean, readonly: true
 
       attribute :discount,  BigDecimal
+      attribute :discount_amount, BigDecimal
+
       attribute :quantity,  BigDecimal
       attribute :price,     BigDecimal
       attribute :tax_rate_override,  BigDecimal
@@ -24,6 +26,21 @@ module Gecko
       attribute :position,  Integer
 
       attribute :image_url, String,     readonly: true
+
+      def discounted_price
+        if discount_amount&.nonzero?
+          price - discount_amount
+        else
+          price * discount_multiplier
+        end
+      end
+
+    private
+
+      def discount_multiplier
+        return 1 unless discount
+        1 - discount / 100
+      end
     end
 
     class OrderLineItemAdapter < BaseAdapter
