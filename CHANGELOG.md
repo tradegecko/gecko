@@ -1,5 +1,6 @@
-## Unreleased
+## 0.8.0 (2019-07-01)
 - Add `discount_amount` attribute and `discounted_price` helper to `OrderLineItem`'s
+- Drop support for Ruby 2.3
 
 ## 0.7.1 (2019-03-19)
 - Add `Gecko::Record::Note` model.
