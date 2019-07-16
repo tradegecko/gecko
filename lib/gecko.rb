@@ -32,3 +32,13 @@ require 'gecko/record/purchase_order_line_item'
 require 'gecko/record/tax_type'
 require 'gecko/record/payment_term'
 require 'gecko/record/webhook'
+
+module Gecko
+  def self.enable_logging
+    require 'gecko/ext/log_subscriber'
+  end
+
+  def self.install_liquid_shim
+    require 'gecko/ext/liquid_compat'
+  end
+end

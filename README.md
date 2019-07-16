@@ -189,6 +189,9 @@ ActiveSupport::Notifications.subscribe('request.gecko') do |name, start, finish,
 end
 ```
 
+The gem comes with a default `LogSubscriber` that outputs API requests in an ActiveRecord style.
+This is disabled by default and can be included by calling `Gecko.enable_logging`.
+
 ## Checking API limits
 
 The Gecko gem stores a copy of the last API response per adapter.
@@ -203,6 +206,10 @@ client.Product.last_response.headers['X-Rate-Limit-Remaining']
 client.Product.last_response.headers['X-Rate-Limit-Reset']
 #=> '1412079600'
 ```
+
+## Liquid Compatibility
+A compatibility shim for the Liquid templating language is distributed, but not loaded by default.
+This can be enabled via `Gecko.install_liquid_shim`
 
 ## TODO
 - Deleting records
