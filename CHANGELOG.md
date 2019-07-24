@@ -1,4 +1,4 @@
-## 0.9.0 (Unreleased)
+## 0.9.0 (2019-07-24)
 - Added an optional `ActiveSupport::LogSubscriber` class for easy logging,
   can be enabled via `Gecko.enable_logging`.
 - Added an optional compatibility shim for the Liquid templating language, 
