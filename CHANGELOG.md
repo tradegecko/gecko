@@ -1,3 +1,6 @@
+## 0.9.1 (2019-07-29)
+- Fix issue with LiquidCompat that broke during refactor
+
 ## 0.9.0 (2019-07-24)
 - Added an optional `ActiveSupport::LogSubscriber` class for easy logging,
   can be enabled via `Gecko.enable_logging`.

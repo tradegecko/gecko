@@ -61,6 +61,8 @@ module Gecko
       end
     end
 
+    alias_method :[], :invoke_drop
+
     ## Override Liquid::Drop#invokable_methods to add extra checks
     def invokable_methods
       @invokable_methods ||= begin
