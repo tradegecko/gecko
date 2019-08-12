@@ -66,10 +66,10 @@ module Gecko
     ## Override Liquid::Drop#invokable_methods to add extra checks
     def invokable_methods
       @invokable_methods ||= begin
-        blacklist = Gecko::Record::Base.public_instance_methods + Liquid::Drop.public_instance_methods
-        blacklist -= [:to_liquid, :id, :created_at, :updated_at]
-        whitelist = self.public_methods + @delegate.public_methods
-        available_methods = (whitelist - blacklist).map(&:to_s)
+        denylist = Gecko::Record::Base.public_instance_methods + Liquid::Drop.public_instance_methods
+        denylist -= [:to_liquid, :id, :created_at, :updated_at]
+        allowlist = self.public_methods + @delegate.public_methods
+        available_methods = (allowlist - denylist).map(&:to_s)
         available_methods.reject! { |method_name| method_name.ends_with?("=") }
         Set.new(available_methods)
       end
