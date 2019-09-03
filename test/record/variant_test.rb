@@ -43,4 +43,19 @@ class Gecko::VariantTest < Minitest::Test
     assert_equal(0,        locations[0].committed_stock)
     assert_equal("AB-123", locations[0].bin_location)
   end
+
+  def test_serialization
+    json = {
+      locations: [
+        { location_id: 1, stock_on_hand: "12.50", committed: "0", bin_location: "AB-123", available: true },
+      ],
+      variant_prices: [
+        { price_list_id: "buy", value: "12.50"}, {price_list_id: 123, value: "14.00" }
+      ]
+    }
+
+    variant = record_class.new(client, json)
+
+    assert_instance_of(Hash, variant.as_json)
+  end
 end

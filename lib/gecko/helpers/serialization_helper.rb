@@ -110,6 +110,8 @@ module Gecko
       #
       # @api private
       def embedded_collections_for_serialization
+        return [] unless respond_to?(:collection_proxies, true)
+
         collection_proxies.values.select(&:embed_records?)
       end
 
