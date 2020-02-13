@@ -7,7 +7,7 @@ module Gecko
   module Record
     class Base
       include Virtus.model
-      include  Gecko::Helpers::AssociationHelper
+      include Gecko::Helpers::AssociationHelper
       include Gecko::Helpers::InspectionHelper
       include Gecko::Helpers::SerializationHelper
       include Gecko::Helpers::ValidationHelper
