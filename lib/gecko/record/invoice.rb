@@ -7,10 +7,13 @@ module Gecko
       belongs_to :shipping_address
       belongs_to :billing_address
       belongs_to :payment_term
+      belongs_to :company,                    readonly: true
+      belongs_to :currency,                   readonly: true
 
       has_many :invoice_line_items, embedded: true
 
       attribute :invoice_number,  String
+      attribute :order_number,    String,     readonly: true
       attribute :invoiced_at,     Date
       attribute :due_at,          Date
       attribute :notes,           String
