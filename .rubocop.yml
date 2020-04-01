@@ -19,7 +19,7 @@ Style/BracesAroundHashParameters:
 Layout/DotPosition:
   EnforcedStyle: leading
 
-Layout/IndentHash:
+Layout/IndentFirstHashElement:
   EnforcedStyle: consistent
 
 Metrics/LineLength:
