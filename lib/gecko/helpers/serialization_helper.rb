@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Gecko
   module Helpers
     # Provides serialization to records
@@ -28,6 +30,7 @@ module Gecko
         attribute_hash = {}
         attribute_set.each do |attribute|
           next unless writeable?(attribute)
+
           serialize_attribute(attribute_hash, attribute)
         end
 
@@ -46,6 +49,7 @@ module Gecko
       def writeable?(attribute)
         return if attribute.options[:readonly]
         return true unless attribute.options[:writeable_on]
+
         case attribute.options[:writeable_on]
         when :update
           persisted?
@@ -75,7 +79,7 @@ module Gecko
       # @return [String]
       #
       # @api private
-      def _serialize(serialized)
+      def _serialize(serialized) # rubocop:disable Metrics/MethodLength
         if serialized.respond_to?(:serializable_hash)
           serialized.serializable_hash
         else

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Shared tests for Gecko::Record Adapters
 # requires definition of several variables
 # - adapter
@@ -5,7 +7,8 @@
 # - record_class
 
 require 'json'
-module SharedAdapterExamples
+
+module SharedAdapterExamples # rubocop:disable Metrics/ModuleLength
   def test_adapter_all
     VCR.use_cassette(plural_name) do
       collection = adapter.where(limit: 5)
@@ -49,29 +52,29 @@ module SharedAdapterExamples
 
   def test_has_record_for_id
     mock_record = Object.new
-    adapter.instance_variable_set(:@identity_map, {12 => mock_record})
+    adapter.instance_variable_set(:@identity_map, { 12 => mock_record })
     assert adapter.has_record_for_id?(12)
     assert !adapter.has_record_for_id?(12345)
   end
 
   def test_fetch
-    request_stub = stub_request(:get, /#{plural_name}\/\d+/)
-      .to_return({
-        headers: {"Content-Type" => "application/json"},
-        body:    JSON.dump({plural_name.singularize => {id: 12345}})
-      })
+    request_stub = stub_request(:get, %r{#{plural_name}/\d+})
+                   .to_return({
+                     headers: { "Content-Type" => "application/json" },
+                     body:    JSON.dump({ plural_name.singularize => { id: 12345 } })
+                   })
     record = adapter.fetch(12345)
     assert_equal(12345, record.id)
     assert_requested(request_stub)
   end
 
-  def test_fetch_miss
-    stub_request(:get, /#{plural_name}\/\d+/)
+  def test_fetch_miss # rubocop:disable Metrics/MethodLength
+    stub_request(:get, %r{#{plural_name}/\d+})
       .to_return({
         status:  404,
-        headers: {"Content-Type" => "application/json"},
-        body: JSON.dump({
-          type: "Not Found",
+        headers: { "Content-Type" => "application/json" },
+        body:    JSON.dump({
+          type:    "Not Found",
           message: "Couldn't find #{plural_name.singularize} with id 12345"
         })
       })
@@ -105,9 +108,8 @@ module SharedAdapterExamples
   def test_saving_new_record
     record = adapter.build
     mock_api_request(record,
-      [:post, plural_name],
-      [200, {plural_name.singularize => {id: 123}}]
-    )
+                     [:post, plural_name],
+                     [200, { plural_name.singularize => { id: 123 } }])
     adapter.save(record)
     assert_equal(record.id, 123)
     assert(record.valid?)
@@ -116,9 +118,8 @@ module SharedAdapterExamples
   def test_saving_new_invalid_record
     record = adapter.build
     mock_api_request(record,
-      [:post, plural_name],
-      [422, {"errors" => {title: ["can not be bounced"]}}]
-    )
+                     [:post, plural_name],
+                     [422, { "errors" => { title: ["can not be bounced"] } }])
     adapter.save(record)
     assert_nil(record.id)
     assert(!record.valid?)
@@ -127,9 +128,8 @@ module SharedAdapterExamples
   def test_saving_existing_record
     record = existing_record
     mock_api_request(record,
-      [:put, "#{plural_name}/#{record.id}"],
-      [204, '']
-    )
+                     [:put, "#{plural_name}/#{record.id}"],
+                     [204, ''])
     adapter.save(record)
     assert(record.valid?)
   end
@@ -137,23 +137,22 @@ module SharedAdapterExamples
   def test_saving_existing_invalid_record
     record = existing_record
     mock_api_request(record,
-      [:put, "#{plural_name}/#{record.id}"],
-      [422, {"errors" => {title: ["can not be bounced"]}}]
-    )
+                     [:put, "#{plural_name}/#{record.id}"],
+                     [422, { "errors" => { title: ["can not be bounced"] } }])
     adapter.save(record)
     assert(!record.valid?)
     assert(record.errors[:title].any?)
   end
 
-  def test_saving_record_with_idempotency_key
+  def test_saving_record_with_idempotency_key # rubocop:disable Metrics/MethodLength
     record = adapter.build
     mock_token = mock
-    mock_response = mock(status: 200, parsed: {plural_name.singularize => {id: 123}})
+    mock_response = mock(status: 200, parsed: { plural_name.singularize => { id: 123 } })
     mock_token.expects(:request)
               .with(:post, plural_name, {
-                body: record.as_json.to_json,
+                body:         record.as_json.to_json,
                 raise_errors: false,
-                headers: {
+                headers:      {
                   'Content-Type' => 'application/json',
                   'Idempotency-Key' => 'abcdefghijkl'
                 }
@@ -163,11 +162,16 @@ module SharedAdapterExamples
   end
 
 private
+
   def mock_api_request(record, request, response)
     mock_token = mock
     mock_response = mock(status: response[0], parsed: response[1])
     mock_token.expects(:request)
-              .with(request[0], request[1], body: record.as_json.to_json, raise_errors: false, headers: {'Content-Type' => 'application/json'})
+              .with(request[0], request[1], {
+                body:         record.as_json.to_json,
+                raise_errors: false,
+                headers:      { 'Content-Type' => 'application/json' }
+              })
               .returns(mock_response)
     adapter.client.access_token = mock_token
   end
@@ -177,6 +181,6 @@ private
   end
 
   def random_attribute
-    @rattr ||= record_class.attribute_set.find { |att| att.type == Axiom::Types::String }.name
+    @random_attribute ||= record_class.attribute_set.find { |att| att.type == Axiom::Types::String }.name
   end
 end

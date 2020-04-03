@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'gecko/record/base'
 
 module Gecko
@@ -13,7 +15,6 @@ module Gecko
     end
 
     class FulfillmentLineItemAdapter < BaseAdapter
-
     end
   end
 end

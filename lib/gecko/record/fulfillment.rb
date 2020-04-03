@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'gecko/record/base'
 require 'gecko/record/fulfillment_line_item'
 

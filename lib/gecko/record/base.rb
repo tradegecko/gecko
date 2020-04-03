@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'gecko/helpers/association_helper'
 require 'gecko/helpers/inspection_helper'
 require 'gecko/helpers/serialization_helper'
@@ -24,9 +26,9 @@ module Gecko
       # @return [undefined]
       #
       # @api private
-      def initialize(client, attributes={})
+      def initialize(client, attributes = {})
         super(attributes)
-        @client   = client
+        @client = client
       end
 
       # Whether the record has been persisted
@@ -62,7 +64,7 @@ module Gecko
       #
       # @api private
       def self.demodulized_name
-        self.name.split('::').last
+        name.split('::').last
       end
     end
   end

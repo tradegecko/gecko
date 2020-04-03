@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 module SharedSideloadedDataParsingExamples
   def test_adapter_sideloaded_data_parsing
     VCR.use_cassette(plural_name + '_sideloaded') do
-
       collection = adapter.where(limit: 5, _include: children.join(","))
 
       children.each do |child|

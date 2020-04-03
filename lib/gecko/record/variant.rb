@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'gecko/record/base'
 
 module Gecko
@@ -13,7 +15,7 @@ module Gecko
         attribute :committed,       BigDecimal
         attribute :stock_on_hand,   BigDecimal
 
-        alias_method :committed_stock, :committed
+        alias committed_stock committed
       end
 
       class VariantPrice
@@ -84,12 +86,12 @@ module Gecko
       #
       # @api public
       def display_name
-        if name.nil? || !name.include?(product_name)
-          parts = [sku, product_name, name]
-        else
-          parts = [sku, name]
-        end
-        parts.select { |part| part && part.length }.join(' - ')
+        parts = if name.nil? || !name.include?(product_name)
+                  [sku, product_name, name]
+                else
+                  [sku, name]
+                end
+        parts.select { |part| part&.length }.join(' - ')
       end
 
       # attribute :is_online

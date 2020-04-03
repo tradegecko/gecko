@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'gecko/record/base'
 
 module Gecko
@@ -32,7 +34,7 @@ module Gecko
       #
       # @api public
       def current
-        if self.has_record_for_id?(:current)
+        if has_record_for_id?(:current)
           record_for_id(:current)
         else
           @identity_map[:current] = find(:current)

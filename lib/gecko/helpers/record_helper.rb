@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Gecko
   module Helpers
     # Helper for registering valid record types

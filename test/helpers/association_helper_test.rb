@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'gecko'
 
 class Gecko::Helpers::AssociationHelperTest < Minitest::Test
@@ -25,31 +27,31 @@ class Gecko::Helpers::AssociationHelperTest < Minitest::Test
   end
 
   def test_has_many
-    record = @klass.new(@client, {order_ids: [123]})
+    record = @klass.new(@client, { order_ids: [123] })
     @client.Order.expects(:find_many).with([123])
     record.orders
   end
 
   def test_has_many_without_ids
-    record = @klass.new(@client, {order_ids: []})
+    record = @klass.new(@client, { order_ids: [] })
     @client.Order.expects(:find_many).never
     assert_empty(record.orders)
   end
 
   def test_belongs_to
-    record = @klass.new(@client, {order_id: 4})
+    record = @klass.new(@client, { order_id: 4 })
     @client.Order.expects(:find).with(4)
     record.order
   end
 
   def test_belongs_to_without_id
-    record = @klass.new(@client, {order_id: nil})
+    record = @klass.new(@client, { order_id: nil })
     @client.Order.expects(:find).never
     assert_nil record.order
   end
 
   def test_belongs_to_with_class
-    record = @klass.new(@client, {small_order_id: 56})
+    record = @klass.new(@client, { small_order_id: 56 })
     @client.Order.expects(:find).with(56)
     record.small_order
   end

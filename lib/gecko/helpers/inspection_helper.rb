@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Gecko
   module Helpers
     # Helper for providing custom #inspect values to Records
@@ -39,9 +41,9 @@ module Gecko
         if value.is_a?(String) && value.length > 50
           "#{value[0..50]}...".inspect
         elsif value.is_a?(DateTime) || value.is_a?(Time)
-          %("#{value.strftime("%Y-%m-%d %H:%M:%S")}")
+          %("#{value.strftime('%Y-%m-%d %H:%M:%S')}")
         elsif value.is_a?(Date)
-          %("#{value.strftime("%Y-%m-%d")}")
+          %("#{value.strftime('%Y-%m-%d')}")
         else
           value.inspect
         end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'gecko/record/base'
 
 module Gecko
@@ -27,7 +29,7 @@ module Gecko
         stock_adjustment.create
         stock_transfer.create
         variant.create
-      ]
+      ].freeze
 
       attribute :address, String
       attribute :event,   String

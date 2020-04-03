@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'active_support/inflector'
 class Generate < Thor
   include Thor::Actions
@@ -7,7 +9,7 @@ class Generate < Thor
     @model_name = model_name
     @file_name  = model_name.underscore
     @plural     = ask "What is the underscore plural of #{@model_name}? (#{@file_name}s):"
-    @plural     = @plural.to_s.length > 0 ? @plural : @file_name + "s"
+    @plural     = !@plural.to_s.empty? ? @plural : @file_name + "s"
     create_file "lib/gecko/record/#{@file_name}.rb", model_template
     create_file "test/record/#{@file_name}_adapter_test.rb", test_adapter_template
     create_file "test/record/#{@file_name}_test.rb", test_template
@@ -16,6 +18,7 @@ class Generate < Thor
   end
 
 private
+
   def default_plural?
     @plural == @file_name + "s"
   end
