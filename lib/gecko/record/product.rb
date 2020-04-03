@@ -6,6 +6,8 @@ module Gecko
   module Record
     class Product < Base
       has_many :variants
+      has_many :images
+
       attribute :name,         String
       attribute :description,  String
       attribute :product_type, String

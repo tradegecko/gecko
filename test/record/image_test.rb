@@ -24,4 +24,20 @@ class Gecko::ImageTest < Minitest::Test
     assert_equal("https://example.com/Gecko.jpg", @record.url(:full))
     assert_equal("https://example.com/thumbnail_Gecko.jpg", @record.url(:thumbnail))
   end
+
+  def test_building_record # rubocop:disable Metrics/MethodLength
+    record = @client.adapter_for(record_class.demodulized_name).build({
+      variant_ids: 1,
+      product_id:  1,
+      url:         "https://example.com/Gecko.jpg"
+    })
+    assert_equal(record.product_id, 1)
+    assert_equal(record.variant_ids, [1])
+    assert_equal(record.serializable_hash, {
+      product_id:  1,
+      variant_ids: [1],
+      name:        nil,
+      url:         "https://example.com/Gecko.jpg"
+    })
+  end
 end
