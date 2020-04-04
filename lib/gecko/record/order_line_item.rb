@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'gecko/record/base'
 
 module Gecko
@@ -39,6 +41,7 @@ module Gecko
 
       def discount_multiplier
         return 1 unless discount
+
         1 - discount / 100
       end
     end

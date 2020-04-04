@@ -1,0 +1,7 @@
+---
+check_name: 'Rubocop Results'
+check_scope: 'modified'
+versions:
+  - rubocop
+  - rubocop-minitest
+  - rubocop-performance

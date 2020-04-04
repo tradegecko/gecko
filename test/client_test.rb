@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class ClientTest < Minitest::Test
@@ -13,10 +15,10 @@ class ClientTest < Minitest::Test
   def test_custom_user_agent
     client  = Gecko::Client.new("ABC", "DEF")
     agent   = client.oauth_client.connection.headers["User-Agent"]
-    assert_match(%r|Gecko/#{Gecko::VERSION} OAuth2/\d\.\d\.\d Faraday/\d\.\d+\.\d Ruby/\d\.\d\.\d|, agent)
+    assert_match(%r{Gecko/#{Gecko::VERSION} OAuth2/\d\.\d\.\d Faraday/\d\.\d+\.\d Ruby/\d\.\d\.\d}, agent)
   end
 
-  def test_allows_test_URLs
+  def test_allows_test_urls
     client = Gecko::Client.new("ABC", "DEF", site: "localhost:3000")
     assert_equal "localhost:3000", client.oauth_client.site
   end

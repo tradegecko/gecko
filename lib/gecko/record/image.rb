@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'gecko/record/base'
 
 module Gecko
   module Record
     class Image < Base
-      AVAILABLE_SIZES = [:full, :thumbnail]
+      AVAILABLE_SIZES = %i[full thumbnail].freeze
 
       belongs_to :variant
       belongs_to :uploader, class_name: "User",   readonly: true
@@ -31,11 +33,11 @@ module Gecko
     private
 
       def build_url(size)
-        if size == :full
-          file_path = file_name
-        else
-          file_path = "#{size}_#{file_name}"
-        end
+        file_path = if size == :full
+                      file_name
+                    else
+                      "#{size}_#{file_name}"
+                    end
         [base_path, file_path].join("/")
       end
     end

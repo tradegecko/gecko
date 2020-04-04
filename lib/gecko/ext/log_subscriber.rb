@@ -13,7 +13,7 @@ class GeckoLogSubscriber < ActiveSupport::LogSubscriber
     @odd = false
   end
 
-  def request(event)
+  def request(event) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     RequestStore.store[ENV_KEY] = []
     payload = event.payload
 
@@ -27,11 +27,11 @@ class GeckoLogSubscriber < ActiveSupport::LogSubscriber
     name  = "#{payload[:model_class]} Load (#{event.duration.round(1)}ms)"
     query = "#{payload[:verb].to_s.upcase} /#{request_path}"
 
-    if odd?
-      name = color(name, CYAN, true)
-    else
-      name = color(name, MAGENTA, true)
-    end
+    name = if odd?
+             color(name, CYAN, true)
+           else
+             color(name, MAGENTA, true)
+           end
 
     query = color(query, nil, true)
 

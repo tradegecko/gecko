@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'gecko/record/base'
 
 module Gecko
@@ -23,7 +25,6 @@ module Gecko
     end
 
     class PurchaseOrderLineItemAdapter < BaseAdapter
-
     end
   end
 end

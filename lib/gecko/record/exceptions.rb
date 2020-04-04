@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Gecko
   module Record
     # Generic Gecko::Record exception class.

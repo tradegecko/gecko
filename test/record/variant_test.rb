@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class Gecko::VariantTest < Minitest::Test
@@ -22,7 +24,7 @@ class Gecko::VariantTest < Minitest::Test
   end
 
   def test_variant_prices
-    json = {variant_prices: [{price_list_id: "buy", value: "12.50"}, {price_list_id: 123, value: "14.00"}]}
+    json = { variant_prices: [{ price_list_id: "buy", value: "12.50" }, { price_list_id: 123, value: "14.00" }] }
     variant_prices = record_class.new(client, json).variant_prices
     assert_instance_of(Gecko::Record::Variant::VariantPrice, variant_prices.first)
     assert_equal(variant_prices[0].price_list_id, "buy")
@@ -31,10 +33,10 @@ class Gecko::VariantTest < Minitest::Test
   end
 
   def test_variant_locations
-    json = {locations: [
+    json = { locations: [
       { location_id: 1, stock_on_hand: "12.50",
-        committed: "0", bin_location: "AB-123" },
-    ]}
+        committed: "0", bin_location: "AB-123" }
+    ] }
 
     locations = record_class.new(client, json).locations
     assert_instance_of(Gecko::Record::Variant::VariantLocation, locations.first)

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Gecko
   module Record
     class BaseAdapter
@@ -108,7 +110,7 @@ module Gecko
       # @return [Array<Gecko::Record::Base>] Records via the API
       #
       # @api public
-      def where(params={})
+      def where(params = {})
         response = @last_response = request(:get, plural_path, params: params)
         parsed_response = response.parsed
         set_pagination(response.headers)
@@ -149,14 +151,14 @@ module Gecko
       # @return <Gecko::Record::Base> A record instance
       #
       # @api public
-      def first(params={})
+      def first(params = {})
         where(params.merge(limit: 1)).first
       end
 
       # Fetch the forty-second record for the given parameters
       #
       # @api public
-      def forty_two(params={})
+      def forty_two(params = {})
         where(params.merge(limit: 1, page: 42)).first
       end
 
@@ -171,7 +173,7 @@ module Gecko
       #
       # @api public
       def count(params = {})
-        self.where(params.merge(limit: 0))
+        where(params.merge(limit: 0))
         @pagination['total_records']
       end
 
@@ -199,13 +201,13 @@ module Gecko
       # @return [nil] if no record was found
       #
       # @api private
-      def fetch(id)
+      def fetch(id) # rubocop:disable Metrics/MethodLength
         verify_id_presence!(id)
         response = @last_response = request(:get, plural_path + '/' + id.to_s)
         record_json = extract_record(response.parsed)
         instantiate_and_register_record(record_json)
-      rescue OAuth2::Error => ex
-        case ex.response.status
+      rescue OAuth2::Error => e
+        case e.response.status
         when 404
           record_not_found!(id)
         else
@@ -257,7 +259,7 @@ module Gecko
       # @return [Gecko::Record::Base]
       #
       # @api public
-      def build(attributes={})
+      def build(attributes = {})
         model_class.new(@client, attributes)
       end
 
@@ -342,7 +344,7 @@ module Gecko
       # @api private
       def create_record(record, opts = {})
         response = request(:post, plural_path, {
-          body: record.as_json,
+          body:         record.as_json,
           raise_errors: false
         }.merge(headers: headers_from_opts(opts)))
         handle_response(record, response)
@@ -355,7 +357,7 @@ module Gecko
       # @api private
       def update_record(record, opts = {})
         response = request(:put, plural_path + "/" + record.id.to_s, {
-          body: record.as_json,
+          body:         record.as_json,
           raise_errors: false
         }.merge(headers: headers_from_opts(opts)))
         handle_response(record, response)
@@ -368,10 +370,10 @@ module Gecko
       # @return [OAuth2::Response]
       #
       # @api private
-      def handle_response(record, response)
+      def handle_response(record, response) # rubocop:disable Metrics/MethodLength
         case response.status
         when 200..299
-          if response_json = extract_record(response.parsed)
+          if (response_json = extract_record(response.parsed))
             record.attributes = response_json
             register_record(record)
           end
@@ -380,7 +382,7 @@ module Gecko
           record.errors.from_response(response.parsed['errors'])
           false
         else
-          fail OAuth2::Error.new(response)
+          fail OAuth2::Error, response
         end
       end
 
@@ -410,6 +412,7 @@ module Gecko
 
           record_class = record_type.singularize.classify
           next unless Gecko::Record.const_defined?(record_class)
+
           adapter = @client.adapter_for(record_class)
 
           records.each do |record_json|
@@ -428,14 +431,16 @@ module Gecko
       # @return [OAuth2::Response]
       #
       # @api private
-      def request(verb, path, options={})
+      def request(verb, path, options = {}) # rubocop:disable Metrics/MethodLength
         ActiveSupport::Notifications.instrument('request.gecko') do |payload|
           payload[:verb]         = verb
           payload[:params]       = options[:params]
           payload[:body]         = options[:body]
           payload[:model_class]  = model_class
           payload[:request_path] = path
-          options[:headers]      = options.fetch(:headers, {}).tap { |headers| headers['Content-Type'] = 'application/json' }
+          options[:headers]      = options.fetch(:headers, {}).tap do |headers|
+            headers['Content-Type'] = 'application/json'
+          end
           options[:body]         = options[:body].to_json if options[:body]
           payload[:response]     = @client.access_token.request(verb, path, options)
         end
@@ -450,9 +455,9 @@ module Gecko
       end
 
       def verify_id_presence!(id)
-        if id.respond_to?(:empty?) ? id.empty? : !id
-          fail RecordNotFound, "Couldn't find #{model_class.name} without an ID"
-        end
+        return unless id.respond_to?(:empty?) ? id.empty? : !id
+
+        fail RecordNotFound, "Couldn't find #{model_class.name} without an ID"
       end
     end
   end

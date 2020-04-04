@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'gecko'
 
 class Gecko::Helpers::ValidationHelperTest < Minitest::Test
@@ -17,7 +19,7 @@ class Gecko::Helpers::ValidationHelperTest < Minitest::Test
 
   def test_from_response
     record = @klass.new(@client, name: "Gecko")
-    record.errors.from_response({name: ["is not shiny"]})
+    record.errors.from_response({ name: ["is not shiny"] })
     assert(!record.valid?)
     assert_equal(record.errors[:name], ["is not shiny"])
   end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Gecko
   module Helpers
     # Provides record validation
@@ -71,7 +73,7 @@ module Gecko
     #
     # @api public
     def empty?
-      messages.all? { |k, v| v && v.empty? && !v.is_a?(String) }
+      messages.all? { |_k, v| v&.empty? && !v.is_a?(String) }
     end
 
     # Parse JSON errors response into the error object

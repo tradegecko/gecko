@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'gecko'
 require 'test_helper'
 
@@ -27,14 +29,14 @@ class Gecko::Helpers::SerializationHelperTest < Minitest::Test
 
   let(:record) do
     Widget.new(@client, {
-      name:       "Gecko",
-      secret:     "Iguana",
+      name:          "Gecko",
+      secret:        "Iguana",
       initial_stock: 10.0,
-      update_stock: 10.0,
-      score:      1.234,
-      started_at: DateTime.now,
-      started_on: Date.today,
-      wodgets:    [Wodget.new(@client, name: "Hi")]
+      update_stock:  10.0,
+      score:         1.234,
+      started_at:    DateTime.now,
+      started_on:    Date.today,
+      wodgets:       [Wodget.new(@client, name: "Hi")]
     })
   end
 
@@ -48,7 +50,7 @@ class Gecko::Helpers::SerializationHelperTest < Minitest::Test
   end
 
   def test_as_json
-    assert_equal({widget: record.serializable_hash}, record.as_json)
+    assert_equal({ widget: record.serializable_hash }, record.as_json)
   end
 
   def test_writeable_on_create
@@ -72,7 +74,7 @@ class Gecko::Helpers::SerializationHelperTest < Minitest::Test
   end
 
   def test_serializes_arrays
-    assert_equal([{name: "Hi"}], record.serializable_hash[:wodgets])
+    assert_equal([{ name: "Hi" }], record.serializable_hash[:wodgets])
   end
 
   def test_root_key
@@ -100,12 +102,12 @@ private
 
   def serialized_record
     {
-      name:       "Gecko",
+      name:          "Gecko",
       initial_stock: "10.0",
-      score:      "1.234",
-      started_on: Date.today,
-      started_at: DateTime.now,
-      wodgets:    [{name: "Hi"}]
+      score:         "1.234",
+      started_on:    Date.today,
+      started_at:    DateTime.now,
+      wodgets:       [{ name: "Hi" }]
     }
   end
 end

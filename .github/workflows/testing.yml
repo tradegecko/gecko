@@ -1,14 +1,15 @@
+---
 name: Ruby Tests
 
-on: [pull_request]
+'on': [push, pull_request]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby: [ '2.4', '2.5', '2.6', '2.7' ]
-    name: Ruby ${{ matrix.ruby }} 
+        ruby: ['2.4', '2.5', '2.6', '2.7']
+    name: Ruby ${{ matrix.ruby }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-ruby@v1
@@ -19,3 +20,7 @@ jobs:
           gem install bundler --no-document
           bundle install --jobs 4 --retry 3
           bundle exec rake
+      - name: Rubocop
+        uses: andrewmcodes/rubocop-linter-action@v3.1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'faraday'
 require 'oauth2/version'
 require 'gecko/version'
@@ -57,7 +59,7 @@ module Gecko
     # @return [undefined]
     #
     # @api private
-    def initialize(client_id, client_secret, options={})
+    def initialize(client_id, client_secret, options = {})
       setup_oauth_client(client_id, client_secret, options)
     end
 
@@ -107,29 +109,29 @@ module Gecko
     #
     # @api private
     def adapter_for(klass_name)
-      self.public_send(klass_name.to_sym)
+      public_send(klass_name.to_sym)
+    end
+
+    def self.default_headers
+      {
+        'User-Agent' => ["Gecko/#{Gecko::VERSION}",
+                         "OAuth2/#{OAuth2::Version}",
+                         "Faraday/#{Faraday::VERSION}",
+                         "Ruby/#{RUBY_VERSION}"].join(' ')
+      }
     end
 
   private
 
     def setup_oauth_client(client_id, client_secret, options)
       defaults = {
-        site:          'https://api.tradegecko.com',
-        authorize_url: 'https://go.tradegecko.com/oauth/authorize',
+        site:            'https://api.tradegecko.com',
+        authorize_url:   'https://go.tradegecko.com/oauth/authorize',
         connection_opts: {
-          headers:     self.class.default_headers
+          headers: self.class.default_headers
         }
       }
       @oauth_client = OAuth2::Client.new(client_id, client_secret, defaults.merge(options))
-    end
-
-    def self.default_headers
-      {
-        'User-Agent' => ["Gecko/#{Gecko::VERSION}",
-                         "OAuth2/#{OAuth2::Version.to_s}",
-                         "Faraday/#{Faraday::VERSION}",
-                         "Ruby/#{RUBY_VERSION}"].join(' ')
-      }
     end
   end
 end

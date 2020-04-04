@@ -1,5 +1,8 @@
 AllCops:
   DisplayCopNames: true
+  Exclude:
+    - 'bin/*'
+    - 'generate.thor'
 
 # class Example
 # ...
@@ -9,33 +12,34 @@ AllCops:
 Layout/AccessModifierIndentation:
   EnforcedStyle: outdent
 
-Style/Blocks:
-  Enabled: false
-
-# Allows foo(bar: baz)
-Style/BracesAroundHashParameters:
-  Enabled: false
-
 Layout/DotPosition:
   EnforcedStyle: leading
 
-Layout/IndentFirstHashElement:
+Layout/FirstHashElementIndentation:
   EnforcedStyle: consistent
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 120
 
-Style/RedundantSelf:
+Layout/HashAlignment:
+  EnforcedColonStyle: table
+
+Metrics/AbcSize:
+  Exclude:
+    - 'test/**/*.rb'
+
+Naming/FileName:
+  Exclude:
+    - 'lib/gecko-ruby.rb'
+
+Naming/PredicateName:
+  Enabled: false
+
+Naming/AccessorMethodName:
   Enabled: false
 
 # We like neatly-aligned code
 Layout/SpaceBeforeFirstArg:
-  Enabled: false
-
-Layout/SpaceAroundEqualsInParameterDefault:
-  Enabled: false
-
-Layout/SpaceInsideHashLiteralBraces:
   Enabled: false
 
 # Allow single or double quotes
@@ -63,7 +67,10 @@ Layout/MultilineOperationIndentation:
   Enabled: false
 
 Style/ClassAndModuleChildren:
-  EnforcedStyle: compact
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
 
 Style/DoubleNegation:
   Enabled: false

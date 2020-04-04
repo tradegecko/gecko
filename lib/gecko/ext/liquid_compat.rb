@@ -56,19 +56,19 @@ module Gecko
 
     ## Override Liquid::Drop#invoke_drop to also check method arity
     def invoke_drop(method_or_key)
-      if self.invokable_methods.include?(method_or_key.to_s) && self.method_arity(method_or_key.to_sym) <= 0
-        self.public_send(method_or_key)
-      end
+      return unless invokable_methods.include?(method_or_key.to_s) && method_arity(method_or_key.to_sym) <= 0
+
+      public_send(method_or_key)
     end
 
-    alias_method :[], :invoke_drop
+    alias [] invoke_drop
 
     ## Override Liquid::Drop#invokable_methods to add extra checks
     def invokable_methods
       @invokable_methods ||= begin
         denylist = Gecko::Record::Base.public_instance_methods + Liquid::Drop.public_instance_methods
-        denylist -= [:to_liquid, :id, :created_at, :updated_at]
-        allowlist = self.public_methods + @delegate.public_methods
+        denylist -= %i[to_liquid id created_at updated_at]
+        allowlist = public_methods + @delegate.public_methods
         available_methods = (allowlist - denylist).map(&:to_s)
         available_methods.reject! { |method_name| method_name.ends_with?("=") }
         Set.new(available_methods)
@@ -78,8 +78,8 @@ module Gecko
   protected
 
     def method_arity(method_name)
-      if self.methods.include?(method_name)
-        self.method(method_name).arity
+      if methods.include?(method_name)
+        method(method_name).arity
       else
         @delegate.method(method_name).arity
       end

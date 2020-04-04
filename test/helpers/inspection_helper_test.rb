@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'gecko'
 
 class Gecko::Helpers::InspectionHelperTest < Minitest::Test
@@ -12,9 +14,9 @@ class Gecko::Helpers::InspectionHelperTest < Minitest::Test
 
   def test_inspect_times
     record = @klass.new(@client, {
-      published_date: Date.new(2014),
-      published_time: Time.new(2014),
-      published_datetime: DateTime.new(2014),
+      published_date:     Date.new(2014),
+      published_time:     Time.new(2014),
+      published_datetime: DateTime.new(2014)
     })
     assert_equal("2014-01-01 00:00:00", get_timestamp(record.inspect, :published_time))
     assert_equal("2014-01-01 00:00:00", get_timestamp(record.inspect, :published_datetime))
@@ -22,6 +24,6 @@ class Gecko::Helpers::InspectionHelperTest < Minitest::Test
   end
 
   def get_timestamp(inspect_string, attribute)
-    inspect_string.match(%r|#{attribute}: \"(?<timestamp>[\d:\s-]+)\"|)[:timestamp]
+    inspect_string.match(/#{attribute}: \"(?<timestamp>[\d:\s-]+)\"/)[:timestamp]
   end
 end
