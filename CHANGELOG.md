@@ -1,4 +1,4 @@
-## 0.10.0 (Unreleased)
+## 0.10.0 (2020-0406)
 - Add extra delegated attributes to invoice record
 - [BREAKING] Update Image record to latest API with product and multiple variant support
 
