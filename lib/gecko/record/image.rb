@@ -7,8 +7,11 @@ module Gecko
     class Image < Base
       AVAILABLE_SIZES = %i[full thumbnail].freeze
 
-      belongs_to :variant
-      belongs_to :uploader, class_name: "User",   readonly: true
+      belongs_to :uploader, class_name: "User", readonly: true
+
+      belongs_to :product, writeable_on: :create
+      has_many :variants,  writeable_on: :create, readonly: false
+
       attribute :name,             String
       attribute :url,              String
       attribute :position,         Integer,       readonly: true

@@ -1,3 +1,7 @@
+## 0.10.0 (Unreleased)
+- Add extra delegated attributes to invoice record
+- [BREAKING] Update Image record to latest API with product and multiple variant support
+
 ## 0.9.1 (2019-07-29)
 - Fix issue with LiquidCompat that broke during refactor
 
