@@ -343,7 +343,7 @@ module Gecko
       #
       # @api private
       def create_record(record, opts = {})
-        response = request(:post, plural_path, {
+        response = @last_response = request(:post, plural_path, {
           body:         record.as_json,
           raise_errors: false
         }.merge(headers: headers_from_opts(opts)))
@@ -356,7 +356,7 @@ module Gecko
       #
       # @api private
       def update_record(record, opts = {})
-        response = request(:put, plural_path + "/" + record.id.to_s, {
+        response = @last_response = request(:put, plural_path + "/" + record.id.to_s, {
           body:         record.as_json,
           raise_errors: false
         }.merge(headers: headers_from_opts(opts)))
