@@ -1,4 +1,4 @@
-## Unreleased
+## 0.11.0 (2020-04-29)
 - Store create/update responses under `adapter.last_response` as well.
 
 ## 0.10.0 (2020-04-06)
