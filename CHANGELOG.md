@@ -1,4 +1,5 @@
 ## Unreleased
+- Adds `request_id` parameter to ActiveSupport::Notifications payload
 - Ensure response is passed to `ActiveSupport::Notifications` on error
 - Ensure `adapter.last_response` is set on error response
 

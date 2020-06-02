@@ -147,7 +147,7 @@ module SharedAdapterExamples # rubocop:disable Metrics/ModuleLength
   def test_saving_record_with_idempotency_key # rubocop:disable Metrics/MethodLength
     record = adapter.build
     mock_token = mock
-    mock_response = mock(status: 200, parsed: { plural_name.singularize => { id: 123 } }, error: nil)
+    mock_response = mock(status: 200, parsed: { plural_name.singularize => { id: 123 } }, error: nil, headers: {})
     mock_token.expects(:request)
               .with(:post, plural_name, {
                 body:         record.as_json.to_json,
@@ -165,7 +165,7 @@ private
 
   def mock_api_request(record, request, response)
     mock_token = mock
-    mock_response = mock(status: response[0], parsed: response[1], error: nil)
+    mock_response = mock(status: response[0], parsed: response[1], error: nil, headers: {})
     mock_token.expects(:request)
               .with(request[0], request[1], {
                 body:         record.as_json.to_json,

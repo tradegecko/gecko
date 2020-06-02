@@ -447,6 +447,7 @@ module Gecko
 
           @client.access_token.request(verb, path, options.merge(raise_errors: false)).tap do |response|
             payload[:response] = @last_response = response
+            payload[:request_id] = response.headers['X-Request-Id']
             raise response.error if response.error && options[:raise_errors] != false
           end
         end
