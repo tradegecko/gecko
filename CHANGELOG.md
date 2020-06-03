@@ -1,3 +1,7 @@
+## Unreleased
+- Ensure response is passed to `ActiveSupport::Notifications` on error
+- Ensure `adapter.last_response` is set on error response
+
 ## 0.11.1 (2020-04-30)
 - Fix addresses on Invoice
 

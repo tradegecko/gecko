@@ -111,7 +111,7 @@ module Gecko
       #
       # @api public
       def where(params = {})
-        response = @last_response = request(:get, plural_path, params: params)
+        response = request(:get, plural_path, params: params)
         parsed_response = response.parsed
         set_pagination(response.headers)
         parse_records(parsed_response)
@@ -203,7 +203,7 @@ module Gecko
       # @api private
       def fetch(id) # rubocop:disable Metrics/MethodLength
         verify_id_presence!(id)
-        response = @last_response = request(:get, plural_path + '/' + id.to_s)
+        response = request(:get, plural_path + '/' + id.to_s)
         record_json = extract_record(response.parsed)
         instantiate_and_register_record(record_json)
       rescue OAuth2::Error => e
@@ -343,7 +343,7 @@ module Gecko
       #
       # @api private
       def create_record(record, opts = {})
-        response = @last_response = request(:post, plural_path, {
+        response = request(:post, plural_path, {
           body:         record.as_json,
           raise_errors: false
         }.merge(headers: headers_from_opts(opts)))
@@ -356,7 +356,7 @@ module Gecko
       #
       # @api private
       def update_record(record, opts = {})
-        response = @last_response = request(:put, plural_path + "/" + record.id.to_s, {
+        response = request(:put, plural_path + "/" + record.id.to_s, {
           body:         record.as_json,
           raise_errors: false
         }.merge(headers: headers_from_opts(opts)))
@@ -431,18 +431,24 @@ module Gecko
       # @return [OAuth2::Response]
       #
       # @api private
-      def request(verb, path, options = {}) # rubocop:disable Metrics/MethodLength
+      def request(verb, path, options = {}) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
         ActiveSupport::Notifications.instrument('request.gecko') do |payload|
           payload[:verb]         = verb
           payload[:params]       = options[:params]
           payload[:body]         = options[:body]
           payload[:model_class]  = model_class
           payload[:request_path] = path
+
           options[:headers]      = options.fetch(:headers, {}).tap do |headers|
             headers['Content-Type'] = 'application/json'
           end
-          options[:body]         = options[:body].to_json if options[:body]
-          payload[:response]     = @client.access_token.request(verb, path, options)
+
+          options[:body] = options[:body].to_json if options[:body]
+
+          @client.access_token.request(verb, path, options.merge(raise_errors: false)).tap do |response|
+            payload[:response] = @last_response = response
+            raise response.error if response.error && options[:raise_errors] != false
+          end
         end
       end
 
