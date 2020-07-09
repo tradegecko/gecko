@@ -72,7 +72,7 @@ module Gecko
                              []
                            end
 
-              build_collection_proxy(collection, {
+              build_collection_proxy(collection, **{
                 embedded:         options[:embedded],
                 class_name:       class_name,
                 association_name: association_name
@@ -100,7 +100,7 @@ module Gecko
       #
       # @api private
       def build_collection_proxy(target, association_name:, class_name:, embedded:)
-        CollectionProxy.new({
+        CollectionProxy.new(**{
           parent:           self,
           target:           target,
           embedded:         embedded,
