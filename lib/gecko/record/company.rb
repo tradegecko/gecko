@@ -7,6 +7,7 @@ module Gecko
     class Company < Base
       belongs_to :assignee,               class_name: "User"
       belongs_to :default_tax_type,       class_name: "TaxType"
+      belongs_to :default_payment_method, class_name: "PaymentMethod"
       belongs_to :default_payment_term,   class_name: "PaymentTerm"
       belongs_to :default_stock_location, class_name: "Location"
       # belongs_to :default_price_list,   class_name: "PriceList"
