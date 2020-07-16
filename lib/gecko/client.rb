@@ -33,6 +33,7 @@ module Gecko
     record :PurchaseOrder
     record :PurchaseOrderLineItem
     record :TaxType
+    record :PaymentMethod
     record :PaymentTerm
     record :Webhook
 

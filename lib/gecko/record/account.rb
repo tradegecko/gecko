@@ -11,6 +11,7 @@ module Gecko
       belongs_to :primary_location,                class_name: "Location"
       belongs_to :primary_billing_location,        class_name: "Location"
       belongs_to :default_currency,                class_name: "Currency"
+      belongs_to :default_payment_method,          class_name: "PaymentMethod"
       belongs_to :default_payment_term,            class_name: "PaymentTerm"
       belongs_to :billing_contact,                 class_name: "User"
       belongs_to :default_sales_order_tax_type,    class_name: "TaxType"

@@ -32,6 +32,7 @@ require 'gecko/record/user'
 require 'gecko/record/purchase_order'
 require 'gecko/record/purchase_order_line_item'
 require 'gecko/record/tax_type'
+require 'gecko/record/payment_method'
 require 'gecko/record/payment_term'
 require 'gecko/record/webhook'
 
