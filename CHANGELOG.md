@@ -1,3 +1,6 @@
+## Unreleased
+- Add `Gecko::Record::PaymentMethod` model.
+
 ## 0.12.0 (2020-07-09)
 - Silence warnings in Ruby 2.7
 - Ensure response is passed to `ActiveSupport::Notifications` on error
