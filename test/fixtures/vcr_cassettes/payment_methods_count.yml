@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/payment_methods?limit=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Gecko/0.12.0 OAuth2/1.4.1 Faraday/0.15.4 Ruby/2.5.7
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <__ACCESS_TOKEN__>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Rate-Limit-Limit:
+      - '300'
+      X-Rate-Limit-Remaining:
+      - '299'
+      X-Rate-Limit-Reset:
+      - '1594871400'
+      Cache-Control:
+      - no-cache, no-store
+      X-Pagination:
+      - '{"total_records":11,"total_pages":1,"first_page":true,"last_page":true,"out_of_bounds":false,"offset":0}'
+      Link:
+      - <http://api.lvh.me:3000/ajax/payment_methods?limit=0&page=1>; rel="last"
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"98c458ef2a733afd7d9fbf88e776e5c2"
+      X-Request-Id:
+      - 89f1b27c-35d7-4b3c-a356-d87c0a1d4cc1
+      X-Runtime:
+      - '0.160860'
+      Connection:
+      - close
+      Server:
+      - thin
+    body:
+      encoding: UTF-8
+      string: '{"payment_methods":[]}'
+    http_version: null
+  recorded_at: Thu, 16 Jul 2020 03:48:14 GMT
+recorded_with: VCR 5.1.0

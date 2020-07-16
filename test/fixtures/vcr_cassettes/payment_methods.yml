@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/payment_methods?limit=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Gecko/0.12.0 OAuth2/1.4.1 Faraday/0.15.4 Ruby/2.5.7
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <__ACCESS_TOKEN__>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Rate-Limit-Limit:
+      - '300'
+      X-Rate-Limit-Remaining:
+      - '299'
+      X-Rate-Limit-Reset:
+      - '1594871400'
+      Cache-Control:
+      - no-cache, no-store
+      X-Pagination:
+      - '{"total_records":11,"total_pages":3,"first_page":true,"last_page":false,"out_of_bounds":false,"offset":0}'
+      Link:
+      - <http://api.lvh.me:3000/ajax/payment_methods?limit=5&page=2>; rel="next",
+        <http://api.lvh.me:3000/ajax/payment_methods?limit=5&page=3>; rel="last"
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"7462907dae56049f84e55abca4a15c5e"
+      X-Request-Id:
+      - ac553ee8-d518-404c-bd7b-215a168d164c
+      X-Runtime:
+      - '0.108324'
+      Connection:
+      - close
+      Server:
+      - thin
+    body:
+      encoding: UTF-8
+      string: '{"payment_methods":[{"id":32,"created_at":"2020-07-16T03:46:03.946Z","updated_at":"2020-07-16T03:46:03.946Z","name":"PayNow","is_default":false},{"id":31,"created_at":"2020-07-16T03:45:50.096Z","updated_at":"2020-07-16T03:45:50.096Z","name":"Singtel
+        Dash","is_default":false},{"id":30,"created_at":"2020-07-16T03:45:36.276Z","updated_at":"2020-07-16T03:45:36.276Z","name":"eNets","is_default":false},{"id":29,"created_at":"2020-07-16T03:45:21.473Z","updated_at":"2020-07-16T03:45:21.473Z","name":"Voucher","is_default":false},{"id":28,"created_at":"2020-07-16T03:45:15.160Z","updated_at":"2020-07-16T03:45:15.160Z","name":"Credit
+        Note","is_default":false}]}'
+    http_version: null
+  recorded_at: Thu, 16 Jul 2020 03:48:15 GMT
+recorded_with: VCR 5.1.0
