@@ -1,4 +1,4 @@
-## Unreleased
+## 0.12.1 (2020-07-20)
 - Add `Gecko::Record::PaymentMethod` model.
 
 ## 0.12.0 (2020-07-09)
