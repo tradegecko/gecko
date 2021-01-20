@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/stock_adjustment_line_items?limit=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.tradegecko.com
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer c651a0dd447c5adc159ec18ed5fcaa68c3b01ec2e891cf30e02a21c6a033a00e
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 21 Jan 2021 00:03:20 GMT
+      Etag:
+      - W/"44dc0966e49c6f17a0be084c74415949"
+      Link:
+      - <http://api.lvh.me:3000/ajax/stock_adjustment_line_items?limit=0&page=1>;
+        rel="last"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 spaces-router (3bba204e6224)
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Pagination:
+      - '{"total_records":8046,"total_pages":1,"first_page":true,"last_page":true,"out_of_bounds":false,"offset":0}'
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Rate-Limit-Limit:
+      - '300'
+      X-Rate-Limit-Remaining:
+      - '299'
+      X-Rate-Limit-Reset:
+      - '1611187500'
+      X-Request-Id:
+      - 8fbeb832-b4a9-5598-9937-e9253880bdc1
+      X-Runtime:
+      - '0.245203'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '60'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"stock_adjustment_line_items":[]}'
+  recorded_at: Thu, 21 Jan 2021 00:03:21 GMT
+recorded_with: VCR 6.0.0

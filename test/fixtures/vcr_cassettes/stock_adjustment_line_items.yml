@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/stock_adjustment_line_items?limit=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.tradegecko.com
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer c651a0dd447c5adc159ec18ed5fcaa68c3b01ec2e891cf30e02a21c6a033a00e
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 20 Jan 2021 23:11:32 GMT
+      Etag:
+      - W/"eae922b3ee542ceaccbbeda948521347"
+      Link:
+      - <http://api.lvh.me:3000/ajax/stock_adjustment_line_items?limit=5&page=2&stock_adjustment_id=7445801>;
+        rel="next", <http://api.lvh.me:3000/ajax/stock_adjustment_line_items?limit=5&page=4&stock_adjustment_id=7445801>;
+        rel="last"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 spaces-router (3bba204e6224)
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Pagination:
+      - '{"total_records":18,"total_pages":4,"first_page":true,"last_page":false,"out_of_bounds":false,"offset":0}'
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Rate-Limit-Limit:
+      - '300'
+      X-Rate-Limit-Remaining:
+      - '298'
+      X-Rate-Limit-Reset:
+      - '1611184500'
+      X-Request-Id:
+      - 916c7fed-b397-ad4c-73bd-cf1869354775
+      X-Runtime:
+      - '0.050639'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '308'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"stock_adjustment_line_items":[{"id":76240755,"unassigned_stock_trails":[],"created_at":"2020-12-10T16:04:23.682Z","updated_at":"2020-12-10T16:04:23.682Z","stock_adjustment_id":7445801,"variant_id":21759331,"quantity":"131.0","position":1,"price":"0.2959","stock_trail_ids":[]},{"id":76240756,"unassigned_stock_trails":[],"created_at":"2020-12-10T16:04:23.741Z","updated_at":"2020-12-10T16:04:23.741Z","stock_adjustment_id":7445801,"variant_id":21759312,"quantity":"119.0","position":2,"price":"0.5304","stock_trail_ids":[]},{"id":76240757,"unassigned_stock_trails":[],"created_at":"2020-12-10T16:04:23.775Z","updated_at":"2020-12-10T16:04:23.775Z","stock_adjustment_id":7445801,"variant_id":6840629,"quantity":"-25.0","position":3,"price":"0.5355","stock_trail_ids":[]},{"id":76240758,"unassigned_stock_trails":[],"created_at":"2020-12-10T16:04:23.798Z","updated_at":"2020-12-10T16:04:23.798Z","stock_adjustment_id":7445801,"variant_id":40598161,"quantity":"12.0","position":4,"price":"1.5356","stock_trail_ids":[]},{"id":76240759,"unassigned_stock_trails":[],"created_at":"2020-12-10T16:04:23.819Z","updated_at":"2020-12-10T16:04:23.819Z","stock_adjustment_id":7445801,"variant_id":6840288,"quantity":"12.0","position":5,"price":"0.0","stock_trail_ids":[]}]}'
+  recorded_at: Wed, 20 Jan 2021 23:11:32 GMT
+recorded_with: VCR 6.0.0

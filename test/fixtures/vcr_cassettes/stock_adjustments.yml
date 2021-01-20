@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/stock_adjustments?limit=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.tradegecko.com
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer c651a0dd447c5adc159ec18ed5fcaa68c3b01ec2e891cf30e02a21c6a033a00e
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 20 Jan 2021 23:11:32 GMT
+      Etag:
+      - W/"449ab56eb705ddb268d63bd2c911fffb"
+      Link:
+      - <http://api.lvh.me:3000/ajax/stock_adjustments?limit=5&page=2>; rel="next",
+        <http://api.lvh.me:3000/ajax/stock_adjustments?limit=5&page=323>; rel="last"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 spaces-router (3bba204e6224)
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Pagination:
+      - '{"total_records":1612,"total_pages":323,"first_page":true,"last_page":false,"out_of_bounds":false,"offset":0}'
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Rate-Limit-Limit:
+      - '300'
+      X-Rate-Limit-Remaining:
+      - '299'
+      X-Rate-Limit-Reset:
+      - '1611184500'
+      X-Request-Id:
+      - cd3a1f5e-3cab-324f-27dc-53dfb39b434c
+      X-Runtime:
+      - '0.090970'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '588'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"stock_adjustments":[{"id":7616718,"created_at":"2021-01-06T18:31:17.441Z","updated_at":"2021-01-06T18:31:17.536Z","stock_location_id":35930,"stock_adjustment_reason_id":215459,"adjustment_number":"23353","notes":"Boxing
+        Day","reason":null,"cached_quantity":"-48.0","total":"50.992","reason_label":"Promotion","status":"received","stock_adjustment_line_item_ids":[94414922,94414925,94414928,94414931,94414934,94414936]},{"id":7533561,"created_at":"2020-12-23T20:06:53.509Z","updated_at":"2020-12-23T20:06:53.636Z","stock_location_id":35930,"stock_adjustment_reason_id":215461,"adjustment_number":"23352","notes":null,"reason":"stocktake","cached_quantity":"-360.0","total":"3211.4664","reason_label":"Stocktake","status":"received","stock_adjustment_line_item_ids":[76498490,76498491,76498492,76498493,76498494,76498495]},{"id":7531539,"created_at":"2020-12-23T17:04:02.529Z","updated_at":"2020-12-23T17:04:02.860Z","stock_location_id":35930,"stock_adjustment_reason_id":215461,"adjustment_number":"23351","notes":null,"reason":"stocktake","cached_quantity":"-167.0","total":"857.3882","reason_label":"Stocktake","status":"received","stock_adjustment_line_item_ids":[76494507,76494508,76494509,76494510,76494511,76494512,76494513,76494514,76494515,76494516,76494517,76494518,76494519,76494520,76494521,76494522,76494523,76494524,76494525,76494526]},{"id":7531103,"created_at":"2020-12-23T16:30:56.071Z","updated_at":"2020-12-23T16:30:56.231Z","stock_location_id":35930,"stock_adjustment_reason_id":215461,"adjustment_number":"23350","notes":null,"reason":"stocktake","cached_quantity":"-24.0","total":"37.3959","reason_label":"Stocktake","status":"received","stock_adjustment_line_item_ids":[76493613,76493614,76493615,76493616,76493617,76493618,76493619,76493620,76493621]},{"id":7530939,"created_at":"2020-12-23T16:00:12.726Z","updated_at":"2020-12-23T16:00:13.049Z","stock_location_id":35930,"stock_adjustment_reason_id":215461,"adjustment_number":"23349","notes":null,"reason":"stocktake","cached_quantity":"-145.0","total":"575.0957","reason_label":"Stocktake","status":"received","stock_adjustment_line_item_ids":[76492975,76492976,76492977,76492978,76492979,76492980,76492981,76492982,76492983,76492984,76492985,76492986,76492987,76492988,76492989,76492990,76492991,76492992]}]}'
+  recorded_at: Wed, 20 Jan 2021 23:11:32 GMT
+recorded_with: VCR 6.0.0
