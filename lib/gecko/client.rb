@@ -26,6 +26,8 @@ module Gecko
     record :FulfillmentLineItem
     record :Invoice
     record :InvoiceLineItem
+    record :StockAdjustment
+    record :StockAdjustmentLineItem
 
     record :Product
     record :Variant
