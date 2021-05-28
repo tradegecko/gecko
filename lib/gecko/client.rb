@@ -127,7 +127,7 @@ module Gecko
     def setup_oauth_client(client_id, client_secret, options)
       defaults = {
         site:            'https://api.tradegecko.com',
-        authorize_url:   'https://go.tradegecko.com/oauth/authorize',
+        authorize_url:   'https://commerce.intuit.com/oauth/authorize',
         connection_opts: {
           headers: self.class.default_headers
         }

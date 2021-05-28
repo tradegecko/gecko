@@ -1,3 +1,6 @@
+## Unreleased
+- Change authorize url to commerce.intuit.com
+
 ## 0.12.1 (2020-07-20)
 - Add `Gecko::Record::PaymentMethod` model.
 
