@@ -20,7 +20,9 @@ module Gecko
       attribute :order_number,          String
       attribute :reference_number,      String
       attribute :email,                 String
+
       attribute :due_at,                Date
+      attribute :payment_due_at,        Date
       attribute :received_at,           Date
 
       attribute :status,                String
@@ -34,9 +36,6 @@ module Gecko
       attribute :cached_quantity,       BigDecimal, readonly: true
 
       attribute :tags,                  Array[String]
-
-      # DEPRECATED
-      # attribute :cached_total,          BigDecimal, readonly: true
     end
 
     class PurchaseOrderAdapter < BaseAdapter
