@@ -1,4 +1,4 @@
-## 0.12.3 (Unreleased)
+## 0.12.3 (2021-12-22)
 - Add `issued_at` to `Gecko::Record::PurchaseOrder`
 - Make liquid shim work with `Gecko::Record::Variant#locations`
 
