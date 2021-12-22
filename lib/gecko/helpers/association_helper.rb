@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'active_support/core_ext/module'
+
 module Gecko
   module Helpers
     # Helper for has_many/belongs_to relationships
