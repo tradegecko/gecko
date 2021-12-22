@@ -35,6 +35,9 @@ module Gecko
   Gecko::Record::Base.include(LiquidCompatibility)
   Gecko::Helpers::CollectionProxy.delegate(:to_liquid, to: :@target)
 
+  Gecko::Record::Variant::VariantLocation.include(Gecko::LiquidCompatibility)
+  Gecko::Record::Variant::VariantPrice.include(Gecko::LiquidCompatibility)
+
   class BaseDecorator < Liquid::Drop
     def initialize(delegate)
       raise 'Turtles all the way down' if delegate.is_a?(BaseDecorator)

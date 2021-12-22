@@ -1,5 +1,6 @@
 ## 0.12.3 (Unreleased)
 - Add `issued_at` to `Gecko::Record::PurchaseOrder`
+- Make liquid shim work with `Gecko::Record::Variant#locations`
 
 ## 0.12.2 (2020-08-12)
 - Change authorize url to commerce.intuit.com
