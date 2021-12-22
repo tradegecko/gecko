@@ -43,7 +43,6 @@ module Gecko
       raise 'Turtles all the way down' if delegate.is_a?(BaseDecorator)
 
       @delegate = delegate
-      super
     end
 
     def method_missing(method_name, *args, &block)
