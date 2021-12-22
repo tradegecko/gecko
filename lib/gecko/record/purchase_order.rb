@@ -22,6 +22,7 @@ module Gecko
       attribute :email,                 String
 
       attribute :due_at,                Date
+      attribute :issued_at,             Date
       attribute :payment_due_at,        Date
       attribute :received_at,           Date
 

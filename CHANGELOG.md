@@ -1,3 +1,6 @@
+## 0.12.3 (Unreleased)
+- Add `issued_at` to `Gecko::Record::PurchaseOrder`
+
 ## 0.12.2 (2020-08-12)
 - Change authorize url to commerce.intuit.com
 - Add `payment_due_at` to `Gecko::Record::PurchaseOrder`
