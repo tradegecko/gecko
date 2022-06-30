@@ -17,6 +17,7 @@ module Gecko
 
     record :Address
     record :Company
+    record :Composition
     record :Contact
     record :Note
 

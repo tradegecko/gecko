@@ -16,6 +16,7 @@ task :console do
   require 'irb'
   require 'irb/completion'
   require 'gecko-ruby'
+  require 'pry'
   ARGV.clear
   IRB.start
 end

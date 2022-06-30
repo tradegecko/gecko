@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.lvh.me:3000/variants/composition/63
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Gecko/0.9.1 OAuth2/1.4.3 Faraday/1.0.0 Ruby/2.5.3
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer 12d62e610cf7825f2bb03e284dfada32e55492f44d0c3fc3bb25736978cbdb65
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Rate-Limit-Limit:
+      - '300'
+      X-Rate-Limit-Remaining:
+      - '299'
+      X-Rate-Limit-Reset:
+      - '1581567600'
+      Cache-Control:
+      - no-cache, no-store
+      X-Pagination:
+      - '{"total_records":3,"total_pages":1,"first_page":true,"last_page":true,"out_of_bounds":false,"offset":0}'
+      Link:
+      - <http://api.lvh.me:3000/ajax/variants/composition/63?page=1>; rel="last"
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Request-Id:
+      - '0098d0fb-5574-429e-b1a4-49444e9accaa'
+      X-Runtime:
+      - '0.090586'
+      Connection:
+      - close
+      Server:
+      - thin
+    body:
+      encoding: UTF-8
+      string: '{"composition":[{"bundle_sku":"BUNDLE-SHIRT","component_sku":"SW001-LG-M","quantity":"2.0","bundle_id":63,"component_id":9},{"bundle_sku":"BUNDLE-SHIRT","component_sku":"SW001-DG-M","quantity":"2.0","bundle_id":63,"component_id":8},{"bundle_sku":"BUNDLE-SHIRT","component_sku":"SW001-R-M","quantity":"2.0","bundle_id":63,"component_id":7}]}'
+    http_version: null
+  recorded_at: Thu, 13 Feb 2020 04:17:14 GMT
+recorded_with: VCR 5.1.0
