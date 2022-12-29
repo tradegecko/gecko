@@ -6,8 +6,9 @@ module Gecko
   module Record
     class Order < Base
       has_many :fulfillments
+      has_many :fulfillment_returns
       has_many :invoices
-      has_many :order_line_items, embedded: true
+      has_many :order_line_items,       embedded: true
 
       belongs_to :company
       belongs_to :contact

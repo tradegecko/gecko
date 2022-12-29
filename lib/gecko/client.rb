@@ -24,6 +24,8 @@ module Gecko
     record :OrderLineItem
     record :Fulfillment
     record :FulfillmentLineItem
+    record :FulfillmentReturn
+    record :FulfillmentReturnLineItem
     record :Invoice
     record :InvoiceLineItem
 
